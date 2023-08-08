@@ -32,3 +32,24 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+// TOOLS
+- https://excalidraw.com/
+- prisma studio
+- supabase studio
+- Data Fetching: Client-side Fetching | Next.js => https://nextjs.org/docs/pages/building-your-application/data-fetching/client-side
+
+// TODO LIST
+
+- Finir CTA Mail en liant à base de donnée (prisma, supabase)
+- Revoir le HERO
+- A l'inscription faire un reglement : tu prends que si tu donnes
+- PB use client and use server avec useState et connexion DB => décomposer
+- regarder pourquoi espace blanc entre fin faq et footer 
+- section grand ecran pas de vert OK✅
+- retravailler footer en y mettant LK de cact-us
+- uniformiser taille texte des p à text-lg
+- apres Hero fais une section 3 blocs "gratuit" "partage" "rencontre"
+
+// IDEAS
+- donne de la lumiere a ton cactUs
