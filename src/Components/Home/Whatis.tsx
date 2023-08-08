@@ -49,7 +49,7 @@ export default function Whatis() {
                   />
                 </div>
               </div>
-              <h2 className="text-xl md:text-2xl mb-4 p-1 leading-2">
+              <h2 className="text-lg md:text-2xl mb-4 px-4 leading-2">
                 Antoine vit aux{" "}
                 <span className="p-1 bg-desertred text-white rounded-lg">
                   États-Unis
@@ -57,7 +57,7 @@ export default function Whatis() {
                 et veut se lancer sur{" "}
                 <span className=" border-b-4 border-desertred">Youtube</span>,
               </h2>
-              <h2 className="text-xl md:text-2xl mb-4 p-1 leading-2">
+              <h2 className="text-lg md:text-2xl mb-4 px-4 leading-2">
                 Merwan est{" "}
                 <span className="p-1 bg-beige text-desertred rounded-lg">
                   développeur
@@ -65,16 +65,16 @@ export default function Whatis() {
                 et veut devenir{" "}
                 <span className=" border-b-4 border-white">freelance</span>,
               </h2>
-              <h2 className="text-xl md:text-2xl mb-4 p-1 leading-2">
+              <h2 className="text-lg md:text-2xl mb-4 px-4 leading-2">
                 Amel est{" "}
                 <span className="p-1 bg-desertred text-white rounded-lg">
                   monteuse vidéo
                 </span>{" "}
                 et veut apprendre{" "}
-                <span className=" border-b-4 border-desertred">l'anglais</span>.
+                <span className=" border-b-4 border-desertred">l'anglais</span>,
               </h2>
 
-              <h2 className="text-xl md:text-2xl mb-4  p-1leading-2">
+              <h2 className="text-lg md:text-2xl mb-4  px-2 leading-2">
                 Julie est{" "}
                 <span className="p-1 bg-beige text-desertred rounded-lg">
                   designer indépendante

@@ -1,5 +1,9 @@
 //import ButtonCTA from "../ui/Buttons/ButtonCTA";
 import TakeMail from "@/Components/Home/TakeMail";
+import { HeartHandshake } from 'lucide-react';
+import { Share2 } from 'lucide-react';
+import { ArrowUpDown } from 'lucide-react';
+
 
 
 {
@@ -37,19 +41,19 @@ export default function Hero() {
           <div className="flex flex-col md:flex-row items-center justify-between mt-8">
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
               <div className="flex flex-col items-center gap-2 border border-gray-200 px-4 py-6 rounded-lg">
-
+              <HeartHandshake size={28} color="#0EAD69" strokeWidth={2.25} />
                 <p className="leading-relaxed">Gratuit, pas de frais caché</p>
               </div>
             </div>
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
               <div className="flex flex-col items-center gap-2 border border-gray-200 px-4 py-6 rounded-lg">
-
+              <Share2 size={28} color="#0EAD69" strokeWidth={2.25} />
                 <p className="leading-relaxed">Rencontre, élargis ton réseau</p>
               </div>
             </div>
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
               <div className="flex flex-col items-center gap-2 border border-gray-200 px-4 py-6 rounded-lg">
-
+              <ArrowUpDown size={28} color="#0EAD69" strokeWidth={2.25} />
                 <p className="leading-relaxed">Partage tes compétences</p>
               </div>
             </div>

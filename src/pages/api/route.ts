@@ -1,23 +1,21 @@
-import prisma from '@/lib/prisma'
+import prisma from "@/lib/prisma";
 import { NextApiRequest, NextApiResponse } from "next";
 
+export default async function POST(req: NextApiRequest, res: NextApiResponse) {
+  console.log(req.body);
 
-export default async function POST(req: NextApiRequest, res:NextApiResponse) {
-    console.log("yes on y est");
-    
-    console.log(req.body);
-    
-    if (req.method === 'POST') {
+  if (req.method === "POST") {
     const { email } = req.body;
 
     try {
-        await prisma.takeMail.create({
-            data: {
-                email
-            }
-        })
-        res.status(200).json({ message: "Email enregistré avec succès !" });
+      await prisma.takeMail.create({
+        data: {
+          email,
+        },
+      });
+      res.status(200).json({ message: "Email enregistré avec succès !" });
     } catch (error) {
-        console.error(error)
-    }}
+      console.error(error);
+    }
+  }
 }
