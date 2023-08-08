@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="  px-4 py-32 lg:flex lg:h-screen lg:items-center">
         <div className="mx-auto text-center">
           <h1 className="bg-gradient-to-r from-desertred to-green bg-clip-text text-transparent     p-4 text-desertred  font-extrabold text-4xl  lg:text-6xl">
-            Apprends. Partage. Rencontre. !!
+            Apprends. Partage. Rencontre. 
           </h1>
           <h1 className="p-4 text-desertred bg-clip-text font-extrabold text-lg  md:text-2xl">
             Première plateforme d'échange de compétences
