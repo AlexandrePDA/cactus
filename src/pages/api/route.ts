@@ -15,6 +15,7 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
       });
       res.status(200).json({ message: "Email enregistré avec succès !" });
     } catch (error) {
+      console.log("dans le catch");
       console.error(error);
     }
   }
