@@ -2,11 +2,10 @@ import prisma from "@/lib/prisma";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function POST(req: NextApiRequest, res: NextApiResponse) {
-  console.log(req.body);
+  console.log("req",req.body);
 
   if (req.method === "POST") {
-    const { email } = req.body;
-
+    const { email } = req.body;    
     try {
       await prisma.takeMail.create({
         data: {
