@@ -4,26 +4,21 @@ import { HeartHandshake } from "lucide-react";
 import { Share2 } from "lucide-react";
 import { ArrowUpDown } from "lucide-react";
 
-{
-  /* mettre le logo sur un coté 
-  revoir style */
-}
-
 export default function Hero() {
   return (
     <section className="bg-beige mx-auto max-w-screen-xl  font-quicksand ">
-      <div className="  px-4 py-32 lg:flex lg:h-screen lg:items-center">
+      <div className="  px-4 py-16 lg:flex lg:h-screen lg:items-center">
         <div className="mx-auto text-center">
           <h1 className="     p-4   font-extrabold text-4xl sm:text-6xl">
-            <span className="bg-gradient-to-r from-red-500 to-green bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-desertred to-green bg-clip-text text-transparent">
               Apprends.
               <br />
-            </span >
-            <span className="bg-gradient-to-r from-red-500 to-green bg-clip-text text-transparent">
+            </span>
+            <span className="text-green">
               Partage.
               <br />
             </span>
-            <span className="bg-gradient-to-r from-red-500 to-green bg-clip-text text-transparent">
+            <span className="bg-gradient-to-l from-desertred to-green bg-clip-text text-transparent">
               Rencontre.
               <br />
             </span>
@@ -40,6 +35,7 @@ export default function Hero() {
             ! 🚀
           </p>
 
+
           <TakeMail />
 
           {/* 
@@ -49,19 +45,19 @@ export default function Hero() {
             */}
           <div className="flex flex-col md:flex-row items-center justify-between mt-8">
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-              <div className="flex flex-col items-center gap-2 border border-gray-200 px-4 py-6 rounded-lg">
+              <div className="flex flex-col items-center gap-2 border border-green px-4 py-6 rounded-lg">
                 <HeartHandshake size={28} color="#0EAD69" strokeWidth={2.25} />
                 <p className="leading-relaxed">Gratuit, pas de frais caché</p>
               </div>
             </div>
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-              <div className="flex flex-col items-center gap-2 border border-gray-200 px-4 py-6 rounded-lg">
+              <div className="flex flex-col items-center gap-2 border border-green px-4 py-6 rounded-lg">
                 <Share2 size={28} color="#0EAD69" strokeWidth={2.25} />
                 <p className="leading-relaxed">Rencontre, élargis ton réseau</p>
               </div>
             </div>
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-              <div className="flex flex-col items-center gap-2 border border-gray-200 px-4 py-6 rounded-lg">
+              <div className="flex flex-col items-center gap-2 border border-green px-4 py-6 rounded-lg">
                 <ArrowUpDown size={28} color="#0EAD69" strokeWidth={2.25} />
                 <p className="leading-relaxed">Partage tes compétences</p>
               </div>
