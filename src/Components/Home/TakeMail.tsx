@@ -12,7 +12,7 @@ export default function TakeMail() {
   const sentMail = async (mail: string) => {
     console.log("test");
     try {
-      const response = await fetch("/api/takemail", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_SITE}/api/takemail`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
