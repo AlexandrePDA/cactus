@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Together() {
   return (
     <>
-      <svg className="-mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <svg className="-mb-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#0EAD69"
           fillOpacity="1"
@@ -43,6 +43,8 @@ export default function Together() {
                     la recherche de sa pépite dans l'ouest californien, tu
                     cherches ta pépite mais quelqu'un d'autre te cherche : on
                     est tous la pépite d'un autre.
+                    <br/>
+                    Integrer CRISP
                   </p>
                 </div>
               </div>

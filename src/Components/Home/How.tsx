@@ -17,13 +17,7 @@
                 <span className="inline-block w-1 h-1 ml-1 bg-green rounded-full"></span>
               </div>
   
-              <p className=" text-lg mt-4">
-                <span className="p-2 bg-desertred text-white rounded-lg">
-                  CactUser
-                </span>{" "}
-                : Membre de la communauté Cact-Us. Plante désertique qui a décidé
-                de fuir la solitude.
-              </p>
+              
               <div className="mt-8 xl:mt-12 lg:flex lg:items-center">
                 <div className="lg:flex lg:w-1/2 lg:justify-center">
                   photo card

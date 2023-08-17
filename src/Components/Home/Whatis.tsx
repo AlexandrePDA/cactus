@@ -21,8 +21,7 @@ export default function Whatis() {
                 <div className="flex items-center justify-center">
                   <Image
                     className="object-cover w-12 h-12 md:w-32 md:h-32 -mx-2 rounded-full ring ring-white dark:ring-gray-900"
-                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=880&h=880&q=100"
-                    alt=""
+                    src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"                    alt=""
                     width={500}
                     height={500}
                   />
@@ -35,7 +34,7 @@ export default function Whatis() {
                   />
                   <Image
                     className="object-cover w-12 h-12 md:w-32 md:h-32 -mx-2 rounded-full ring ring-white dark:ring-gray-900"
-                    src="https://images.unsplash.com/photo-1485178575877-1a13bf489dfe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=1401&h=1401&q=80"
+                    src="https://images.unsplash.com/photo-1507152832244-10d45c7eda57?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80"
                     alt=""
                     width={500}
                     height={500}
@@ -87,6 +86,8 @@ export default function Whatis() {
              
               <p className="mt-12 text-2xl text-beige">
                 Amel et Antoine se rencontrent, partagent leur
+                expérience et développent leurs compétences. <br/>
+                Merwzan et Julie se rencontrent, partagent leur
                 expérience et développent leurs compétences.
               </p>
              

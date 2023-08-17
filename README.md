@@ -41,15 +41,16 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 // TODO LIST
 
-- Finir CTA Mail en liant à base de donnée (prisma, supabase)
+- Finir CTA Mail en liant à base de donnée (prisma, supabase)✅
+- apres Hero fais une section 3 blocs "gratuit" "partage" "rencontre"✅
+- PB use client and use server avec useState et connexion DB => décomposer✅
+- section grand ecran pas de vert OK✅
+- uniformiser taille texte des p à text-lg✅
 - Revoir le HERO
 - A l'inscription faire un reglement : tu prends que si tu donnes
-- PB use client and use server avec useState et connexion DB => décomposer
 - regarder pourquoi espace blanc entre fin faq et footer 
-- section grand ecran pas de vert OK✅
 - retravailler footer en y mettant LK de cact-us
-- uniformiser taille texte des p à text-lg
-- apres Hero fais une section 3 blocs "gratuit" "partage" "rencontre"
+- gerer crisp
 
 // IDEAS
 - donne de la lumiere a ton cactUs

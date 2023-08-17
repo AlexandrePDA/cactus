@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Cact-us",
-  description: "compétences, ensemble",
+  description: "Apprends. Partage. Rencontre",
 };
 
 export default function RootLayout({

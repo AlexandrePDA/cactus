@@ -38,7 +38,7 @@ export default function TakeMail() {
 
   return (
     <div className="mt-6">
-    {sentEmail? <p>Sois informé de la sortie : </p> : <p>Merci 🎉</p>}
+    {sentEmail? <p>Sois informé de la sortie : </p> : <p>Merci, tu recevras un mail 🎉</p>}
       {" "}
       {sentEmail && (
         <div className="w-full max-w-sm mx-auto  bg-transparent border rounded-md  focus-within:ring-opacity-40">   

@@ -1,10 +1,15 @@
 import { Linkedin } from "lucide-react";
 import { Github } from "lucide-react";
 
+
+
 export const Footer = () => {
   return (
     <div className="bg-green font-quicksand ">
       <footer className=" max-w-screen-xl mx-auto text-white mt-12 py-8">
+        <div className="container flex items-center justify-between flex-col p-6 mx-auto space-y-4 sm:space-y-0 sm:flex-row">
+          <a href="#">CGV</a>
+        </div>
         <div className="container flex flex-col items-center justify-between p-6 mx-auto space-y-4 sm:space-y-0 sm:flex-row">
           <p className="text-lg ">
             ©Cact-Us - Copyright 2023. All Rights Reserved.
@@ -32,6 +37,7 @@ export const Footer = () => {
             </a>
           </div>
         </div>
+        
       </footer>
     </div>
   );
