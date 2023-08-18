@@ -9,7 +9,7 @@ export default function Hero() {
     <section className="bg-beige mx-auto max-w-screen-xl  font-quicksand ">
       <div className="  px-4 py-16 lg:flex lg:h-screen lg:items-center">
         <div className="mx-auto text-center">
-          <h1 className="     p-4   font-extrabold text-4xl sm:text-6xl">
+          <h1 className="     p-4   font-extrabold text-6xl">
             <span className="bg-gradient-to-r from-desertred to-green bg-clip-text text-transparent">
               Apprends.
               <br />
