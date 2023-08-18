@@ -37,11 +37,11 @@ export default function TakeMail() {
   };
 
   return (
-    <div className="mt-6">
-    {sentEmail? <p>Sois informé de la sortie : </p> : <p>Merci, tu recevras un mail 🎉</p>}
+    <div className="mt-12">
+    {sentEmail? <p>Sois informé de la sortie 👋 </p> : <p>Merci, tu recevras un mail 🎉</p>}
       {" "}
       {sentEmail && (
-        <div className="w-full max-w-sm mx-auto  bg-transparent border rounded-md  focus-within:ring-opacity-40">   
+        <div className="w-full max-w-sm mx-auto mt-2  bg-transparent border rounded-md  focus-within:ring-opacity-40">   
           <form className="flex flex-col md:flex-row">
             <input
               onChange={handleMailChange}

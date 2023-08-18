@@ -23,17 +23,17 @@ export default function Hero() {
               <br />
             </span>
           </h1>
-          <h1 className="p-4 text-desertred bg-clip-text font-extrabold text-lg  md:text-2xl">
+          <h3 className="p-4 text-desertred bg-clip-text font-bold text-lg  md:text-2xl">
             Première plateforme d'échange de compétences
-          </h1>
+          </h3>
 
-          <p className="mx-auto  px-2 text-dark mt-4 max-w-2xl text-lg">
+          <h3 className="mx-auto   px-2 text-dark mt-4 max-w-2xl text-lg">
             Cact-Us, c'est la solution pour les curieux qui souhaitent partager
-            leur experience et grimper en compétence. Pas de frais caché, la
+            leur experience et grimper en compétence. Ta
             seule monnaie, c'est tes connaissances. Inscris-toi sur la
             plateforme, renseigne ton besoin et tes qualifications. C'est parti
             ! 🚀
-          </p>
+          </h3>
 
 
           <TakeMail />
@@ -43,21 +43,21 @@ export default function Hero() {
             <ButtonCTA item="En savoir plus" href="/#whatis" />
           </div>
             */}
-          <div className="flex flex-col md:flex-row items-center justify-between mt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between mt-12">
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-              <div className="flex flex-col items-center gap-2 border border-green px-4 py-6 rounded-lg">
+              <div className="flex flex-col items-center gap-2 border-2 border-gray-200 px-4 py-6 rounded-lg">
                 <HeartHandshake size={28} color="#0EAD69" strokeWidth={2.25} />
                 <p className="leading-relaxed">Gratuit, pas de frais caché</p>
               </div>
             </div>
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-              <div className="flex flex-col items-center gap-2 border border-green px-4 py-6 rounded-lg">
+              <div className="flex flex-col items-center gap-2 border-2 border-gray-200 px-4 py-6 rounded-lg">
                 <Share2 size={28} color="#0EAD69" strokeWidth={2.25} />
-                <p className="leading-relaxed">Rencontre, élargis ton réseau</p>
+                <p className="leading-relaxed">Élargis ton réseau</p>
               </div>
             </div>
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
-              <div className="flex flex-col items-center gap-2 border border-green px-4 py-6 rounded-lg">
+              <div className="flex flex-col items-center gap-2 border-2 border-gray-200 px-4 py-6 rounded-lg">
                 <ArrowUpDown size={28} color="#0EAD69" strokeWidth={2.25} />
                 <p className="leading-relaxed">Partage tes compétences</p>
               </div>

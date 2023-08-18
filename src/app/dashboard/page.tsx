@@ -1,10 +1,12 @@
-{/* fetch info du profil via un context pour recuperer toutes les infos */}
-
+{
+  /* fetch info du profil via un context pour recuperer toutes les infos
+   *** middleware *** */
+}
 
 export default function Dashboard() {
-    return (
-      <div>Dashboard</div>
-    )
-  }
-  
-  
+  return (
+    <div>
+      dashboard
+    </div>
+  );
+}

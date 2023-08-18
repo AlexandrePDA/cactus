@@ -46,11 +46,15 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - PB use client and use server avec useState et connexion DB => décomposer✅
 - section grand ecran pas de vert OK✅
 - uniformiser taille texte des p à text-lg✅
-- Revoir le HERO
+- Revoir le HERO ✅
+- revoir animation apres email inscrit
 - A l'inscription faire un reglement : tu prends que si tu donnes
 - regarder pourquoi espace blanc entre fin faq et footer 
 - retravailler footer en y mettant LK de cact-us
 - gerer crisp
+
+// Prisma 
+- schema ok ✅
 
 // IDEAS
 - donne de la lumiere a ton cactUs

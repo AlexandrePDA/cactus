@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Cact-us",
-  description: "compétences, ensemble",
+  description: "Mon profil",
 };
 
 export default function RootLayout({
