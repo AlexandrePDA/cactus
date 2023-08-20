@@ -51,7 +51,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - A l'inscription faire un reglement : tu prends que si tu donnes
 - regarder pourquoi espace blanc entre fin faq et footer 
 - retravailler footer en y mettant LK de cact-us
-- gerer crisp
+- gerer crisp ou alternative
+- gerer front et back longueur mdp à l'inscription (+8 caracteres, majuscule, number)
+- j'ai commencé next-auth mais bizarre à voir si j'utilise pas direct useContext()
 
 // Prisma 
 - schema ok ✅

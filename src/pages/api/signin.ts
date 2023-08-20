@@ -9,19 +9,26 @@ export default async function handler(
   try {
     if (req.method === "POST") {
       const body = await req.body;
-      const user = await prisma.user.create({
-        data: {
-          name: body.name,
+      const user = await prisma.user.findUnique({
+        where: {
           email: body.email,
-          password: await bcrypt.hash(body.password, 10),
         },
       });
 
-      const { password, ...result } = user;
-      console.log(result);
-      return res.status(200).json({ etat: "user crée avec succes" });
+      {
+        /* compare si user existe et si le password qu'on reçoit du front est = au password de l'user */
+      }
+      if (user && (await bcrypt.compare(body.password, user.password))) {
+        return res.status(200).json({ etat: "user connecté" });
+      }
+
+      return res
+        .status(400)
+        .json({ etat: "mauvais email/password ou pb réseau" });
     }
   } catch (error) {
-    return res.status(400).json({ etat: "email utilisé ou pb réseau" });
+    return res
+      .status(400)
+      .json({ etat: "mauvais email/password ou pb réseau" });
   }
 }

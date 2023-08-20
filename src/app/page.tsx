@@ -7,12 +7,12 @@ import Whatis from "@/Components/Home/Whatis";
 
 export default function Home() {
   return (
-    <>
+    <div>
       <Hero />
       <Whatis />
       <How/>
       <Together/>
       <Faq/>
-    </>
+    </div>
   );
 }

@@ -22,7 +22,7 @@ const handler = NextAuth({
            ******************************* login *******************************
            */
         }
-        const res = await fetch("/api/signup", {
+        const res = await fetch("api/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
