@@ -88,6 +88,7 @@ export default function Signup() {
           password: "",
         });
         console.log("ok c'est envoyé");
+        router.push('/dashboard');
       }
     } catch (error) {
       console.log(error);
