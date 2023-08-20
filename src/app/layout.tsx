@@ -18,10 +18,14 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+  const bodyStyles = {
+    backgroundColor: '#fffaf2', 
+  };
+
   return (
     <html lang="fr">
-      <body className={inter.className}>
-        
+      <body style={bodyStyles} className={inter.className}>
          {children}
           <Analytics />
    

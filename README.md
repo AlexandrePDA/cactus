@@ -54,6 +54,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - gerer crisp ou alternative
 - gerer front et back longueur mdp à l'inscription (+8 caracteres, majuscule, number)
 - j'ai commencé next-auth mais bizarre à voir si j'utilise pas direct useContext()
+- a chaque section on perd le beige
 
 // Prisma 
 - schema ok ✅
