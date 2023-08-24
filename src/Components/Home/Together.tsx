@@ -3,7 +3,11 @@ import Image from "next/image";
 export default function Together() {
   return (
     <>
-      <svg className="-mb-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <svg
+        className="-mb-1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+      >
         <path
           fill="#0EAD69"
           fillOpacity="1"
@@ -35,16 +39,20 @@ export default function Together() {
                     <span className="inline-block w-3 h-1 ml-1 bg-desertred rounded-full"></span>
                   </div>
                   <p className="mt-4 text-lg">
-                    L'ambition de Cact-Us c'est avant tout de créer du lien.
-                    Comme le cactus a besoin de soleil pour pouvoir vivre, on a
-                    besoin des uns et des autres pour grandir, partager,
-                    s'entraider. Que ce soit en visio ou autour d'un café, de
-                    belles histoires peuvent s'écrire. Comme le chercheur d'or à
-                    la recherche de sa pépite dans l'ouest californien, tu
-                    cherches ta pépite mais quelqu'un d'autre te cherche : on
-                    est tous la pépite d'un autre.
-                    <br/>
-                    Integrer CRISP
+                    Le cactus est une espèce pionnière. Véritable source de vie,
+                    il représente un refuge dans le désert pour de nombreux
+                    animaux.
+                    <br/> <br/>
+                    C'est cette même ambition qui anime Cact-Us : fonder une
+                    communauté unie et bienveillante dont les différences font
+                    la richesse. Et cela est possible en créant du lien entre
+                    les femmes et les hommes qui ont soif d'apprendre, de
+                    partager, et de se rencontrer.
+                    <br /> <br />
+                    Ensemble, redéfinissons l'échange de compétences.
+                    <br /> <br />
+                    Cact-Us, c'est moi, Antoine, Amel... c'est nous.
+                    <br /> <br />
                   </p>
                 </div>
               </div>
