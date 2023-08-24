@@ -148,7 +148,7 @@ export default function Whatis() {
               </div>
               <div className="block rounded-xl border border-transparent p-8 shadow-xl bg-beige">
                 <h2 className="mt-4 text-xl font-bold text-dark">
-                  🧠 Apprendre et transmettre
+                  🧠 Apprends et transmets
                 </h2>
 
                 <p className="mt-1 text-lg text-dark">
