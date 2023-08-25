@@ -1,6 +1,7 @@
 import prisma from "@/lib/prisma";
 import * as bcrypt from "bcrypt";
 import { NextApiRequest, NextApiResponse } from "next";
+const jwt = require("../../utils/jwt");
 
 export default async function handler(
   req: NextApiRequest,
@@ -9,7 +10,7 @@ export default async function handler(
   try {
     if (req.method === "POST") {
       const body = await req.body;
-      const user = await prisma.user.findUnique({
+      let user = await prisma.user.findUnique({
         where: {
           email: body.email,
         },
@@ -19,7 +20,11 @@ export default async function handler(
         /* compare si user existe et si le password qu'on reçoit du front est = au password de l'user */
       }
       if (user && (await bcrypt.compare(body.password, user.password))) {
-        return res.status(200).json({ etat: "user connecté" });
+        const { password, ...result } = user;
+        {/* jwt */}
+        const token = await jwt.signAccessToken(user);
+        result.token = token;
+        return res.status(200).json({ user: result });
       }
 
       return res
