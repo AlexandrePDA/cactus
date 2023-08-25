@@ -105,8 +105,7 @@
                     </h2>
   
                     <p className="text-lg">
-                      À ton tour, utilise tes connaissances pour accompagner les
-                      CactUsers. Logiciel de retouche photos, cours de comédie ou
+                      À ton tour, utilise tes connaissances : logiciel de retouche photos, cours de comédie ou
                       encore de géographie. Mets à profit tes talents en les
                       enseignant.
                     </p>
@@ -137,7 +136,7 @@
                     <p className="text-lg">
                       Parcours les profils dispos parmi la selection de Cact-Us et
                       trouve ta pépite. La suite est simple : entre en contact,
-                      donne et reçois !
+                      donne et reçois ! ✨
                     </p>
                   </div>
                 </div>

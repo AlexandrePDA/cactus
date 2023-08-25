@@ -24,7 +24,7 @@ export const Faq = () => {
         <div className="mt-12 space-y-8">
           <div className="border border-gray-200 rounded-lg ">
             <button
-              className="flex items-center justify-between w-full p-8"
+              className="flex text-left items-center justify-between w-full p-8"
               onClick={() => setOpen1(!open1)}
             >
               <h2 className="font-semibold text-gray-700 ">
@@ -68,23 +68,16 @@ export const Faq = () => {
               )}
             </button>
 
-            {open1 ? (
+            {open1 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Si vous disposez d'un cahier des charges, vous me partagez les
-                détails de votre projet. Au contraire, si votre idée est encore
-                floue, nous pouvons la travailler ensemble. Dans tous les cas,
-                nous en discutons autour d'un appel, d'un visio, d'un mail ou
-                d'un café. Une fois le contrat signé, l'aventure peut commencer
-                ! 🚀
+                Cact-Us c'est pour tous les curieux qui souhaitent partager leur compétences afin d'en apprendre de nouvelles 🌵
               </p>
-            ) : (
-              ""
             )}
           </div>
 
           <div className="border border-gray-200 rounded-lg ">
             <button
-              className="flex items-center justify-between w-full p-8"
+              className="flex text-left items-center justify-between w-full p-8"
               onClick={() => setOpen2(!open2)}
             >
               <h2 className="font-semibold text-gray-700 ">
@@ -128,21 +121,17 @@ export const Faq = () => {
               )}
             </button>
 
-            {open2 ? (
+            {open2 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Il n'existe pas de prix unique pour la rédaction d'un article.
-                La tarification dépend de facteurs variés mentionnés dans le
-                cahier des charges. Contactez-moi pour obtenir un devis
-                personnalisé. 📩
+                Cact-Us sort bientôt de terre. Pour être informé de son lancement, renseigne ton mail pour recevoir toutes les informations. Tu peux également suivre Cact-Us sur Linkedin 🚀
               </p>
-            ) : (
-              ""
-            )}
+            ) 
+            }
           </div>
 
           <div className="border border-gray-200 rounded-lg ">
             <button
-              className="flex items-center justify-between w-full p-8"
+              className="flex text-left items-center justify-between w-full p-8"
               onClick={() => setOpen3(!open3)}
             >
               <h1 className="font-semibold text-gray-700 ">
@@ -186,20 +175,16 @@ export const Faq = () => {
               )}
             </button>
 
-            {open3 ? (
+            {open3 && (
               <p className="p-8 text-sm text-gray-500 ">
-                À la date convenue lors de la signature du contrat. Des envois
-                intermédiaires sont prévus tout au long de la mission afin de
-                vous permettre un suivi constant de l'évolution de vos contenus.{" "}
+                Cact-Us c'est l'échange, tu donnes ce que tu sais pour recevoir ce que tu veux apprendre. Ta seule monnaie c'est tes connaissances. C'est un échange win-win qui n'attend que toi ! ⚡️{" "}
               </p>
-            ) : (
-              ""
-            )}
+            ) }
           </div>
         
           <div className="border border-gray-200 rounded-lg ">
             <button
-              className="flex items-center justify-between w-full p-8"
+              className="flex text-left items-center justify-between w-full p-8"
               onClick={() => setOpen4(!open4)}
             >
               <h2 className="font-semibold text-gray-700 ">
@@ -243,22 +228,17 @@ export const Faq = () => {
               )}
             </button>
 
-            {open4 ? (
+            {open4 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Il n'existe pas de prix unique pour la rédaction d'un article.
-                La tarification dépend de facteurs variés mentionnés dans le
-                cahier des charges. Contactez-moi pour obtenir un devis
-                personnalisé. 📩
+                Tu trouveras toujours quelqu'un qui recherche ce que tu sais. C'est d'ailleurs la richesse de Cact-Us : faire de nos compétences un atout pour échanger ✨
               </p>
-            ) : (
-              ""
-            )}
+            ) }
           </div>
 
                   
           <div className="border border-gray-200 rounded-lg ">
             <button
-              className="flex items-center justify-between w-full p-8"
+              className="flex text-left items-center justify-between w-full p-8"
               onClick={() => setOpen5(!open5)}
             >
               <h2 className="font-semibold text-gray-700 ">
@@ -302,21 +282,16 @@ export const Faq = () => {
               )}
             </button>
 
-            {open5 ? (
+            {open5 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Il n'existe pas de prix unique pour la rédaction d'un article.
-                La tarification dépend de facteurs variés mentionnés dans le
-                cahier des charges. Contactez-moi pour obtenir un devis
-                personnalisé. 📩
+                Ça y est, tu as trouvé ? Rien de plus simple, contact la via ses réseaux ou son adresse mail disponible sur son profil. Allez, qu'est-ce que tu attends ? 🎯
               </p>
-            ) : (
-              ""
-            )}
+            ) }
           </div>
 
           <div className="border border-gray-200 rounded-lg ">
             <button
-              className="flex items-center justify-between w-full p-8"
+              className="flex text-left items-center justify-between w-full p-8"
               onClick={() => setOpen6(!open6)}
             >
               <h2 className="font-semibold text-gray-700 ">
@@ -360,22 +335,17 @@ export const Faq = () => {
               )}
             </button>
 
-            {open6 ? (
+            {open6 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Il n'existe pas de prix unique pour la rédaction d'un article.
-                La tarification dépend de facteurs variés mentionnés dans le
-                cahier des charges. Contactez-moi pour obtenir un devis
-                personnalisé. 📩
+                Des recommandations ? Des idées ? Déclarer un problème ? Tu peux nous contacter par mail contact@cact-us.com et nous serons heureux de te répondre 💌
               </p>
-            ) : (
-              ""
-            )}
+            ) }
           </div>
 
 
           <div className="border border-gray-200 rounded-lg ">
             <button
-              className="flex items-center justify-between w-full p-8"
+              className="flex text-left items-center justify-between w-full p-8"
               onClick={() => setOpen7(!open7)}
             >
               <h2 className="font-semibold text-gray-700 ">
@@ -419,16 +389,11 @@ export const Faq = () => {
               )}
             </button>
 
-            {open7 ? (
+            {open7 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Il n'existe pas de prix unique pour la rédaction d'un article.
-                La tarification dépend de facteurs variés mentionnés dans le
-                cahier des charges. Contactez-moi pour obtenir un devis
-                personnalisé. 📩
+                Parles-en autour de toi, plus on est plus il sera facil de trouver ta pépite ! Abonne toi également à la page Linkedin de Cact-Us pour rester informer de toutes les nouveautés 👂
               </p>
-            ) : (
-              ""
-            )}
+            ) }
           </div>
         </div>
       </div>

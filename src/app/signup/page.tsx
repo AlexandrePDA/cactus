@@ -1,9 +1,10 @@
 "use client";
 import NavBar from "@/Components/NavBar";
 import { useState } from "react";
-import { useRouter } from 'next/navigation';
-import { Info } from 'lucide-react';
+import { useRouter } from "next/navigation";
+import { CheckCircle2 } from "lucide-react";
 import { Footer } from "@/Components/Footer";
+import Link from "next/link";
 
 {
   /* signin : s'inscrire
@@ -30,7 +31,6 @@ function mailIsCorrect(email: string) {
 }
 
 export default function Signup() {
-
   const router = useRouter();
   const [data, setData] = useState<UserData>({
     name: "",
@@ -67,7 +67,9 @@ export default function Signup() {
     sentData();
   };
 
-  {/* envois à BDD */}
+  {
+    /* envois à BDD */
+  }
   const sentData = async () => {
     try {
       const response = await fetch("/api/signup", {
@@ -88,7 +90,7 @@ export default function Signup() {
           password: "",
         });
         console.log("ok c'est envoyé");
-        router.push('/dashboard');
+        router.push("/dashboard");
       }
     } catch (error) {
       console.log(error);
@@ -96,26 +98,64 @@ export default function Signup() {
   };
 
   const goToSignIn = () => {
-    router.push('/signin')
-  }
+    router.push("/signin");
+  };
 
   return (
     <div>
       <NavBar />
+
+{/* chemin */}
+<div className="hidden md:flex md:items-center md:px-8 md:mt-8 md:overflow-x-auto md:whitespace-nowrap">
+        <Link href="/" className="text-dark">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-5 h-5 text-green"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+          </svg>
+        </Link>
+
+        <span className="mx-5 text-gray-500  rtl:-scale-x-100">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-5 h-5"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </span>
+
+        <p className="text-dark">S'inscrire</p>
+      </div>
+
+
       <section className="bg-beige">
         <div className="flex justify-center min-h-screen">
-          <div className="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5">
+          <div className="flex items-center w-full max-w-xl p-8 mx-auto lg:px-12 lg:w-3/5">
             <div className="w-full">
-              <h1 className="text-2xl font-semibold  text-gray-800  ">
+              <h1 className="text-2xl font-semibold  text-dark  ">
                 Inscris toi et rejoins la communauté 🌵
               </h1>
 
-              <p className="mt-4 text-gray-500 ">
-                Renseigne les informations Lorem ipsum, dolor sit amet
-                consectetur adipisicing elit. Iste vel perferendis nemo
-                expedita, recusandae, voluptatem exercitationem, soluta hic a
-                quos illum nisi esse iusto tempora reiciendis at accusantium
-                voluptatibus ex.
+              <p className="flex items-center gap-2 mt-4 text-dark ">
+                <CheckCircle2 size={20} color="#0EAD69" /> Gratuit, aucun frais
+                caché
+              </p>
+              <p className="flex items-center gap-2 mt-4 text-dark ">
+                <CheckCircle2 size={20} color="#0EAD69" /> Un profil prêt
+                immédiatement
+              </p>
+              <p className="flex items-center gap-2 mt-4 text-dark ">
+                <CheckCircle2 size={20} color="#0EAD69" /> Une communauté qui
+                t'attend
               </p>
 
               <form
@@ -123,7 +163,7 @@ export default function Signup() {
                 className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2"
               >
                 <div>
-                  <label className="block mb-2 text-sm text-gray-600 ">
+                  <label className="block mb-2 text-sm text-dark ">
                     Prénom
                   </label>
                   <input
@@ -135,14 +175,12 @@ export default function Signup() {
                     type="text"
                     value={data.name}
                     placeholder="Cact-Us"
-                    className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg   focus:outline-none focus:ring focus:ring-opacity-40"
+                    className="block w-full px-5 py-3 mt-2 text-dark placeholder-gray-400 bg-white border border-gray-200 rounded-lg   focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                 </div>
 
                 <div>
-                  <label className="block mb-2 text-sm text-gray-600 ">
-                    Email
-                  </label>
+                  <label className="block mb-2 text-sm text-dark ">Email</label>
                   <input
                     onChange={(e) => {
                       setData({ ...data, email: e.target.value });
@@ -157,8 +195,8 @@ export default function Signup() {
                 </div>
 
                 <div>
-                  <label className="block mb-2 text-sm text-gray-600 ">
-                    Mot de passe 
+                  <label className="block mb-2 text-sm text-dark ">
+                    Mot de passe
                   </label>
                   <input
                     onChange={(e) => {
@@ -169,13 +207,14 @@ export default function Signup() {
                     type="password"
                     value={data.password}
                     placeholder="*************"
-                    className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:outline-none focus:ring focus:ring-opacity-40"
+                    className="block w-full px-5 py-3 mt-2 text-dark placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:outline-none focus:ring focus:ring-opacity-40"
                   />
+                  <div className="mt-1 flex items-center gap-1 text-gray-400 text-sm">
+                    <p>minimum 8 caracteres, 1 chiffre et 1 lettre majuscule</p>
+                  </div>
                 </div>
 
-                <div className="flex gap-1 text-gray-400 text-sm">
-                  <Info /> Le mot de passe doit contenir 8 caracteres, 1 chiffre, 1 lettre majuscule
-                </div>
+                <div> </div>
 
                 <button className="flex items-center justify-between w-full px-6 py-3 text-sm  text-white capitalize transition-colors duration-300 transform bg-green rounded-lg ">
                   <span>S'inscrire 🚀</span>
@@ -195,15 +234,18 @@ export default function Signup() {
                 </button>
                 <p className="text-red-600 font-semibold">{error}</p>
               </form>
-              <button className="text-sm mt-4 text-gray-400 cursor-pointer" onClick={goToSignIn}>
-
-Déjà un compte ? <span className="text-green">Connecte-toi</span>
-</button>
+              <button
+                className="text-sm mt-4 text-gray-400 cursor-pointer"
+                onClick={goToSignIn}
+              >
+                Déjà un compte ?{" "}
+                <span className="text-green">Connecte-toi</span>
+              </button>
             </div>
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

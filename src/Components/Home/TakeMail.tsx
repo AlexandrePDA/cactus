@@ -1,9 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-{
-  /* voir ce que l'on peut faire pour notifier à l'user que l'envois de l'email est ok */
-}
+
 
 export default function TakeMail() {
   const [mail, setMail] = useState<string>("");
@@ -19,6 +17,7 @@ export default function TakeMail() {
         },
         body: JSON.stringify({ email: mail }),
       });
+
 
       if (response.ok === true && response.status == 200) {
         setSentEmail(false);
@@ -43,6 +42,7 @@ export default function TakeMail() {
           Cact-Us arrive prochainement ! 👋<br /> Inscris-toi pour être averti du
           lancement et faire partie des premiers utilisateurs {" "}
         </p>
+       
       ) : (
         <p>🎉 Merci, tu recevras un mail pour le lancement de Cact-Us 🎉</p>
       )}{" "}
