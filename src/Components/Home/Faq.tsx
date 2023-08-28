@@ -24,7 +24,7 @@ export const Faq = () => {
         <div className="mt-12 space-y-8">
           <div className="border border-gray-200 rounded-lg ">
             <button
-              className="flex text-left items-center justify-between w-full p-8"
+              className="flex text-left items-center justify-between w-full p-4"
               onClick={() => setOpen1(!open1)}
             >
               <h2 className="font-semibold text-gray-700 ">
@@ -77,7 +77,7 @@ export const Faq = () => {
 
           <div className="border border-gray-200 rounded-lg ">
             <button
-              className="flex text-left items-center justify-between w-full p-8"
+              className="flex text-left items-center justify-between w-full p-4"
               onClick={() => setOpen2(!open2)}
             >
               <h2 className="font-semibold text-gray-700 ">
@@ -131,7 +131,7 @@ export const Faq = () => {
 
           <div className="border border-gray-200 rounded-lg ">
             <button
-              className="flex text-left items-center justify-between w-full p-8"
+              className="flex text-left items-center justify-between w-full p-4"
               onClick={() => setOpen3(!open3)}
             >
               <h1 className="font-semibold text-gray-700 ">
@@ -184,7 +184,7 @@ export const Faq = () => {
         
           <div className="border border-gray-200 rounded-lg ">
             <button
-              className="flex text-left items-center justify-between w-full p-8"
+              className="flex text-left items-center justify-between w-full p-4"
               onClick={() => setOpen4(!open4)}
             >
               <h2 className="font-semibold text-gray-700 ">
@@ -238,7 +238,7 @@ export const Faq = () => {
                   
           <div className="border border-gray-200 rounded-lg ">
             <button
-              className="flex text-left items-center justify-between w-full p-8"
+              className="flex text-left items-center justify-between w-full p-4"
               onClick={() => setOpen5(!open5)}
             >
               <h2 className="font-semibold text-gray-700 ">
@@ -291,7 +291,7 @@ export const Faq = () => {
 
           <div className="border border-gray-200 rounded-lg ">
             <button
-              className="flex text-left items-center justify-between w-full p-8"
+              className="flex text-left items-center justify-between w-full p-4"
               onClick={() => setOpen6(!open6)}
             >
               <h2 className="font-semibold text-gray-700 ">
@@ -345,7 +345,7 @@ export const Faq = () => {
 
           <div className="border border-gray-200 rounded-lg ">
             <button
-              className="flex text-left items-center justify-between w-full p-8"
+              className="flex text-left items-center justify-between w-full p-4"
               onClick={() => setOpen7(!open7)}
             >
               <h2 className="font-semibold text-gray-700 ">

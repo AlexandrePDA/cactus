@@ -13,11 +13,7 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      fontFamily: {
-        'abril' : ['"Abril Fatface"','arial'],
-        'roboto' : ['"Roboto"','arial'],
-        'quicksand' : ['"Quicksand"', 'arial']
-      },
+      
       colors: {
         'dark-purple' : '#2A1B3B',
         'maroon' : '#553D67',

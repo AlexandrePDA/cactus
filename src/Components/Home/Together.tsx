@@ -14,8 +14,8 @@ export default function Together() {
           d="M0,128L1440,256L1440,320L0,320Z"
         ></path>
       </svg>
-      <div className="bg-green font-quicksand">
-        <section className="mx-auto max-w-screen-xl font-quicksand  text-beige">
+      <div className="bg-green ">
+        <section className="mx-auto max-w-screen-xl  text-beige">
           <section>
             <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
               <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">

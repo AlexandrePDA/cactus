@@ -6,7 +6,7 @@ import { ArrowUpDown } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="bg-beige mx-auto max-w-screen-xl  font-quicksand ">
+    <section className="bg-beige mx-auto max-w-screen-xl   ">
       <div className="  px-4 py-16 lg:flex lg:h-screen lg:items-center">
         <div className="mx-auto text-center">
           <h1 className="p-4 font-extrabold text-5xl lg:text-7xl">
