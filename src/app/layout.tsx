@@ -6,7 +6,7 @@ import { Metadata } from "next";
 
 
 // Importez le composant Crisp avec le chargement dynamique
-const CrispWithNoSSR = dynamic(() => import('../components/crisp'));
+const CrispWithNoSSR = dynamic(() => import('../Components/crisp'));
 
 // Créez l'objet Inter pour les styles de police
 const inter = Inter({ subsets: ["latin"] });
