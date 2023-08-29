@@ -1,4 +1,5 @@
 import Image from "next/image";
+import together from "../../../public/assets/cact-us_together.jpg";
 
 export default function Together() {
   return (
@@ -15,45 +16,79 @@ export default function Together() {
         ></path>
       </svg>
       <div className="bg-green ">
-        <section className="mx-auto max-w-screen-xl  text-beige">
+        <section className="mx-auto max-w-screen-xl  text-beige p-4">
           <section>
-            <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
-              <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-                <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
-                  <Image
-                    alt="Party"
-                    src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-                    className="absolute inset-0 h-full w-full object-cover"
-                    width={500}
-                    height={500}
-                  />
-                </div>
-
+            <div className="mx-auto max-w-screen-xl px-4  sm:py-12 sm:px-6 lg:py-16 lg:px-8">
+              <div className="max-w-xl mx-auto">
                 <div className="lg:py-24">
                   <h2 className="text-3xl font-bold sm:text-4xl">
                     Cact-Us c'est vous !
                   </h2>
-                  <div className="mt-2">
+                  <div className="mt-2 mb-12">
                     <span className="inline-block w-40 h-1 bg-desertred rounded-full"></span>
                     <span className="inline-block w-1 h-1 ml-1 bg-desertred rounded-full"></span>
                     <span className="inline-block w-3 h-1 ml-1 bg-desertred rounded-full"></span>
                   </div>
-                  <p className="mt-4 text-lg">
+                  <p className="mt-4 text-justify text-lg">
                     Le cactus est une espèce pionnière. Véritable source de vie,
                     il représente un refuge dans le désert pour de nombreux
                     animaux.
-                    <br/> <br/>
+                    <br /> <br />
                     C'est cette même ambition qui anime Cact-Us : fonder une
                     communauté unie et bienveillante dont les différences font
                     la richesse. Et cela est possible en créant du lien entre
                     les femmes et les hommes qui ont soif d'apprendre, de
                     partager, et de se rencontrer.
-                    <br /> <br />
-                    Ensemble, redéfinissons l'échange de compétences.
-                    <br /> <br />
-                    Cact-Us, c'est moi, Antoine, Amel... c'est nous.
-                    <br /> <br />
                   </p>
+
+                  <div className="flex mt-8  items-center">
+                    <div className="flex items-center mx-auto">
+                      <Image
+                        className="h-16 w-16 -mx-2.5 ring ring-white dark:ring-gray-900 rounded-full object-cover"
+                        src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=880&h=880&q=100"
+                        alt=""
+                        width={500}
+                        height={500}
+                      />
+                      <Image
+                        className="h-16 w-16 -mx-2.5 ring ring-white dark:ring-gray-900 rounded-full object-cover"
+                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=687&h=687&q=80"
+                        alt=""
+                        width={500}
+                        height={500}
+                      />
+                      <Image
+                        className="h-16 w-16 -mx-2.5 ring ring-white dark:ring-gray-900 rounded-full object-cover"
+                        src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=686&h=686&q=80"
+                        alt=""
+                        width={500}
+                        height={500}
+                      />
+                      <Image
+                        className="h-16 w-16 -mx-2.5 ring ring-white dark:ring-gray-900 rounded-full object-cover"
+                        src="https://images.unsplash.com/photo-1485178575877-1a13bf489dfe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=1401&h=1401&q=80"
+                        alt=""
+                        width={500}
+                        height={500}
+                      />
+                      <Image
+                        className="h-16 w-16 -mx-2.5 ring ring-white dark:ring-gray-900 rounded-full object-cover"
+                        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=880&h=880&q=80"
+                        alt=""
+                        width={500}
+                        height={500}
+                      />
+                    </div>
+                  </div>
+                  <h2 className="p-2 text-xl mt-8 sm:mt-12  font-semibold text-center ">
+                    <span className=" border-b-4 border-desertred">
+                      Ensemble
+                    </span>
+                    , redéfinissons{" "}
+                    <span className="p-1 bg-beige text-desertred rounded-lg">
+                      l'échange de compétences.
+                    </span>
+                  </h2>
                 </div>
               </div>
             </div>

@@ -3,9 +3,15 @@ import NavBar from "@/Components/NavBar";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
+import { Sun } from "lucide-react";
+import { Sprout } from "lucide-react";
+import { Repeat } from "lucide-react";
+import logo from "../../../public/assets/Logo_cactus_round.png";
 
-{/* if pas de jwt route.push("/") 
-*/}
+{
+  /* if pas de jwt route.push("/")
+   */
+}
 
 export default function AllProfils() {
   return (
@@ -43,35 +49,54 @@ export default function AllProfils() {
         <p className="text-dark">Profils</p>
       </div>
 
-      <h2 className="text-center mt-12 text-lg md:text-4xl text-dark font-semibold">
-        Retrouvez tous les  <span className="bg-gradient-to-r from-desertred to-green bg-clip-text text-transparent">
-              CactUsers
-            </span> 🌵
+      <h2 className="text-center px-2 mt-12 text-2xl sm:text-4xl text-dark font-semibold">
+        Trouve ta{" "}
+        <span className="bg-gradient-to-r from-desertred to-green bg-clip-text text-transparent">
+          pépite
+        </span>{" "}
+        parmi nos{" "}
+        <span className="bg-gradient-to-r from-desertred to-green bg-clip-text text-transparent">
+          CactUsers
+        </span>{" "}
+        !
       </h2>
+
+      <h3 className="text-center text-dark text-md sm:text-xl p-4">
+        Informatique, langues, arts... À chaque domaine, ses experts. <br />
+        Consulte notre selection pour y trouver la compétence dont tu as besoin.{" "}
+        <br /> Un des profils recherche ce que tu possèdes ? C'est l'heure des
+        présentations !
+      </h3>
 
       <section className="text-dark mt-12 body-font">
         <div className="container px-5 py-4 mx-auto">
           <div className="flex flex-wrap -m-4">
-
-
             <div className="p-4 w-full lg:w-1/3">
-              <div className="flex w-full flex-col items-center justify-center h-full bg-beige border-2 border-green px-8 py-8 rounded-lg overflow-hidden text-center relative shadow-xl">
+              <div className="bg-beige text-dark flex w-full flex-col items-center justify-center h-full bg-beige  px-8 py-8 rounded-lg overflow-hidden text-center relative shadow-2xl">
                 <Image
-                  className="object-cover w-24 h-24 md:w-32 md:h-32 -mx-2 rounded-xl ring ring-white dark:ring-gray-900"
-                  src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
-                  alt=""
+                  className="object-cover w-32 h-32   rounded-full ring ring-white"
+                  src={logo}
+                  alt="logo cact-us"
                   width={500}
                   height={500}
                 />
 
-                <h1 className=" text-xl font-medium text-green mt-4 mb-3">
-                  John
-                </h1>
-                <h3 className=" mb-1">Je sais</h3>
-                <p>Test</p>
+                <h2 className=" text-2xl font-semibold  my-4">Cact-Us</h2>
 
-                <h3 className=" mb-1">Je cherche</h3>
-                <p>Test</p>
+                {/* je partage, je reçois */}
+                <div className="flex items-center w-full gap-2 mb-4">
+                  <Sun color="#f19410" size={28} />
+                  <p>Anglais, Python, Dessin</p>
+                </div>
+
+                <div>
+                  <Repeat color="#4b5563" size={28} />
+                </div>
+
+                <div className="flex items-center w-full gap-2 my-4">
+                  <Sprout color="#11671D" size={28} />
+                  <p>DevOps</p>
+                </div>
 
                 <button className=" w-full px-6 py-3 mt-4 text-sm  text-white bg-green rounded-lg ">
                   <p className="mx-auto">Voir le profil</p>
@@ -79,140 +104,10 @@ export default function AllProfils() {
               </div>
             </div>
 
-
-            <div className="p-4 w-full lg:w-1/3">
-              <div className="flex w-full flex-col items-center justify-center h-full bg-beige border-2 border-green px-8 py-8 rounded-lg overflow-hidden text-center relative shadow-xl">
-                <Image
-                  className="object-cover w-24 h-24 md:w-32 md:h-32 -mx-2 rounded-xl ring ring-white dark:ring-gray-900"
-                  src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
-                  alt=""
-                  width={500}
-                  height={500}
-                />
-
-                <h1 className=" text-xl font-medium text-green mt-4 mb-3">
-                  John
-                </h1>
-                <h3 className=" mb-1">Je sais</h3>
-                <p>Test</p>
-
-                <h3 className=" mb-1">Je cherche</h3>
-                <p>Test</p>
-
-                <button className=" w-full px-6 py-3 mt-4 text-sm  text-white bg-green rounded-lg ">
-                  <p className="mx-auto">Voir le profil</p>
-                </button>
-              </div>
-            </div>
-
-
-            <div className="p-4 w-full lg:w-1/3">
-              <div className="flex w-full flex-col items-center justify-center h-full bg-beige border-2 border-green px-8 py-8 rounded-lg overflow-hidden text-center relative shadow-xl">
-                <Image
-                  className="object-cover w-24 h-24 md:w-32 md:h-32 -mx-2 rounded-xl ring ring-white dark:ring-gray-900"
-                  src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
-                  alt=""
-                  width={500}
-                  height={500}
-                />
-
-                <h1 className=" text-xl font-medium text-green mt-4 mb-3">
-                  John
-                </h1>
-                <h3 className=" mb-1">Je sais</h3>
-                <p>Test</p>
-
-                <h3 className=" mb-1">Je cherche</h3>
-                <p>Test</p>
-
-                <button className=" w-full px-6 py-3 mt-4 text-sm  text-white bg-green rounded-lg ">
-                  <p className="mx-auto">Voir le profil</p>
-                </button>
-              </div>
-            </div>
-
-            <div className="p-4 w-full lg:w-1/3">
-              <div className="flex w-full flex-col items-center justify-center h-full bg-beige border-2 border-green px-8 py-8 rounded-lg overflow-hidden text-center relative shadow-xl">
-                <Image
-                  className="object-cover w-24 h-24 md:w-32 md:h-32 -mx-2 rounded-xl ring ring-white dark:ring-gray-900"
-                  src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
-                  alt=""
-                  width={500}
-                  height={500}
-                />
-
-                <h1 className=" text-xl font-medium text-green mt-4 mb-3">
-                  John
-                </h1>
-                <h3 className=" mb-1">Je sais</h3>
-                <p>Test</p>
-
-                <h3 className=" mb-1">Je cherche</h3>
-                <p>Test</p>
-
-                <button className=" w-full px-6 py-3 mt-4 text-sm  text-white bg-green rounded-lg ">
-                  <p className="mx-auto">Voir le profil</p>
-                </button>
-              </div>
-            </div>
-
-            <div className="p-4 w-full lg:w-1/3">
-              <div className="flex w-full flex-col items-center justify-center h-full bg-beige border-2 border-green px-8 py-8 rounded-lg overflow-hidden text-center relative shadow-xl">
-                <Image
-                  className="object-cover w-24 h-24 md:w-32 md:h-32 -mx-2 rounded-xl ring ring-white dark:ring-gray-900"
-                  src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
-                  alt=""
-                  width={500}
-                  height={500}
-                />
-
-                <h1 className=" text-xl font-medium text-green mt-4 mb-3">
-                  John
-                </h1>
-                <h3 className=" mb-1">Je sais</h3>
-                <p>Test</p>
-
-                <h3 className=" mb-1">Je cherche</h3>
-                <p>Test</p>
-
-                <button className=" w-full px-6 py-3 mt-4 text-sm  text-white bg-green rounded-lg ">
-                  <p className="mx-auto">Voir le profil</p>
-                </button>
-              </div>
-            </div>
-
-            <div className="p-4 w-full lg:w-1/3">
-              <div className="flex w-full flex-col items-center justify-center h-full bg-beige border-2 border-green px-8 py-8 rounded-lg overflow-hidden text-center relative shadow-xl">
-                <Image
-                  className="object-cover w-24 h-24 md:w-32 md:h-32 -mx-2 rounded-xl ring ring-white dark:ring-gray-900"
-                  src="https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80"
-                  alt=""
-                  width={500}
-                  height={500}
-                />
-
-                <h1 className=" text-xl font-medium text-green mt-4 mb-3">
-                  John
-                </h1>
-                <h3 className=" mb-1">Je sais</h3>
-                <p>Test</p>
-
-                <h3 className=" mb-1">Je cherche</h3>
-                <p>Test</p>
-
-                <button className=" w-full px-6 py-3 mt-4 text-sm  text-white bg-green rounded-lg ">
-                  <p className="mx-auto">Voir le profil</p>
-                </button>
-              </div>
-            </div>
 
             
           </div>
-
-
-          
         </div>
-        
       </section>
 
       <Footer />

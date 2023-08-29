@@ -1,5 +1,7 @@
 import Image from "next/image";
-import logo from "../../../public/assets/Logo_cactus_round.png";
+import man from "../../../public/assets/cact-us_man.jpg";
+import woman from "../../../public/assets/cact-us_woman.jpg";
+
 
 export default function Whatis() {
   return (
@@ -12,101 +14,91 @@ export default function Whatis() {
         ></path>
       </svg>
       <section id="whatis" className="text-beige bg-green pb-12 lg:-mt-32 ">
-        {/* story Antoine & Amel */}
-        <div className="text-beige pt-8 p-4 max-w-screen-sm mx-auto">
-          <div className="lg:flex lg:items-center">
-            <div className="w-full space-y-12">
-              <div>
-                <h2
-                  className="text-3xl
-                  sm:text-4xl bg-green text-center font-semibold w-full  "
-                >
-                  Cact-Us c'est des{" "}
-                  <span className="p-1 bg-desertred text-white rounded-lg">
-                    histoires
-                  </span>
-                </h2>
-              </div>
-
-              <div className="md:flex md:items-start md:-mx-4">
-                <span className="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4 ">
-                  {/* logo */}
-                </span>
-
-                <div className="mt-4 md:mx-4 md:mt-0">
-                  <h3 className="text-xl font-semibold text-beige  ">
-                    Des besoins
-                  </h3>
-
-                  <p className="mt-3 text-beige">
-                    Antoine vit aux{" "}
-                    <span className="p-1 bg-desertred text-white rounded-lg">
-                      États-Unis
-                    </span>{" "}
-                    et veut se lancer sur{" "}
-                    <span className="border-b-4 border-white">Youtube</span>,
-                    <br />
-                    Amel est{" "}
-                    <span className="p-1 bg-beige text-desertred rounded-lg">
-                      monteuse vidéo
-                    </span>{" "}
-                    et veut apprendre{" "}
-                    <span className=" border-b-4 border-desertred">
-                      l'anglais
-                    </span>
-                    .
-                  </p>
+        <section className="text-beige max-w-screen-xl mx-auto">
+          <div className="container px-6 py-10 mx-auto">
+            <div className="flex flex-col">
+              <div className="flex flex-wrap flex-col  py-6 mb-12">
+                <h2 className="text-3xl font-bold sm:text-4xl">Le concept </h2>
+                <div className="mt-2 mb-4">
+                  <span className="inline-block w-40 h-1 bg-desertred rounded-full"></span>
+                  <span className="inline-block w-3 h-1 ml-1 bg-desertred rounded-full"></span>
+                  <span className="inline-block w-1 h-1 ml-1 bg-desertred rounded-full"></span>
                 </div>
-              </div>
 
-              <div className="md:flex md:items-start md:-mx-4">
-                <span className="inline-block p-2 text-blue-500 bg-blue-100 rounded-xl md:mx-4 ">
-                  {/* logo */}
-                </span>
-
-                <div className="mt-4 md:mx-4 md:mt-0">
-                  <h3 className="text-xl font-semibold text-beige ">
-                    Une rencontre
-                  </h3>
-
-                  <p className="mt-3 text-beige">
-                    Depuis New-York, Antoine a pu aider Amel à progresser en
-                    anglais.
-                    <br /> De son côté, Amel a accompagné Antoine dans son
-                    apprentissage du montage vidéo. <br />
-                    <br />
-                  </p>
-                </div>
-              </div>
-
-              <div className="md:flex md:items-start md:-mx-4">
-                <span className="inline-block p-2 text-beige bg-blue-100 rounded-xl md:mx-4">
-                  {/* logo */}
-                </span>
-
-                <div className="mt-4 md:mx-4 md:mt-0">
-                  <h3 className="text-xl font-semibold text-beige">
-                    Des objectis atteints
-                  </h3>
-
-                  <p className="mt-3 text-beige">
-                    Ensemble, ils ont atteint leurs objectifs : ⚡️ Amel a
-                    obtenu 936 au TOEIC ⚡️ ⚡️ Antoine vient de fêter ses 1 000
-                    abonnés ⚡️ Ils ont même prévu de passer le Nouvel An
-                    ensemble.
-                  </p>
-                </div>
+              
               </div>
             </div>
+            <div className="flex items-center justify-center flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+              <div className=" p-4 md:w-1/3 sm:mb-0 mb-6">
+              <h2 className="text-xl font-semibold mb-6 text-center">
+                Antoine vit aux{" "}
+                <span className="p-1 bg-desertred text-white rounded-lg">
+                  États-Unis
+                </span>{" "}
+                et veut se lancer sur{" "}
+                <span className="border-b-4 border-white">Youtube</span>
+              </h2>
+                <div className="rounded-lg h-72 overflow-hidden">
+                  <Image
+                    alt="content"
+                    width={500}
+                    height={500}
+                    className="object-cover border-4 border-beige object-center h-full w-full"
+                    src={man}
+                  />
+                </div>
+                
+                <p className="text-center mt-4">
+                  Depuis New-York, Antoine a pu aider Amel à progresser en
+                anglais. Elle a récemment obtenu 936 points à son TOEIC.
+                </p>
+             </div>
+
+
+
+              <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
+              <h2 className="text-xl font-semibold text-center mb-6 ">
+                Amel est{" "}
+                <span className="p-1 bg-beige text-desertred rounded-lg">
+                  monteuse vidéo
+                </span>{" "}
+                et veut apprendre{" "}
+                <span className=" border-b-4 border-desertred">l'anglais</span>
+              </h2>
+                <div className="rounded-lg h-72 overflow-hidden">
+                  <Image
+                    alt="content"
+                    width={500}
+                    height={500}
+                    className="object-cover border-4 border-beige object-center h-full w-full"
+                    src={woman}
+                  />
+                </div>
+                
+                <p className="text-center mt-4">
+                De son côté, Amel a accompagné Antoine dans son
+                apprentissage du montage vidéo. Il vient de fêter ses 1.000 abonnés.
+                </p>
+              </div>
+
+
+              <h2 className="p-2 text-2xl max-w-xl mt-8 sm:mt-12 text-center font-semibold text-center mb-6 ">
+              <span className=" border-b-4 border-desertred">Ensemble</span>
+                , ils ont atteints leurs {" "}
+                <span className="">objectifs</span>. Ils ont même prévu de se retrouver pour le <span className="p-1 bg-beige text-desertred rounded-lg">
+                  Nouvel An.
+                </span>
+              </h2>
+            </div>
           </div>
-        </div>
+        </section>
 
         {/* benefits */}
-        <div className="container mt-12 px-2 py-10 mx-auto">
-          <h2 className="text-3xl text-center font-bold sm:text-4xl">
-            Avec Cact-Us :
+        <div className="container mt-12 px-6 py-10 mx-auto">
+          <h2 className="text-3xl font-bold sm:text-4xl">
+            Pourquoi utiliser Cact-Us ?
           </h2>
-          <div className="mt-2 text-center mb-12">
+          <div className="mt-2 mb-12">
             <span className="inline-block w-40 h-1 bg-desertred rounded-full"></span>
             <span className="inline-block w-3 h-1 ml-1 bg-desertred rounded-full"></span>
             <span className="inline-block w-1 h-1 ml-1 bg-desertred rounded-full"></span>
@@ -196,7 +188,6 @@ export default function Whatis() {
 
 {
   /*
-
 <>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
