@@ -337,7 +337,7 @@ export const Faq = () => {
 
             {open6 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Des recommandations ? Des idées ? Déclarer un problème ? Tu peux nous contacter par mail contact@cact-us.com et nous serons heureux de te répondre 💌
+                Des recommandations ? Des idées ? Déclarer un problème ? Tu peux nous contacter par mail contact@cact-us.com ou via le chat juste à ta droite. Nous serons heureux de te répondre 💌
               </p>
             ) }
           </div>

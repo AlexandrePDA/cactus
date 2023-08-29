@@ -2,7 +2,6 @@ import Image from "next/image";
 import man from "../../../public/assets/cact-us_man.jpg";
 import woman from "../../../public/assets/cact-us_woman.jpg";
 
-
 export default function Whatis() {
   return (
     <>
@@ -24,20 +23,18 @@ export default function Whatis() {
                   <span className="inline-block w-3 h-1 ml-1 bg-desertred rounded-full"></span>
                   <span className="inline-block w-1 h-1 ml-1 bg-desertred rounded-full"></span>
                 </div>
-
-              
               </div>
             </div>
             <div className="flex items-center justify-center flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-              <div className=" p-4 md:w-1/3 sm:mb-0 mb-6">
-              <h2 className="text-xl font-semibold mb-6 text-center">
-                Antoine vit aux{" "}
-                <span className="p-1 bg-desertred text-white rounded-lg">
-                  États-Unis
-                </span>{" "}
-                et veut se lancer sur{" "}
-                <span className="border-b-4 border-white">Youtube</span>
-              </h2>
+              <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
+                <h2 className="text-xl font-semibold mb-6 text-center">
+                  Antoine vit aux{" "}
+                  <span className="p-1 bg-desertred text-white rounded-lg">
+                    États-Unis
+                  </span>{" "}
+                  et veut se lancer sur{" "}
+                  <span className="border-b-4 border-white">Youtube</span>
+                </h2>
                 <div className="rounded-lg h-72 overflow-hidden">
                   <Image
                     alt="content"
@@ -47,24 +44,24 @@ export default function Whatis() {
                     src={man}
                   />
                 </div>
-                
+
                 <p className="text-center mt-4">
                   Depuis New-York, Antoine a pu aider Amel à progresser en
-                anglais. Elle a récemment obtenu 936 points à son TOEIC.
+                  anglais. Elle a récemment obtenu 936 points à son TOEIC.
                 </p>
-             </div>
-
-
+              </div>
 
               <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
-              <h2 className="text-xl font-semibold text-center mb-6 ">
-                Amel est{" "}
-                <span className="p-1 bg-beige text-desertred rounded-lg">
-                  monteuse vidéo
-                </span>{" "}
-                et veut apprendre{" "}
-                <span className=" border-b-4 border-desertred">l'anglais</span>
-              </h2>
+                <h2 className="text-xl font-semibold text-center mb-6 ">
+                  Amel est{" "}
+                  <span className="p-1 bg-beige text-desertred rounded-lg">
+                    monteuse vidéo
+                  </span>{" "}
+                  et veut apprendre{" "}
+                  <span className=" border-b-4 border-desertred">
+                    l'anglais
+                  </span>
+                </h2>
                 <div className="rounded-lg h-72 overflow-hidden">
                   <Image
                     alt="content"
@@ -74,18 +71,18 @@ export default function Whatis() {
                     src={woman}
                   />
                 </div>
-                
+
                 <p className="text-center mt-4">
-                De son côté, Amel a accompagné Antoine dans son
-                apprentissage du montage vidéo. Il vient de fêter ses 1.000 abonnés.
+                  De son côté, Amel a accompagné Antoine dans son apprentissage
+                  du montage vidéo. Il vient de fêter ses 1.000 abonnés.
                 </p>
               </div>
 
-
               <h2 className="p-2 text-xl max-w-xl mt-8 sm:mt-12 text-center font-semibold text-center mb-6 ">
-              <span className=" border-b-4 border-desertred">Ensemble</span>
-                , ils ont atteints leurs {" "}
-                <span className="">objectifs</span>.<br/> Ils ont même prévu de se retrouver pour le <span className="p-1 bg-beige text-desertred rounded-lg">
+                <span className=" border-b-4 border-desertred">Ensemble</span>,
+                ils ont atteints leurs <span className="">objectifs</span>.
+                <br /> Ils ont même prévu de se retrouver pour le{" "}
+                <span className="p-1 bg-beige text-desertred rounded-lg">
                   Nouvel An.
                 </span>
               </h2>
