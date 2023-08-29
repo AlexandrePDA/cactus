@@ -82,7 +82,7 @@ export default function Whatis() {
               </div>
 
 
-              <h2 className="p-2 text-2xl max-w-xl mt-8 sm:mt-12 text-center font-semibold text-center mb-6 ">
+              <h2 className="p-2 text-xl max-w-xl mt-8 sm:mt-12 text-center font-semibold text-center mb-6 ">
               <span className=" border-b-4 border-desertred">Ensemble</span>
                 , ils ont atteints leurs {" "}
                 <span className="">objectifs</span>. Ils ont même prévu de se retrouver pour le <span className="p-1 bg-beige text-desertred rounded-lg">
