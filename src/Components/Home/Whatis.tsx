@@ -85,7 +85,7 @@ export default function Whatis() {
 
               <h2 className="p-2 text-xl max-w-xl mt-8 sm:mt-12 text-center font-semibold text-center mb-6 ">
                 <span className=" border-b-4 border-desertred">Ensemble</span>,
-                ils ont atteints leurs <span className="">objectifs</span>.
+                ils ont atteint leurs <span className="">objectifs</span>.
                 <br /> Ils ont même prévu de se retrouver pour le{" "}
                 <span className="p-1 bg-beige text-desertred rounded-lg">
                   Nouvel An.
@@ -113,9 +113,8 @@ export default function Whatis() {
               </h2>
 
               <p className="mt-1 text-lg text-dark">
-                Avec Cact-Us, finis de paniquer seul devant ton écran! Crée ton
-                profil, trouve la compétence qu'il te faut et paye avec ton
-                experience.
+                Avec Cact-Us, finis de paniquer seul devant ton écran ! Crée ton
+                profil, cherche la compétence qu'il te faut et échange avec les CactUsers.
               </p>
             </div>
             <div className="block rounded-xl border border-transparent p-8 shadow-xl bg-beige">
@@ -135,7 +134,7 @@ export default function Whatis() {
 
               <p className="mt-1 text-lg text-dark">
                 Ce que tu cherches, quelqu'un l'a. Et ce que tu as, quelqu'un le
-                cherche. Avec Cact-Us entrez en relation et partagez bien plus
+                cherche. Avec Cact-Us, entrez en relation et partagez bien plus
                 que des compétences.
               </p>
             </div>

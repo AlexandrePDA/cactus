@@ -70,7 +70,7 @@ export const Faq = () => {
 
             {open1 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Cact-Us c'est pour tous les curieux qui souhaitent partager leur compétences afin d'en apprendre de nouvelles 🌵
+                Cact-Us, c'est la 1re plateforme d'échange de compétences pour les curieux qui souhaitent partager et apprendre  🌵
               </p>
             )}
           </div>
@@ -123,7 +123,7 @@ export const Faq = () => {
 
             {open2 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Cact-Us sort bientôt de terre. Pour être informé de son lancement, renseigne ton mail pour recevoir toutes les informations. Tu peux également suivre Cact-Us sur Linkedin 🚀
+                Cact-Us sort bientôt de terre. Renseigne ton mail pour être le premier informé du lancement. Tu peux également suivre les actus de Cact-Us sur <a className="border-b-2 border-green pointer" href="https://www.linkedin.com/company/cact-us1/">Linkedin</a>{" "} 🚀
               </p>
             ) 
             }
@@ -177,7 +177,7 @@ export const Faq = () => {
 
             {open3 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Cact-Us c'est l'échange, tu donnes ce que tu sais pour recevoir ce que tu veux apprendre. Ta seule monnaie c'est tes connaissances. C'est un échange win-win qui n'attend que toi ! ⚡️{" "}
+                Cact-Us c'est le partage : tu donnes ce que tu sais pour recevoir ce que tu veux apprendre. Ta seule monnaie, c'est tes connaissances. C'est un échange win-win qui n'attend que toi ! ⚡️{" "}
               </p>
             ) }
           </div>
@@ -284,7 +284,7 @@ export const Faq = () => {
 
             {open5 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Ça y est, tu as trouvé ? Rien de plus simple, contact la via ses réseaux ou son adresse mail disponible sur son profil. Allez, qu'est-ce que tu attends ? 🎯
+                Ça y est ? Félicitations 🥳 <br/> Il te suffit de le contacter via ses coordonnées, disponibles sur son profil. Démarrez ensuite votre accompagnement, au rythme qui vous convient. Bonne pousse ! 🌱
               </p>
             ) }
           </div>
@@ -337,7 +337,7 @@ export const Faq = () => {
 
             {open6 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Des recommandations ? Des idées ? Déclarer un problème ? Tu peux nous contacter par mail contact@cact-us.com ou via le chat juste à ta droite. Nous serons heureux de te répondre 💌
+                Un problème ? Une idée ? Des recommandations ? <br/> Tu peux nous contacter par  <a className="border-b-2 border-green pointer" href="mailto:contact@cact-us.com">mail</a>  ou via le chat juste à ta droite. Nous serons heureux de te répondre 💌
               </p>
             ) }
           </div>
@@ -391,8 +391,9 @@ export const Faq = () => {
 
             {open7 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Parles-en autour de toi, plus on est plus il sera facil de trouver ta pépite !
-                <br/> Abonne toi également à la page <a className="border-b-2 border-green pointer" href="https://www.linkedin.com/company/cact-us1/">Linkedin</a>  de Cact-Us pour rester informer de toutes les nouveautés 👂 <br/> Tu peux aussi soutenir Cact-Us en lui {" "}
+                Merci pour ton soutien ❤️ <br/>
+                N'hésite pas à en parler autour de toi et suis nos actus sur <a className="border-b-2 border-green pointer" href="https://www.linkedin.com/company/cact-us1/">Linkedin</a> !
+                 <br/> Tu peux aussi soutenir Cact-Us en lui {" "}
                 <a className="border-b-2 border-green pointer" href="https://www.buymeacoffee.com/cactus1">offrant un café</a> ☕️
               </p>
             ) }

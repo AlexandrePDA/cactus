@@ -118,7 +118,7 @@ export default function How() {
 
                   <p className="text-lg">
                     Rédiger un business plan, écrire le script de ta prochaine
-                    vidéo Youtube, apprendre à parler espagnol... Quoique tu
+                    vidéo Youtube, apprendre à parler espagnol... Quoi que tu
                     cherches, un CactUser t'attend pour te le partager.
                   </p>
                 </div>
@@ -175,7 +175,7 @@ export default function How() {
                   </h2>
 
                   <p className="text-lg">
-                    Parcours les profils dispos parmi la selection de Cact-Us et
+                    Parcours les profils dispos parmi la sélection de Cact-Us et
                     trouve ta pépite. La suite est simple : entre en contact,
                     donne et reçois ! ✨
                   </p>

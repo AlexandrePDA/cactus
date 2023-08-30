@@ -18,13 +18,13 @@ export default function Together() {
         ></path>
       </svg>
       <div className="bg-green ">
-        <section className="mx-auto max-w-screen-xl  text-beige p-4">
+        <section className="mx-auto max-w-screen-xl py-10 md:pb-2  text-beige p-4">
           <section>
             <div className="mx-auto max-w-screen-xl px-4  sm:py-12 sm:px-6 lg:py-16 lg:px-8">
               <div className="max-w-xl mx-auto">
-                <div className="lg:py-24">
+                <div className="py-6">
                   <h2 className="text-3xl font-bold sm:text-4xl">
-                    Cact-Us c'est vous !
+                    Cact-Us, c'est Nous !
                   </h2>
                   <div className="mt-2 mb-12">
                     <span className="inline-block w-40 h-1 bg-desertred rounded-full"></span>

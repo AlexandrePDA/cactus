@@ -40,7 +40,7 @@ export default function TakeMail() {
       {sentEmail ? (
         <p className="text-lg">
           Cact-Us arrive prochainement ! 👋<br /> Inscris-toi pour être averti du
-          lancement et faire partie des premiers utilisateurs. {" "}
+          lancement et rejoindre la communauté des CactUsers. {" "}
         </p>
        
       ) : (
