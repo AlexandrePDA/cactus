@@ -2,28 +2,32 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 
-
 export default function TakeMail() {
   const [mail, setMail] = useState<string>("");
   const [sentEmail, setSentEmail] = useState<boolean>(true);
+  const [msgError, setMsgError] = useState<string>("");
 
   const sentMail = async (mail: string) => {
     console.log("test");
-    try {
-      const response = await fetch("/api/takemail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email: mail }),
-      });
+    if (mail.length > 3) {
+      setMsgError("");
+      try {
+        const response = await fetch("/api/takemail", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: mail }),
+        });
 
-
-      if (response.ok === true && response.status == 200) {
-        setSentEmail(false);
+        if (response.ok === true && response.status == 200) {
+          setSentEmail(false);
+        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
+    } else {
+      setMsgError("Adresse mail invalide");
     }
   };
   const handleMailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,12 +41,13 @@ export default function TakeMail() {
 
   return (
     <div className="p-4 border bg-green shadow-lg rounded-lg mt-12 text-beige">
+      <p className="text-red-600">{msgError}</p>
       {sentEmail ? (
         <p className="text-lg">
-          Cact-Us arrive prochainement ! 👋<br /> Inscris-toi pour être averti du
-          lancement et rejoindre la communauté des CactUsers. {" "}
+          Cact-Us arrive prochainement ! 👋
+          <br /> Inscris-toi pour être averti du lancement et rejoindre la
+          communauté des CactUsers.{" "}
         </p>
-       
       ) : (
         <p>🎉 Merci, tu recevras un mail pour le lancement de Cact-Us 🎉</p>
       )}{" "}
