@@ -1,5 +1,7 @@
 import Image from "next/image";
 import together from "../../../public/assets/cact-us_together.jpg";
+import together1 from "../../../public/assets/cact-us_together1.jpg";
+
 
 export default function Together() {
   return (
@@ -45,7 +47,7 @@ export default function Together() {
                     <div className="flex items-center mx-auto">
                       <Image
                         className="h-16 w-16 -mx-2.5 ring ring-white dark:ring-gray-900 rounded-full object-cover"
-                        src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=880&h=880&q=100"
+                        src={together1}
                         alt=""
                         width={500}
                         height={500}
@@ -59,7 +61,7 @@ export default function Together() {
                       />
                       <Image
                         className="h-16 w-16 -mx-2.5 ring ring-white dark:ring-gray-900 rounded-full object-cover"
-                        src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=686&h=686&q=80"
+                        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=880&h=880&q=80"
                         alt=""
                         width={500}
                         height={500}
@@ -73,7 +75,7 @@ export default function Together() {
                       />
                       <Image
                         className="h-16 w-16 -mx-2.5 ring ring-white dark:ring-gray-900 rounded-full object-cover"
-                        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=4&w=880&h=880&q=80"
+                        src={together}
                         alt=""
                         width={500}
                         height={500}

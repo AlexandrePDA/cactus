@@ -18,7 +18,7 @@ export default function How() {
             <h2 className="text-3xl font-bold sm:text-4xl">
               Comment ça marche ?
             </h2>
-            <div className="mt-2">
+            <div className="mt-2 mb-12">
               <span className="inline-block w-40 h-1 bg-green rounded-full"></span>
               <span className="inline-block w-3 h-1 ml-1 bg-green rounded-full"></span>
               <span className="inline-block w-1 h-1 ml-1 bg-green rounded-full"></span>
@@ -114,7 +114,7 @@ export default function How() {
                     </svg>
                   </span>
 
-                  <h2 className="text-xl font-semibold ">Définis ton besoin</h2>
+                  <h2 className="text-xl font-semibold ">🌱 Définis ton besoin </h2>
 
                   <p className="text-lg">
                     Rédiger un business plan, écrire le script de ta prochaine
@@ -142,7 +142,7 @@ export default function How() {
                   </span>
 
                   <h2 className="text-xl font-semibold  ">
-                    Renseigne tes compétences
+                  ☀️ Renseigne tes compétences 
                   </h2>
 
                   <p className="text-lg">

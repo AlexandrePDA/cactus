@@ -391,7 +391,9 @@ export const Faq = () => {
 
             {open7 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Parles-en autour de toi, plus on est plus il sera facil de trouver ta pépite ! Abonne toi également à la page Linkedin de Cact-Us pour rester informer de toutes les nouveautés 👂
+                Parles-en autour de toi, plus on est plus il sera facil de trouver ta pépite !
+                <br/> Abonne toi également à la page <a className="border-b-2 border-green pointer" href="https://www.linkedin.com/company/cact-us1/">Linkedin</a>  de Cact-Us pour rester informer de toutes les nouveautés 👂 <br/> Tu peux aussi soutenir Cact-Us en lui {" "}
+                <a className="border-b-2 border-green pointer" href="https://www.buymeacoffee.com/cactus1">offrant un café</a> ☕️
               </p>
             ) }
           </div>

@@ -40,7 +40,7 @@ export default function TakeMail() {
       {sentEmail ? (
         <p className="text-lg">
           Cact-Us arrive prochainement ! 👋<br /> Inscris-toi pour être averti du
-          lancement et faire partie des premiers utilisateurs {" "}
+          lancement et faire partie des premiers utilisateurs. {" "}
         </p>
        
       ) : (
@@ -59,9 +59,9 @@ export default function TakeMail() {
             <button
               onClick={handleSentMail}
               type="button"
-              className="h-10 flex items-center gap-1 px-4 py-2 m-1 text-green transition-colors duration-300 transform bg-white rounded-md "
+              className="h-10 text-center flex items-center gap-1 px-4 py-2 m-1 text-green transition-colors duration-300 transform bg-white rounded-md "
             >
-              Rejoins-nous
+              Go
               <ArrowRight size={18} color="#0EAD69" />
             </button>
           </form>

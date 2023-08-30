@@ -1,6 +1,7 @@
 import Image from "next/image";
 import man from "../../../public/assets/cact-us_man.jpg";
 import woman from "../../../public/assets/cact-us_woman.jpg";
+import { Repeat } from "lucide-react";
 
 export default function Whatis() {
   return (
@@ -16,7 +17,7 @@ export default function Whatis() {
         <section className="text-beige max-w-screen-xl mx-auto">
           <div className="container px-6 py-10 mx-auto">
             <div className="flex flex-col">
-              <div className="flex flex-wrap flex-col  py-6 mb-12">
+              <div className="flex flex-wrap flex-col  py-6 md:mb-12">
                 <h2 className="text-3xl font-bold sm:text-4xl">Le concept </h2>
                 <div className="mt-2 mb-4">
                   <span className="inline-block w-40 h-1 bg-desertred rounded-full"></span>
@@ -47,9 +48,13 @@ export default function Whatis() {
 
                 <p className="text-center mt-4">
                   Depuis New-York, Antoine a pu aider Amel à progresser en
-                  anglais. Elle a récemment obtenu 936 points à son TOEIC.
+                  anglais. Elle a récemment obtenu 936 points à son TOEIC ⚡️
                 </p>
               </div>
+
+              <div className="mb-8">
+                      <Repeat color="#fffaf2" size={28} />
+                    </div>
 
               <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
                 <h2 className="text-xl font-semibold text-center mb-6 ">
@@ -74,7 +79,7 @@ export default function Whatis() {
 
                 <p className="text-center mt-4">
                   De son côté, Amel a accompagné Antoine dans son apprentissage
-                  du montage vidéo. Il vient de fêter ses 1.000 abonnés.
+                  du montage vidéo. Il vient de fêter ses 1.000 abonnés 🎉
                 </p>
               </div>
 
