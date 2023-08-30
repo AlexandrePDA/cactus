@@ -98,7 +98,7 @@ export default function Whatis() {
         {/* benefits */}
         <div className="container mt-12 px-6 py-10 mx-auto">
           <h2 className="text-3xl font-bold sm:text-4xl">
-            Pourquoi utiliser Cact-Us ?
+            Pourquoi Cact-Us ?
           </h2>
           <div className="mt-2 mb-12">
             <span className="inline-block w-40 h-1 bg-desertred rounded-full"></span>
