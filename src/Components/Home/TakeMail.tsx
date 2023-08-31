@@ -58,7 +58,7 @@ export default function TakeMail() {
               onChange={handleMailChange}
               type="email"
               placeholder="Adresse mail"
-              className="flex-1 h-10 px-4 py-2 m-1 placeholder-gray-400  border-none appearance-none  focus:outline-none focus:placeholder-transparent focus:ring-0"
+              className="flex-1 h-10 px-4 py-2 m-1 text-dark placeholder-gray-400  border-none appearance-none  focus:outline-none focus:placeholder-transparent focus:ring-0"
             />
 
             <button
