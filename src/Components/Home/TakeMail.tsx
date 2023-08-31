@@ -52,22 +52,22 @@ export default function TakeMail() {
         <p>🎉 Merci, tu recevras un mail pour le lancement de Cact-Us 🎉</p>
       )}{" "}
       {sentEmail && (
-        <div className="w-full mt-4 max-w-sm mx-auto mt-2  bg-transparent border rounded-md  focus-within:ring-opacity-40">
+        <div className="w-full mt-4 max-w-sm mx-auto mt-2  bg-white  rounded-md  focus-within:ring-opacity-40">
           <form className="flex flex-col md:flex-row">
             <input
               onChange={handleMailChange}
               type="email"
               placeholder="Adresse mail"
-              className="flex-1 h-10 px-4 py-2 m-1 text-white placeholder-white bg-transparent border-none appearance-none  focus:outline-none focus:placeholder-transparent focus:ring-0"
+              className="flex-1 h-10 px-4 py-2 m-1 placeholder-gray-400  border-none appearance-none  focus:outline-none focus:placeholder-transparent focus:ring-0"
             />
 
             <button
               onClick={handleSentMail}
               type="button"
-              className="h-10 text-center flex items-center gap-1 px-4 py-2 m-1 text-green transition-colors duration-300 transform bg-white rounded-md "
+              className="h-10 text-center bg-desertred flex items-center gap-1 px-4 py-2 m-1 text-white transition-colors duration-300 transform  rounded-md "
             >
               Go
-              <ArrowRight size={18} color="#0EAD69" />
+              <ArrowRight size={18} color="#fff" />
             </button>
           </form>
         </div>
