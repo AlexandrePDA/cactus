@@ -3,7 +3,6 @@ import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
-import logo from "../../public/assets/Logo_cactus_round.png";
 
 // Importez le composant Crisp avec le chargement dynamique
 const CrispWithNoSSR = dynamic(() => import("../Components/crisp"));
@@ -52,7 +51,7 @@ export default function RootLayout({
         />
         <meta
           property="og:image"
-          content="../../public/assets/Logo_cactus_round.png"
+          content="/assets/Logo_cactus_round.png"
         />
         <meta property="og:url" content="https://www.cact-us.com" />
         <meta property="og:type" content="website" />
@@ -67,7 +66,7 @@ export default function RootLayout({
         />
         <meta
           name="twitter:image"
-          content="../../public/assets/Logo_cactus_round.png"
+          content="/assets/Logo_cactus_round.png"
         />
       </head>
       <body style={bodyStyles} className={inter.className}>
