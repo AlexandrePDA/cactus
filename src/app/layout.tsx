@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 // Définissez les métadonnées
 export const metadata: Metadata = {
   title: "Cact-us",
-  description: "Apprends. Partage. Rencontre",
+  description: "Apprends. Partage. Rencontre - Cact-Us, la 1re plateforme d'échange de compétences 100% gratuite 🚀 Pratique et ludique, Cact-Us remet l'humain au coeur de l'apprentissage 🎯",
   keywords:
     "compétences, échange, cact-us, apprendre, plateforme, skills, need",
 };
