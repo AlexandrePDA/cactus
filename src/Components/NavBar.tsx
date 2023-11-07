@@ -1,9 +1,15 @@
-import { Info } from "lucide-react";
+//import { Info, UserCog, Users, LogOut } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../public/assets/Logo_cactus_round.png";
+import { LoginButton } from "@/auth/LoginButton";
+import { getServerSession } from "next-auth";
+import { authConfig } from "@/pages/api/auth/[...nextauth]";
+import { Menu } from "./Menu";
 
-export default function NavBar() {
+export default async function NavBar() {
+  const session = await getServerSession(authConfig);
+
   return (
     <div aria-label="Site Header" className="bg-green font-roboto">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -14,10 +20,15 @@ export default function NavBar() {
               <p className="hidden md:block">Cact-us</p>
             </div>
           </Link>
-          <div className="flex items-center gap-2  bg-white py-2 px-4 rounded-md text-green">
-            <Info size={20} color="#0EAD69" strokeWidth={2.5} />
-            <p>Bientôt disponible 🚀</p>
-          </div>
+          {session == null ? (
+            <div>
+              <LoginButton />
+            </div>
+          ) : (
+            <div>
+              <Menu />
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -1,76 +1,72 @@
 "use client";
-import NavBar from "@/Components/NavBar";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import * as z from "zod";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import NavBar from "@/components/NavBar";
+import { Footer } from "@/components/Footer";
 import { CheckCircle2 } from "lucide-react";
-import { Footer } from "@/Components/Footer";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
-{
-  /* signin : s'inscrire
-
-  to do :
-Router : à validation amener sur page reglement
-  */
-}
-
-interface UserData {
-  name: string;
-  email: string;
-  password: string;
-}
-
-function containsUppercase(password: string) {
-  return /[A-Z]/.test(password);
-}
-function containsNumber(password: string) {
-  return /[0-9]/.test(password);
-}
-function mailIsCorrect(email: string) {
-  return /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/.test(email);
-}
+const formSchema = z.object({
+  username: z.string().min(2, {
+    message: "Au moins 2 caractères",
+  }),
+  email: z
+    .string()
+    .email({
+      message: "Email invalide",
+    })
+    .min(5, {
+      message: "Email invalide",
+    }),
+  password: z
+    .string()
+    .min(7, {
+      message: "Au moins 7 caractères",
+    })
+    .refine(
+      (value) => {
+        return (
+          /\d/.test(value) &&
+          /[!@#$%^&*(),.?":{}|<>]/.test(value) &&
+          /[A-Z]/.test(value)
+        );
+      },
+      {
+        message:
+          "Mot de passe doit contenir au moins un chiffre, une lettre majuscule et un caractère spécial",
+      }
+    ),
+});
 
 export default function Signup() {
   const router = useRouter();
-  const [data, setData] = useState<UserData>({
-    name: "",
-    email: "",
-    password: "",
+  const [err, setErr] = useState<boolean>(false);
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      username: "",
+      email: "",
+      password: "",
+    },
   });
-  const [error, setError] = useState<string>("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!data.name || !data.email || !data.password) {
-      setError("Veuillez remplir tous les champs");
-      return console.log("error");
-    }
-    if (data.password.length <= 8) {
-      setError("Le mot de passe doit faire minimum 8 caracteres");
-      return console.log("error : mdp 8");
-    }
-    if (containsUppercase(data.password) === false) {
-      setError("Le mot de passe doit contenir au minimum une lettre majuscule");
-      return console.log("error : mdp majuscule");
-    }
-    if (containsNumber(data.password) === false) {
-      setError("Le mot de passe doit contenir au minimum un chiffre");
-      return console.log("error : mdp chiffre");
-    }
-
-    if (mailIsCorrect(data.email) === false) {
-      setError("L'adresse mail est incorrect");
-      return console.log("error : mail incorrect");
-    }
-
-    setError("");
-    sentData();
-  };
-
-  {
-    /* envois à BDD */
-  }
-  const sentData = async () => {
+  // sent to bdd
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       const response = await fetch("/api/signup", {
         method: "POST",
@@ -78,174 +74,122 @@ export default function Signup() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          password: data.password,
+          name: values.username,
+          email: values.email.toLowerCase(),
+          password: values.password,
         }),
       });
       if (response.ok === true && response.status === 200) {
-        setData({
-          name: "",
-          email: "",
-          password: "",
-        });
-        console.log("ok c'est envoyé");
+        const user = await response.json();
+
         router.push("/dashboard");
+      }
+      if (response.ok === false && response.status === 400) {
+        const res = await response.json();
+        console.log(res);
+        if (res.etat === "email utilisé ou pb réseau") {
+          setErr(true);
+        }
       }
     } catch (error) {
       console.log(error);
     }
-  };
-
-  const goToSignIn = () => {
-    router.push("/signin");
-  };
+  }
 
   return (
-    <div>
-      <NavBar />
+    <>
+      <section className="max-w-lg mx-auto my-12 p-4">
+        <div className="mb-4">
+          <h1 className="text-2xl font-semibold  text-dark  ">
+            Inscris toi et rejoins la communauté 🌵
+          </h1>
 
-{/* chemin */}
-<div className="hidden md:flex md:items-center md:px-8 md:mt-8 md:overflow-x-auto md:whitespace-nowrap">
-        <Link href="/" className="text-dark">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-5 h-5 text-green"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-          </svg>
-        </Link>
-
-        <span className="mx-5 text-gray-500  rtl:-scale-x-100">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-5 h-5"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              fillRule="evenodd"
-              d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </span>
-
-        <p className="text-dark">S'inscrire</p>
-      </div>
-
-
-      <section className="bg-beige">
-        <div className="flex justify-center min-h-screen">
-          <div className="flex items-center w-full max-w-xl p-8 mx-auto lg:px-12 lg:w-3/5">
-            <div className="w-full">
-              <h1 className="text-2xl font-semibold  text-dark  ">
-                Inscris toi et rejoins la communauté 🌵
-              </h1>
-
-              <p className="flex items-center gap-2 mt-4 text-dark ">
-                <CheckCircle2 size={20} color="#0EAD69" /> Gratuit, aucun frais
-                caché
-              </p>
-              <p className="flex items-center gap-2 mt-4 text-dark ">
-                <CheckCircle2 size={20} color="#0EAD69" /> Un profil prêt
-                immédiatement
-              </p>
-              <p className="flex items-center gap-2 mt-4 text-dark ">
-                <CheckCircle2 size={20} color="#0EAD69" /> Une communauté qui
-                t'attend
-              </p>
-
-              <form
-                onSubmit={handleSubmit}
-                className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2"
-              >
-                <div>
-                  <label className="block mb-2 text-sm text-dark ">
-                    Prénom
-                  </label>
-                  <input
-                    onChange={(e) => {
-                      setData({ ...data, name: e.target.value });
-                    }}
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={data.name}
-                    placeholder="Cact-Us"
-                    className="block w-full px-5 py-3 mt-2 text-dark placeholder-gray-400 bg-white border border-gray-200 rounded-lg   focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-
-                <div>
-                  <label className="block mb-2 text-sm text-dark ">Email</label>
-                  <input
-                    onChange={(e) => {
-                      setData({ ...data, email: e.target.value });
-                    }}
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={data.email}
-                    placeholder="cact-us@exemple.com"
-                    className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                </div>
-
-                <div>
-                  <label className="block mb-2 text-sm text-dark ">
-                    Mot de passe
-                  </label>
-                  <input
-                    onChange={(e) => {
-                      setData({ ...data, password: e.target.value });
-                    }}
-                    id="password"
-                    name="password"
-                    type="password"
-                    value={data.password}
-                    placeholder="*************"
-                    className="block w-full px-5 py-3 mt-2 text-dark placeholder-gray-400 bg-white border border-gray-200 rounded-lg  focus:outline-none focus:ring focus:ring-opacity-40"
-                  />
-                  <div className="mt-1 flex items-center gap-1 text-gray-400 text-sm">
-                    <p>minimum 8 caracteres, 1 chiffre et 1 lettre majuscule</p>
-                  </div>
-                </div>
-
-                <div> </div>
-
-                <button className="flex items-center justify-between w-full px-6 py-3 text-sm  text-white capitalize transition-colors duration-300 transform bg-green rounded-lg ">
-                  <span>S'inscrire 🚀</span>
-
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-5 h-5 rtl:-scale-x-100"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </button>
-                <p className="text-red-600 font-semibold">{error}</p>
-              </form>
-              <button
-                className="text-sm mt-4 text-gray-400 cursor-pointer"
-                onClick={goToSignIn}
-              >
-                Déjà un compte ?{" "}
-                <span className="text-green">Connecte-toi</span>
-              </button>
-            </div>
-          </div>
+          <p className="flex items-center gap-2 mt-4 text-dark ">
+            <CheckCircle2 size={20} color="#0EAD69" /> Gratuit, aucun frais
+            caché
+          </p>
+          <p className="flex items-center gap-2 mt-4 text-dark ">
+            <CheckCircle2 size={20} color="#0EAD69" /> Un profil prêt
+            immédiatement
+          </p>
+          <p className="flex items-center gap-2 mt-4 text-dark ">
+            <CheckCircle2 size={20} color="#0EAD69" /> Une communauté qui
+            t'attend
+          </p>
         </div>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <FormField
+              control={form.control}
+              name="username"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Prénom</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Cactus" {...field} />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input placeholder="cactus@mail.com" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Mot de passe</FormLabel>
+                  <FormControl>
+                    <Input placeholder="" type="password" {...field} />
+                  </FormControl>
+                  <FormDescription>
+                    Min 8 caractères, 1 chiffre, 1 caractère spécial, 1 lettre
+                    majusucule
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            {err && (
+              <Alert>
+                <AlertTitle>🚨 Oups!</AlertTitle>
+                <AlertDescription>
+                  Email déjà utilisé, veuillez vous connecter
+                </AlertDescription>
+              </Alert>
+            )}
+
+            <Button className="bg-green" type="submit">
+              S'inscrire 🚀
+            </Button>
+          </form>
+        </Form>
+        <button
+          className="text-sm mt-4 text-gray-400 cursor-pointer"
+          onClick={() => {
+            router.push("/signin");
+          }}
+        >
+          Déjà inscris ? <span className="text-green">Connecte-toi</span>
+        </button>
       </section>
       <Footer />
-    </div>
+    </>
   );
 }

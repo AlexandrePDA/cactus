@@ -1,30 +1,36 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async headers() {
-      return [
+    return [
+      {
+        // matching all API routes
+        source: "/api/:path*",
+        headers: [
+          { key: "Access-Control-Allow-Credentials", value: "true" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
           {
-              // matching all API routes
-              source: "/api/:path*",
-              headers: [
-                  { key: "Access-Control-Allow-Credentials", value: "true" },
-                  { key: "Access-Control-Allow-Origin", value: "*" }, 
-                  { key: "Access-Control-Allow-Methods", value: "GET,DELETE,PATCH,POST,PUT" },
-                  { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" },
-              ]
-          }
-      ]
-  }
-}
+            key: "Access-Control-Allow-Methods",
+            value: "GET,DELETE,PATCH,POST,PUT",
+          },
+          {
+            key: "Access-Control-Allow-Headers",
+            value:
+              "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+          },
+        ],
+      },
+    ];
+  },
+};
 
-
-module.exports = nextConfig
+module.exports = nextConfig;
 
 module.exports = {
-    images: {
-      domains: ['images.unsplash.com'], // Ajoutez les autres domaines dont vous avez besoin séparés par des virgules
-    },
-  };
-
-
-
- 
+  images: {
+    domains: [
+      "images.unsplash.com",
+      "avatars.githubusercontent.com",
+      "lh3.googleusercontent.com",
+    ],
+  },
+};

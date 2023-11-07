@@ -1,5 +1,5 @@
 //import ButtonCTA from "../ui/Buttons/ButtonCTA";
-import TakeMail from "@/Components/Home/TakeMail";
+import TakeMail from "@/components/Home/TakeMail";
 import { HeartHandshake } from "lucide-react";
 import { Share2 } from "lucide-react";
 import { ArrowUpDown } from "lucide-react";

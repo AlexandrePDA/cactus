@@ -1,7 +1,9 @@
+"use server";
+
 import prisma from "@/lib/prisma";
 import * as bcrypt from "bcrypt";
 import { NextApiRequest, NextApiResponse } from "next";
-const jwt = require("../../utils/jwt");
+import { cookies } from "next/headers";
 
 function containsUppercase(password: string) {
   return /[A-Z]/.test(password);
@@ -42,7 +44,7 @@ export default async function signup(
         return res.status(400).json({ etat: "email incorrect" });
       }
 
-      let user = await prisma.user.create({
+      const user = await prisma.user.create({
         data: {
           name: body.name,
           email: body.email,
@@ -51,9 +53,14 @@ export default async function signup(
       });
 
       const { password, ...result } = user;
-      {/* jwt */}
-      const token = await jwt.signAccessToken(user);
-      result.token = token;
+
+      {
+        /* id session
+          -> genere un id unique à l'inscription via BDD
+          -> stocké dans cookie
+      */
+      }
+
       res.status(200).json({ user: result });
     }
   } catch (error) {

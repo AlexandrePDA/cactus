@@ -1,7 +1,7 @@
 import prisma from "@/lib/prisma";
 import * as bcrypt from "bcrypt";
 import { NextApiRequest, NextApiResponse } from "next";
-const jwt = require("../../utils/jwt");
+
 
 export default async function handler(
   req: NextApiRequest,
@@ -21,9 +21,11 @@ export default async function handler(
       }
       if (user && (await bcrypt.compare(body.password, user.password))) {
         const { password, ...result } = user;
-        {/* jwt */}
-        const token = await jwt.signAccessToken(user);
-        result.token = token;
+
+        {/* id session
+          -> genere un id unique à l'inscription via BDD
+          -> stocké dans cookie
+      */}       
         return res.status(200).json({ user: result });
       }
 

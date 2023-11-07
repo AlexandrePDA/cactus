@@ -1,58 +1,51 @@
-import CredentialsProvider from "next-auth/providers/credentials";
+import prisma from "@/lib/prisma";
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
+import GithubProvider from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
+import Email from "next-auth/providers/email";
 
-const handler = NextAuth({
+const githubId = process.env.GITHUB_ID;
+const githubSecret = process.env.GITHUB_SECRET;
+const googleId = process.env.GOOGLE_ID;
+const googleSecret = process.env.GOOGLE_SECRET;
+
+if (!githubId || !githubSecret || !googleId || !googleSecret) {
+  throw new Error(
+    "Missing GITHUB_ID or GITHUB_SECRET or GOOGLE_ID or GOOGLE_SECRET in .env"
+  );
+}
+
+export const authConfig = {
   providers: [
-    CredentialsProvider({
-      // The name to display on the sign in form (e.g. "Sign in with...")
-      name: "Credentials",
-      // `credentials` is used to generate a form on the sign in page.
-      // You can specify which fields should be submitted, by adding keys to the `credentials` object.
-      // e.g. domain, username, password, 2FA token, etc.
-      // You can pass any HTML attribute to the <input> tag through the object.
-      credentials: {
-        username: { label: "Username", type: "text", placeholder: "jsmith" },
-        password: { label: "Password", type: "password" },
-      },
-      async authorize(credentials, req) {
-        // Add logic here to look up the user from the credentials supplied
-
-        {
-          /*
-           ******************************* login *******************************
-           */
-        }
-        const res = await fetch("api/signup", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            username: credentials?.username,
-            password: credentials?.password,
-          }),
-        });
-        const user = await res.json();
-        console.log("USER : ", user);
-        
-        {
-          /*
-           ********************************************************************
-           */
-        }
-
-        if (user) {
-          // Any object returned will be saved in `user` property of the JWT
-          return user;
-        } else {
-          // If you return null then an error will be displayed advising the user to check their details.
-          return null;
-
-          // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
-        }
+    GithubProvider({
+      clientId: githubId,
+      clientSecret: githubSecret,
+    }),
+    GoogleProvider({
+      clientId: googleId,
+      clientSecret: googleSecret,
+    }),
+    Email({
+      from: "Cact-Us <do-not-reply@cact-us.com",
+      server: {
+        host: process.env.SMTP_HOST,
+        port: Number(process.env.SMTP_PORT),
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PASSWORD,
+        },
       },
     }),
   ],
-});
+  callbacks: {
+    session: async ({ session, user }) => {
+      return session;
+    },
+  },
+  adapter: PrismaAdapter(prisma),
+  secret: process.env.NEXTAUTH_SECRET,
+} satisfies NextAuthOptions;
 
-export { handler as GET, handler as POST };
+export default NextAuth(authConfig);

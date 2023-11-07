@@ -1,28 +1,34 @@
 import { Linkedin } from "lucide-react";
 import { Github } from "lucide-react";
-import { Coffee } from 'lucide-react';
+import { Coffee } from "lucide-react";
 
 export const Footer = () => {
   return (
     <div className="bg-green ">
       <footer className=" max-w-screen-xl mx-auto text-white mt-12 py-8">
         <div className="container flex items-center justify-center flex-col p-6 mx-auto space-y-4 sm:space-y-0 ">
-            
-            <a className="flex gap-2 mb-4 bg-desertred py-2 px-4 rounded-xl" href="https://www.buymeacoffee.com/cactus1">Soutiens Cact-Us
-            <Coffee size={20} color="#fffaf2" /></a>
-          
-            <a className="flex gap-2 mb-4 bg-darkgreen py-2 px-4  rounded-xl" href="https://www.linkedin.com/company/cact-us1/">
-              Follow Cact-Us
-              <Linkedin size={20} color="white" />
-            </a>
-
-        
+          <a
+            className="flex gap-2 mb-4 bg-desertred py-2 px-4 rounded-xl"
+            href="https://www.buymeacoffee.com/cactus1"
+          >
+            Soutiens Cact-Us
+            <Coffee size={20} color="#fffaf2" />
+          </a>
+          <a
+            className="flex gap-2 mb-4 bg-darkgreen py-2 px-4  rounded-xl"
+            href="https://www.linkedin.com/company/cact-us1/"
+          >
+            Follow Cact-Us
+            <Linkedin size={20} color="white" />
+          </a>
         </div>
         <div className="container flex flex-col items-center justify-between p-6 mx-auto space-y-4 sm:space-y-0 sm:flex-row">
           <p className="text-sm ">
             ©Cact-Us - Copyright 2023. All Rights Reserved.
           </p>
-          <a className="text-sm" href="/mentions-legales">Mentions Légales</a>
+          <a className="text-sm" href="/mentions-legales">
+            Mentions Légales
+          </a>
 
           <div className="flex -mx-2"></div>
           <div className="flex justify-between items-center">

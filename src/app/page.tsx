@@ -1,22 +1,19 @@
-import { Footer } from "@/Components/Footer";
-import { Faq } from "@/Components/Home/Faq";
-import Hero from "@/Components/Home/Hero";
-import How from "@/Components/Home/How";
-import Together from "@/Components/Home/Together";
-import Whatis from "@/Components/Home/Whatis";
-import NavBar from "@/Components/NavBar";
-
+import { Footer } from "@/components/Footer";
+import { Faq } from "@/components/Home/Faq";
+import Hero from "@/components/Home/Hero";
+import How from "@/components/Home/How";
+import Together from "@/components/Home/Together";
+import Whatis from "@/components/Home/Whatis";
 
 export default function Home() {
   return (
     <div>
-      <NavBar/>
       <Hero />
       <Whatis />
-      <How/>
-      <Together/>
-      <Faq/>
-      <Footer/>
+      <How />
+      <Together />
+      <Faq />
+      <Footer />
     </div>
   );
 }
