@@ -9,8 +9,9 @@ export const LoginButton = () => {
       onClick={async () => {
         await signIn();
       }}
+      className="bg-beige text-green hover:bg-slate-200"
     >
-      Login
+      Connexion
     </Button>
   );
 };

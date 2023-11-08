@@ -1,4 +1,3 @@
-import { Footer } from "@/components/Footer";
 import { Faq } from "@/components/Home/Faq";
 import Hero from "@/components/Home/Hero";
 import How from "@/components/Home/How";
@@ -13,7 +12,6 @@ export default function Home() {
       <How />
       <Together />
       <Faq />
-      <Footer />
     </div>
   );
 }

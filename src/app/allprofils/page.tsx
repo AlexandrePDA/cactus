@@ -1,8 +1,5 @@
-import { Footer } from "@/components/Footer";
-import NavBar from "@/components/NavBar";
 import Image from "next/image";
 import React from "react";
-import Link from "next/link";
 import { Sun } from "lucide-react";
 import { Sprout } from "lucide-react";
 import { Repeat } from "lucide-react";
@@ -34,7 +31,7 @@ export default function AllProfils() {
         <div className="container px-5 py-4 mx-auto">
           <div className="flex flex-wrap -m-4">
             <div className="p-4 w-full lg:w-1/3">
-              <div className="bg-beige text-dark flex w-full flex-col items-center justify-center h-full bg-beige  px-8 py-8 rounded-lg overflow-hidden text-center relative shadow-2xl">
+              <div className=" text-dark flex w-full flex-col items-center justify-center h-full bg-beige  px-8 py-8 rounded-lg overflow-hidden text-center relative shadow-2xl">
                 <Image
                   className="object-cover w-32 h-32   rounded-full ring ring-white"
                   src={logo}
@@ -68,8 +65,6 @@ export default function AllProfils() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 }
