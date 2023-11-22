@@ -1,9 +1,9 @@
 import { authConfig } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
 import Image from "next/image";
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "../../components/ui/separator";
 import { Mail, Globe, Github, Linkedin, Instagram } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
