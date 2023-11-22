@@ -7,7 +7,7 @@ import { Button } from "../../components/ui/button";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
-export const Dashboard = async () => {
+export default async function Dashboard() {
   const session = await getServerSession(authConfig);
 
   if (!session) redirect("/");
@@ -116,6 +116,4 @@ export const Dashboard = async () => {
       </div>
     </div>
   );
-};
-
-export default Dashboard;
+}
