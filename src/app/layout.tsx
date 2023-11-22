@@ -21,6 +21,8 @@ export const metadata: Metadata = {
     "compétences, échange, cact-us, apprendre, plateforme, skills, need",
 };
 
+export const forceDynamic = "force-dynamic";
+
 export default function RootLayout({
   children,
 }: {
