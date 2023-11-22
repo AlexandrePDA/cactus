@@ -4,8 +4,16 @@ import { Sun } from "lucide-react";
 import { Sprout } from "lucide-react";
 import { Repeat } from "lucide-react";
 import logo from "../../../public/assets/Logo_cactus_round.png";
+import { get } from "http";
+import { getServerSession } from "next-auth";
+import { authConfig } from "@/pages/api/auth/[...nextauth]";
+import { redirect } from "next/navigation";
 
 export default function AllProfils() {
+  const session = getServerSession(authConfig);
+
+  if (!session) redirect("/");
+
   return (
     <div className="bg-beige">
       <h2 className="text-center px-2 mt-12 text-2xl sm:text-4xl text-dark font-semibold">

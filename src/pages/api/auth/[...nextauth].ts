@@ -5,6 +5,7 @@ import NextAuth from "next-auth/next";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import Email from "next-auth/providers/email";
+import { ExtendedUser } from "../../../../type";
 
 const githubId = process.env.GITHUB_ID;
 const githubSecret = process.env.GITHUB_SECRET;
@@ -40,10 +41,30 @@ export const authConfig = {
     }),
   ],
   callbacks: {
-    session: async ({ session, user }) => {
+    session: async ({
+      session,
+      user,
+    }: {
+      session: any;
+      user: ExtendedUser | null;
+    }) => {
+      if (user) {
+        session.user.bio = user.bio;
+        session.user.haveCompetence = user.haveCompetence;
+        session.user.askCompetence = user.askCompetence;
+        session.user.github = user.github;
+        session.user.linkedin = user.linkedin;
+        session.user.instagram = user.instagram;
+        session.user.ownSite = user.ownSite;
+        session.user.id = user.id;
+        session.user.skill1 = user.skill1;
+        session.user.skill2 = user.skill2;
+        session.user.skill3 = user.skill3;
+      }
       return session;
     },
   },
+  pages: { signIn: "/auth/signin", verifyRequest: "/auth/verify-request" },
   adapter: PrismaAdapter(prisma),
   secret: process.env.NEXTAUTH_SECRET,
 } satisfies NextAuthOptions;

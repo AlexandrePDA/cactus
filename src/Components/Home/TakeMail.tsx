@@ -8,7 +8,6 @@ export default function TakeMail() {
   const [msgError, setMsgError] = useState<string>("");
 
   const sentMail = async (mail: string) => {
-    console.log("test");
     if (mail.length > 3) {
       setMsgError("");
       try {

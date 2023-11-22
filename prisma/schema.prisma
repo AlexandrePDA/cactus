@@ -52,7 +52,14 @@ model User {
   image          String?
   bio            String?
   haveCompetence String[]
-  askCompetence  String[]
+  skill1         String?
+  skill2         String?
+  skill3         String?
+  askCompetence  String?
+  ownSite        String?
+  instagram      String?
+  github         String?
+  linkedin       String?
   accounts       Account[]
   sessions       Session[]
 }
