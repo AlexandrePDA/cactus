@@ -17,7 +17,7 @@ export default async function Dashboard() {
   return (
     <div className=" p-4 max-w-screen-xl text-dark mx-auto w-full mb-48">
       <h1 className="text-center my-12 text-green font-bold text-2xl">
-        Dashboard
+        Dashboard de {session?.user?.name}
       </h1>
       <div className="flex flex-col gap-8 lg:flex-row items-center justify-center">
         <div className="lg:w-1/3 w-full flex flex-col lg:items-start items-center   ">
