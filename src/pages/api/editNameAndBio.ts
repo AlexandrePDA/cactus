@@ -4,7 +4,6 @@ import { Session, getServerSession } from "next-auth";
 import { authConfig } from "@/pages/api/auth/[...nextauth]";
 
 // OK
-export const dynamic = "force-dynamic";
 
 export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   const { username, bio } = req.body.values;
