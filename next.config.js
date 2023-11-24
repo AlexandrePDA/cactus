@@ -21,11 +21,6 @@ const nextConfig = {
       },
     ];
   },
-};
-
-module.exports = nextConfig;
-
-module.exports = {
   images: {
     domains: [
       "images.unsplash.com",
@@ -34,3 +29,5 @@ module.exports = {
     ],
   },
 };
+
+module.exports = nextConfig;
