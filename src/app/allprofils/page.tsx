@@ -32,7 +32,7 @@ export default function AllProfils() {
         Informatique, langues, arts... À chaque domaine, ses experts. <br />
         Consulte notre selection pour y trouver la compétence dont tu as besoin.
         <br /> Un des profils recherche ce que tu possèdes ? C'est l'heure des
-        présentations
+        présentations !
       </h3>
 
       <section className="text-dark mt-12 body-font">
