@@ -30,7 +30,7 @@ export default function AllProfils() {
 
       <h3 className="text-center text-dark text-md sm:text-xl p-4">
         Informatique, langues, arts... À chaque domaine, ses experts. <br />
-        Consulte notre selection pour y trouver la compétence dont tu as besoin.{" "}
+        Consulte notre selection pour y trouver la compétence dont tu as besoin.
         <br /> Un des profils recherche ce que tu possèdes ? C'est l'heure des
         présentations !
       </h3>
