@@ -7,29 +7,10 @@ import GoogleProvider from "next-auth/providers/google";
 import Email from "next-auth/providers/email";
 import { ExtendedUser } from "../../../../type";
 
-const githubId = process.env.GITHUB_ID;
-const githubSecret = process.env.GITHUB_SECRET;
-const googleId = process.env.GOOGLE_ID;
-const googleSecret = process.env.GOOGLE_SECRET;
-
 export const dynamic = "force-dynamic";
-
-if (!githubId || !githubSecret || !googleId || !googleSecret) {
-  throw new Error(
-    "Missing GITHUB_ID or GITHUB_SECRET or GOOGLE_ID or GOOGLE_SECRET in .env"
-  );
-}
 
 export const authConfig = {
   providers: [
-    GithubProvider({
-      clientId: githubId,
-      clientSecret: githubSecret,
-    }),
-    GoogleProvider({
-      clientId: googleId,
-      clientSecret: googleSecret,
-    }),
     Email({
       from: "Cact-Us <do-not-reply@cact-us.com",
       server: {
