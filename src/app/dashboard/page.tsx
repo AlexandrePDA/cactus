@@ -72,7 +72,7 @@ export default async function Dashboard() {
             <p className="bg-[#DEF7EC] text-[#155E49] p-2">
               🥇 {session?.user.skill1}
             </p>
-            {session?.user.skill2.length > 0 ? (
+            {session?.user.skill2 !== null ? (
               <p className="bg-[#DEF7EC] text-[#155E49] p-2">
                 {" "}
                 🥈 {session?.user.skill2}{" "}
@@ -80,7 +80,7 @@ export default async function Dashboard() {
             ) : (
               ""
             )}
-            {session?.user.skill3.length > 0 ? (
+            {session?.user.skill3 !== null ? (
               <p className="bg-[#DEF7EC] text-[#155E49] p-2">
                 {" "}
                 🥉 {session?.user.skill3}{" "}
