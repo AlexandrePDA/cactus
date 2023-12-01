@@ -1,5 +1,3 @@
-//import ButtonCTA from "../ui/Buttons/ButtonCTA";
-import TakeMail from "@/components/Home/TakeMail";
 import { HeartHandshake } from "lucide-react";
 import { Share2 } from "lucide-react";
 import { ArrowUpDown } from "lucide-react";
@@ -30,8 +28,6 @@ export default function Hero() {
             plateforme, décris ton besoin, présente tes qualifications : c'est
             parti ! 🚀
           </h3>
-
-          <TakeMail />
 
           {/* 
           <div className="mt-8 flex flex-wrap justify-center gap-4">

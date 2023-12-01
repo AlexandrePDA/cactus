@@ -88,7 +88,7 @@ export default function EditNameAndBio() {
           />
 
           <Button className="bg-green" type="submit">
-            Modifier
+            Valider
           </Button>
         </form>
       </Form>

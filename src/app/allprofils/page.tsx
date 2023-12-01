@@ -4,15 +4,33 @@ import { Sun } from "lucide-react";
 import { Sprout } from "lucide-react";
 import { Repeat } from "lucide-react";
 import logo from "../../../public/assets/Logo_cactus_round.png";
-import { get } from "http";
 import { getServerSession } from "next-auth";
 import { authConfig } from "@/pages/api/auth/[...nextauth]";
 import { redirect } from "next/navigation";
+import { useQuery } from "react-query";
 
-export default async function AllProfils() {
-  const session = await getServerSession(authConfig);
+const fetchUsers = async () => {
+  const response = await fetch("/api/getAllUsers");
+  if (!response.ok) {
+    throw new Error("Failed to fetch users");
+  }
+  return response.json();
+};
+
+export default function AllProfils() {
+  const session = getServerSession(authConfig);
 
   if (!session) redirect("/");
+
+  const { data: users, isLoading, isError } = useQuery("users", fetchUsers);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error fetching users</div>;
+  }
 
   return (
     <div className="bg-beige">

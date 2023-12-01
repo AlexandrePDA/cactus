@@ -12,6 +12,8 @@ export default async function Dashboard() {
 
   if (!session) redirect("/");
 
+  if (session?.user.askCompetence === null) redirect("/onboarding");
+
   const profileImage = session?.user.image || "";
 
   return (
