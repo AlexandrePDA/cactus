@@ -12,6 +12,8 @@ const CrispWithNoSSR = dynamic(() => import("../components/crisp"));
 // Créez l'objet Inter pour les styles de police
 const inter = Inter({ subsets: ["latin"] });
 
+export const dynamicStatic = "force-dynamic";
+
 // Définissez les métadonnées
 export const metadata: Metadata = {
   title: "Cact-us",
