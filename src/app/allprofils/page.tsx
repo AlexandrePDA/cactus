@@ -9,8 +9,8 @@ import { getServerSession } from "next-auth";
 import { authConfig } from "@/pages/api/auth/[...nextauth]";
 import { redirect } from "next/navigation";
 
-export default function AllProfils() {
-  const session = getServerSession(authConfig);
+export default async function AllProfils() {
+  const session = await getServerSession(authConfig);
 
   if (!session) redirect("/");
 

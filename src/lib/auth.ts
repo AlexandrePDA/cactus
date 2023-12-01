@@ -1,8 +1,8 @@
 import { authConfig } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
 
-export const getAuthSession = () => {
-  return getServerSession(authConfig);
+export const getAuthSession = async () => {
+  return await getServerSession(authConfig);
 };
 
 export const getRequiredAuthSession = async () => {
