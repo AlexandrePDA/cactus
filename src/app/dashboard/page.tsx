@@ -72,12 +72,12 @@ export default async function Dashboard() {
           <h3 className="font-bold text-lg my-4">Skills</h3>
           <div className="flex flex-wrap gap-4">
             <p className="bg-[#DEF7EC] text-[#155E49] p-2">
-              🥇 {session?.user.skill1}
+              ⭐️ {session?.user.skill1}
             </p>
             {session?.user.skill2 !== null ? (
               <p className="bg-[#DEF7EC] text-[#155E49] p-2">
                 {" "}
-                🥈 {session?.user.skill2}{" "}
+                ⭐️ {session?.user.skill2}{" "}
               </p>
             ) : (
               ""
@@ -85,7 +85,7 @@ export default async function Dashboard() {
             {session?.user.skill3 !== null ? (
               <p className="bg-[#DEF7EC] text-[#155E49] p-2">
                 {" "}
-                🥉 {session?.user.skill3}{" "}
+                ⭐️ {session?.user.skill3}{" "}
               </p>
             ) : (
               ""

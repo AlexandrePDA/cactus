@@ -93,7 +93,7 @@ export default function EditHaveAndSearchCompetences() {
             name="skill1"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Skill 1 *</FormLabel>
+                <FormLabel>🥇 Skill 1 *</FormLabel>
                 <FormControl>
                   <Input placeholder="Javascript" {...field} />
                 </FormControl>
@@ -107,7 +107,7 @@ export default function EditHaveAndSearchCompetences() {
             name="skill2"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Skill 2</FormLabel>
+                <FormLabel>🥈 Skill 2</FormLabel>
                 <FormControl>
                   <Input placeholder="Espagnol" {...field} />
                 </FormControl>
@@ -121,7 +121,7 @@ export default function EditHaveAndSearchCompetences() {
             name="skill3"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Skill 3</FormLabel>
+                <FormLabel>🥉 Skill 3</FormLabel>
                 <FormControl>
                   <Input placeholder="Photographie" {...field} />
                 </FormControl>

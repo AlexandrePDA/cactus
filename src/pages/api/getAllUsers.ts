@@ -15,6 +15,10 @@ export default async function getAllUsers(
         skill1: true,
         skill2: true,
         skill3: true,
+        ownSite: true,
+        linkedin: true,
+        github: true,
+        instagram: true,
       },
     });
 
