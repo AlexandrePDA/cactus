@@ -12,6 +12,8 @@ const githubSecret = process.env.GITHUB_SECRET;
 const googleId = process.env.GOOGLE_ID;
 const googleSecret = process.env.GOOGLE_SECRET;
 
+export const dynamic = "force-dynamic";
+
 if (!githubId || !githubSecret || !googleId || !googleSecret) {
   throw new Error(
     "Missing GITHUB_ID or GITHUB_SECRET or GOOGLE_ID or GOOGLE_SECRET in .env"
