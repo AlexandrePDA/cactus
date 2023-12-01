@@ -22,14 +22,6 @@ if (!githubId || !githubSecret || !googleId || !googleSecret) {
 
 export const authConfig = {
   providers: [
-    GithubProvider({
-      clientId: githubId,
-      clientSecret: githubSecret,
-    }),
-    GoogleProvider({
-      clientId: googleId,
-      clientSecret: googleSecret,
-    }),
     Email({
       from: "Cact-Us <do-not-reply@cact-us.com",
       server: {
