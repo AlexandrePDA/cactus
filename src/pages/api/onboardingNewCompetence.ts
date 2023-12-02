@@ -10,9 +10,7 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   console.log("session", session);
   console.log(req.body.values);
 
-  const { username, bio } = req.body.values;
-
-  console.log(session?.user.id);
+  const { search, skill1, skill2, skill3 } = req.body.values;
 
   try {
     const response = await prisma.user.update({
@@ -20,8 +18,10 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
         id: session?.user.id,
       },
       data: {
-        name: username,
-        bio: bio,
+        askCompetence: search,
+        skill1: skill1,
+        skill2: skill2,
+        skill3: skill3,
       },
     });
     res.status(200).json({ message: "profil crée avec succès !" });

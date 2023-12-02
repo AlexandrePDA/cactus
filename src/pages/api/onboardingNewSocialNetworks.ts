@@ -10,7 +10,7 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   console.log("session", session);
   console.log(req.body.values);
 
-  const { username, bio } = req.body.values;
+  const { website, linkedin, instagram, github } = req.body.values;
 
   console.log(session?.user.id);
 
@@ -20,8 +20,10 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
         id: session?.user.id,
       },
       data: {
-        name: username,
-        bio: bio,
+        ownSite: website,
+        linkedin: linkedin,
+        instagram: instagram,
+        github: github,
       },
     });
     res.status(200).json({ message: "profil crée avec succès !" });
