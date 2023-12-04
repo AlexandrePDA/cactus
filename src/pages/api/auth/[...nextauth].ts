@@ -6,15 +6,25 @@ import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import Email from "next-auth/providers/email";
 import { ExtendedUser } from "../../../../type";
+import LinkedInProvider from "next-auth/providers/linkedin";
 
 const githubId = process.env.GITHUB_ID;
 const githubSecret = process.env.GITHUB_SECRET;
 const googleId = process.env.GOOGLE_ID;
 const googleSecret = process.env.GOOGLE_SECRET;
+const linkedinId = process.env.LINKEDIN_ID;
+const linkedinSecret = process.env.LINKEDIN_SECRET;
 
 export const dynamic = "force-dynamic";
 
-if (!githubId || !githubSecret || !googleId || !googleSecret) {
+if (
+  !githubId ||
+  !githubSecret ||
+  !googleId ||
+  !googleSecret ||
+  !linkedinId ||
+  !linkedinSecret
+) {
   throw new Error(
     "Missing GITHUB_ID or GITHUB_SECRET or GOOGLE_ID or GOOGLE_SECRET in .env"
   );
@@ -29,6 +39,10 @@ export const authConfig = {
     GoogleProvider({
       clientId: googleId,
       clientSecret: googleSecret,
+    }),
+    LinkedInProvider({
+      clientId: linkedinId,
+      clientSecret: linkedinSecret,
     }),
     Email({
       from: "Cact-Us <do-not-reply@cact-us.com",
