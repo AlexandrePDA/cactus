@@ -1,28 +1,60 @@
-import EditHaveAndSearchCompetences from "../../../components/EditProfile/EditHaveAndSearchCompetences";
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
 import EditNameAndBio from "../../../components/EditProfile/EditNameAndBio";
+import EditHaveAndSearchCompetences from "../../../components/EditProfile/EditHaveAndSearchCompetences";
 import EditSocialNetwork from "../../../components/EditProfile/EditSocialNetwork";
-import { authConfig } from "@/pages/api/auth/[...nextauth]";
-import { getServerSession } from "next-auth";
-import { redirect } from "next/navigation";
-import React from "react";
 
-const EditDashboardPage = async () => {
-  const session = await getServerSession(authConfig);
+export default function ShowMyInfos() {
+  const [selectedLink, setSelectedLink] = useState("infos");
 
-  if (!session) redirect("/");
+  const handleLinkClick = (link: string) => {
+    setSelectedLink(link);
+  };
 
   return (
-    <div className=" p-4 max-w-screen-xl text-dark mx-auto w-full mb-48">
-      <h1 className="text-center my-12 text-green font-bold text-2xl">
+    <div className="p-4 max-w-screen-xl text-dark mx-auto w-full ">
+      <h2 className="text-center my-12 text-green font-bold text-2xl">
         Modifier mon profil
-      </h1>
-      <div className="flex flex-col lg:flex-row gap-12">
-        <EditNameAndBio />
-        <EditHaveAndSearchCompetences />
+      </h2>
+      <div className="flex items-center justify-center">
+        <div className=" bg-darkgreen text-white rounded-xl p-2 inline-flex">
+          <Link
+            href="#"
+            onClick={() => handleLinkClick("infos")}
+            className={`${
+              selectedLink === "infos" ? "bg-green" : "bg-darkgreen"
+            } transition-bg duration-700 ease-in-out p-1 rounded-md`}
+          >
+            Infos
+          </Link>
+          <Link
+            href="#"
+            onClick={() => handleLinkClick("competences")}
+            className={`${
+              selectedLink === "competences" ? "bg-green" : "bg-darkgreen"
+            } transition-bg duration-700 ease-in-out p-1 rounded-sm`}
+          >
+            Compétences
+          </Link>
+          <Link
+            href="#"
+            onClick={() => handleLinkClick("reseaux")}
+            className={`${
+              selectedLink === "reseaux" ? "bg-green" : "bg-darkgreen"
+            } transition-bg duration-700 ease-in-out p-1 rounded-sm`}
+          >
+            Réseaux
+          </Link>
+        </div>
       </div>
-      <EditSocialNetwork />
+      <div className="mt-12">
+        {/* Affichez le composant en fonction du lien sélectionné */}
+        {selectedLink === "infos" && <EditNameAndBio />}
+        {selectedLink === "competences" && <EditHaveAndSearchCompetences />}
+        {selectedLink === "reseaux" && <EditSocialNetwork />}
+      </div>
     </div>
   );
-};
-
-export default EditDashboardPage;
+}

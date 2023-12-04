@@ -22,6 +22,10 @@ if (!githubId || !githubSecret || !googleId || !googleSecret) {
 
 export const authConfig = {
   providers: [
+    GithubProvider({
+      clientId: githubId,
+      clientSecret: githubSecret,
+    }),
     Email({
       from: "Cact-Us <do-not-reply@cact-us.com",
       server: {
@@ -57,6 +61,9 @@ export const authConfig = {
       }
       return session;
     },
+  },
+  pages: {
+    signIn: "/auth/signIn",
   },
   adapter: PrismaAdapter(prisma),
   secret: process.env.NEXTAUTH_SECRET,

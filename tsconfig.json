@@ -28,7 +28,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/pages/auth/signin.tsx",
+    "src/pages/auth/signIn.ts",
     "src/middleware.js",
     "src/pages/api/test.js"
   ],

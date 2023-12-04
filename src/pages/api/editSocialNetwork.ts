@@ -12,17 +12,46 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   const { website, linkedin, github, instagram } = req.body.values;
 
   try {
-    const response = await prisma.user.update({
-      where: {
-        id: session?.user.id,
-      },
-      data: {
-        ownSite: website,
-        linkedin,
-        github,
-        instagram,
-      },
-    });
+    if (website.trim() !== "") {
+      await prisma.user.update({
+        where: {
+          id: session?.user.id,
+        },
+        data: {
+          ownSite: website,
+        },
+      });
+    }
+    if (linkedin.trim() !== "") {
+      await prisma.user.update({
+        where: {
+          id: session?.user.id,
+        },
+        data: {
+          linkedin: linkedin,
+        },
+      });
+    }
+    if (instagram.trim() !== "") {
+      await prisma.user.update({
+        where: {
+          id: session?.user.id,
+        },
+        data: {
+          instagram: instagram,
+        },
+      });
+    }
+    if (github.trim() !== "") {
+      await prisma.user.update({
+        where: {
+          id: session?.user.id,
+        },
+        data: {
+          github: github,
+        },
+      });
+    }
     res
       .status(200)
       .json({ message: "modifications enregistrées avec succès !" });

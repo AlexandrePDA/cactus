@@ -129,8 +129,9 @@ export default function EditSocialNetwork() {
               </FormItem>
             )}
           />
-
-          <Button type="submit">Submit</Button>
+          <Button className="bg-green" type="submit">
+            Valider
+          </Button>
         </form>
       </Form>
       <Toaster position="bottom-center" reverseOrder={false} />

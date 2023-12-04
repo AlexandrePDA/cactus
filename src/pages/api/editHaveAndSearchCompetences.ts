@@ -16,17 +16,41 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   console.log(session?.user.id);
 
   try {
-    const response = await prisma.user.update({
-      where: {
-        id: session?.user.id,
-      },
-      data: {
-        askCompetence: search,
-        skill1: skill1,
-        skill2: skill2,
-        skill3: skill3,
-      },
-    });
+    if (skill1.trim() !== "") {
+      await prisma.user.update({
+        where: {
+          id: session?.user.id,
+        },
+        data: {
+          askCompetence: search,
+          skill1: skill1,
+        },
+      });
+    }
+
+    if (skill2.trim() !== "") {
+      await prisma.user.update({
+        where: {
+          id: session?.user.id,
+        },
+        data: {
+          askCompetence: search,
+          skill2: skill2,
+        },
+      });
+    }
+
+    if (skill3.trim() !== "") {
+      await prisma.user.update({
+        where: {
+          id: session?.user.id,
+        },
+        data: {
+          askCompetence: search,
+          skill3: skill3,
+        },
+      });
+    }
     res
       .status(200)
       .json({ message: "modifications enregistrées avec succès !" });

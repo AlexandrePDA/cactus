@@ -12,6 +12,15 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import toast, { Toaster } from "react-hot-toast";
@@ -24,8 +33,12 @@ const formSchema = z.object({
 });
 
 const formSchemaCompetences = z.object({
-  search: z.string().min(2, { message: "Au moins 2 caractères" }),
-  skill1: z.string().min(2, { message: "Au moins 2 caractères" }),
+  search: z
+    .string()
+    .min(1, { message: "Tu as oublié de selectionner ta recherche" }),
+  skill1: z
+    .string()
+    .min(1, { message: "Tu as oublié de selectionner un skill" }),
   skill2: z.string().optional(),
   skill3: z.string().optional(),
 });
@@ -136,6 +149,124 @@ export default function OnboardingNewProfile() {
     }
   }
 
+  const categories = [
+    { title: "Musique 🎸", options: ["Piano", "Guitare", "Violon", "Chant"] },
+    {
+      title: "UI/UX 👩🏼‍🎨",
+      options: ["Design graphique", "UI", "UX"],
+    },
+    {
+      title: "DIY 🛠️",
+      options: [
+        "Couture",
+        "Bricolage",
+        "Jardinage",
+        "Décoration",
+        "Cosmétique",
+      ],
+    },
+    {
+      title: "Marketing 🛍️",
+      options: ["Stratégie marketing", "SEO", "SEM", "Email marketing"],
+    },
+    {
+      title: " Finance 💰",
+      options: ["Comptabilité", "Analyse financière", "Gestion de trésorerie"],
+    },
+    {
+      title: " Logiciels 👨🏾‍💻",
+      options: [
+        "Photoshop",
+        "Illustrator",
+        "InDesign",
+        "Premiere Pro",
+        "After Effects",
+        "SketchUp",
+      ],
+    },
+    {
+      title: " Programmation ⚙️",
+      options: [
+        "JavaScript",
+        "Python",
+        "Java",
+        "C++",
+        "Ruby",
+        "Swift",
+        "TypeScript",
+        "PHP",
+        "Go",
+      ],
+    },
+    {
+      title: " Cuisine 🍕",
+      options: [
+        "Cuisine française",
+        "Cuisine italienne",
+        "Pâtisserie",
+        "Cuisine asiatique",
+        "Cuisine végétarienne",
+        "Boulangerie",
+      ],
+    },
+    {
+      title: " Langages 💬",
+      options: [
+        "Français",
+        "Espagnol",
+        "Allemand",
+        "Chinois",
+        "Russe",
+        "Arabe",
+        "Japonais",
+      ],
+    },
+    {
+      title: " Cours 📚",
+      options: [
+        "Soutien scolaire",
+        "Préparation aux examens",
+        "Préparation aux concours",
+        "Mathématiques",
+        "Physique",
+        "Chimie",
+        "Français",
+        "Biologie",
+        "Histoire/Géographie",
+      ],
+    },
+    {
+      title: "Gestion d'entreprise 📈",
+      options: [
+        "Business plan",
+        "Stratégie d'entreprise",
+        "Business development",
+        "Gestion de projet",
+      ],
+    },
+    {
+      title: " Arts 🎨",
+      options: ["Peinture", "Dessin", "Sculpture", "Photographie"],
+    },
+    {
+      title: " Développement personnel ✨",
+      options: [
+        "Gestion du temps",
+        "Productivité",
+        "Leadership",
+        "Bien-être émotionnel",
+      ],
+    },
+  ];
+
+  // Trier les titres par ordre alphabétique
+  categories.sort((a, b) => a.title.localeCompare(b.title));
+
+  // Trier les options par ordre alphabétique
+  categories.forEach((category) => {
+    category.options.sort();
+  });
+
   return (
     <div className="mx-auto max-w-screen-sm mt-12 w-full lg:w-1/2 ">
       {/* gestion parcours */}
@@ -189,7 +320,10 @@ export default function OnboardingNewProfile() {
               name="bio"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Bio *</FormLabel>
+                  <FormLabel>
+                    Parle nous de toi, ton besoin et tes compétences à partagées
+                    *
+                  </FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Hello ! je suis professeur d'anglais et j'aime la photographie et j'aimerai apprendre l'Espagnol"
@@ -218,10 +352,35 @@ export default function OnboardingNewProfile() {
               name="search"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Je recherche *</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Anglais" {...field} />
-                  </FormControl>
+                  <FormLabel>Je recherche</FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Selectionne" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {categories.map((category, index) => (
+                        <p key={index}>
+                          <SelectItem
+                            value={`category_${index}`}
+                            disabled
+                            className="font-bold "
+                          >
+                            {category.title}
+                          </SelectItem>
+                          {category.options.map((option, optionIndex) => (
+                            <SelectItem key={optionIndex} value={option}>
+                              {option}
+                            </SelectItem>
+                          ))}
+                        </p>
+                      ))}
+                    </SelectContent>
+                  </Select>
                   <FormMessage />
                 </FormItem>
               )}
@@ -239,10 +398,35 @@ export default function OnboardingNewProfile() {
               name="skill1"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>⭐️ Skill 1 *</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Javascript" {...field} />
-                  </FormControl>
+                  <FormLabel>Skill ⭐️</FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Selectionne" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {categories.map((category, index) => (
+                        <p key={index}>
+                          <SelectItem
+                            value={`category_${index}`}
+                            disabled
+                            className="font-bold "
+                          >
+                            {category.title}
+                          </SelectItem>
+                          {category.options.map((option, optionIndex) => (
+                            <SelectItem key={optionIndex} value={option}>
+                              {option}
+                            </SelectItem>
+                          ))}
+                        </p>
+                      ))}
+                    </SelectContent>
+                  </Select>
                   <FormMessage />
                 </FormItem>
               )}
@@ -253,10 +437,35 @@ export default function OnboardingNewProfile() {
               name="skill2"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>⭐️ Skill 2</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Espagnol" {...field} />
-                  </FormControl>
+                  <FormLabel>Skill ⭐️</FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Selectionne" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {categories.map((category, index) => (
+                        <p key={index}>
+                          <SelectItem
+                            value={`category_${index}`}
+                            disabled
+                            className="font-bold "
+                          >
+                            {category.title}
+                          </SelectItem>
+                          {category.options.map((option, optionIndex) => (
+                            <SelectItem key={optionIndex} value={option}>
+                              {option}
+                            </SelectItem>
+                          ))}
+                        </p>
+                      ))}
+                    </SelectContent>
+                  </Select>
                   <FormMessage />
                 </FormItem>
               )}
@@ -267,10 +476,35 @@ export default function OnboardingNewProfile() {
               name="skill3"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>⭐️ Skill 3</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Photographie" {...field} />
-                  </FormControl>
+                  <FormLabel>Skill ⭐️</FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Selectionne" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {categories.map((category, index) => (
+                        <p key={index}>
+                          <SelectItem
+                            value={`category_${index}`}
+                            disabled
+                            className="font-bold "
+                          >
+                            {category.title}
+                          </SelectItem>
+                          {category.options.map((option, optionIndex) => (
+                            <SelectItem key={optionIndex} value={option}>
+                              {option}
+                            </SelectItem>
+                          ))}
+                        </p>
+                      ))}
+                    </SelectContent>
+                  </Select>
                   <FormMessage />
                 </FormItem>
               )}

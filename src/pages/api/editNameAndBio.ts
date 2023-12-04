@@ -10,15 +10,26 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerSession(req, res, authConfig);
 
   try {
-    const response = await prisma.user.update({
-      where: {
-        id: session?.user.id,
-      },
-      data: {
-        name: username,
-        bio: bio,
-      },
-    });
+    if (username.trim() !== "") {
+      await prisma.user.update({
+        where: {
+          id: session?.user.id,
+        },
+        data: {
+          name: username,
+        },
+      });
+    }
+    if (username.trim() !== "") {
+      await prisma.user.update({
+        where: {
+          id: session?.user.id,
+        },
+        data: {
+          bio: bio,
+        },
+      });
+    }
     res
       .status(200)
       .json({ message: "modifications enregistrées avec succès !" });

@@ -17,8 +17,8 @@ import { Input } from "@/components/ui/input";
 import toast, { Toaster } from "react-hot-toast";
 
 const formSchema = z.object({
-  username: z.string().min(2, { message: "Au moins 2 caractères" }),
-  bio: z.string().min(10, { message: "Au moins 10 caractères" }),
+  username: z.string(),
+  bio: z.string(),
 });
 
 export default function EditNameAndBio() {
@@ -64,7 +64,7 @@ export default function EditNameAndBio() {
               <FormItem>
                 <FormLabel>Prénom</FormLabel>
                 <FormControl>
-                  <Input placeholder="John Doe" {...field} />
+                  <Input placeholder="Julie" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -75,10 +75,12 @@ export default function EditNameAndBio() {
             name="bio"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Bio</FormLabel>
+                <FormLabel>
+                  Dis nous en plus sur tes besoins et tes skills
+                </FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="Hello ! je suis professeur d'anglais et j'aime la photographie et j'aimerai apprendre l'Espagnol"
+                    placeholder="Hello ! je suis professeur d'anglais et j'aime la photographie. J'aimerai apprendre l'Espagnol"
                     {...field}
                   />
                 </FormControl>
