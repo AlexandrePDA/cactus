@@ -1,4 +1,7 @@
 "use client";
+import { authConfig } from "@/pages/api/auth/[...nextauth]";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 

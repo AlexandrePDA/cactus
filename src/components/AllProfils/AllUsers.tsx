@@ -20,18 +20,29 @@ interface User {
   github: string;
   linkedin: string;
   instagram: string;
+  bio: string;
 }
 
-const fetchUsers = async () => {
-  const response = await fetch("/api/getAllUsers");
+interface AllUsersProps {
+  selectedCategory: string;
+}
+
+const fetchUsers = async (selectedCategory: string) => {
+  const response = await fetch(
+    `/api/getAllUsers?selectedCategory=${selectedCategory}`
+  );
   if (!response.ok) {
     throw new Error("Failed to fetch users");
   }
   return response.json();
 };
 
-export default function AllUsers() {
-  const { data: users, isLoading, isError } = useQuery("users", fetchUsers);
+export default function AllUsers({ selectedCategory }: AllUsersProps) {
+  const {
+    data: users,
+    isLoading,
+    isError,
+  } = useQuery(["users", selectedCategory], () => fetchUsers(selectedCategory));
 
   if (isLoading) {
     return (
@@ -89,12 +100,11 @@ export default function AllUsers() {
                 )}
               </div>
             </div>
-
-            <p className="mt-3 text-gray-500">
-              I am an ambitious workaholic, but apart from that, pretty simple
-              person.
-            </p>
-            <div className=" space-x-1 flex mt-4">
+            <h4 className="text-gray-500 font-bold my-4">
+              🔎 {user.askCompetence}
+            </h4>
+            <p className=" text-gray-500">{user.bio}</p>
+            <div className=" space-x-1 flex ">
               {user.ownSite ? (
                 <Link href={user.ownSite}>
                   <Globe color="#4b5563" size={18} strokeWidth={2} />

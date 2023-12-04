@@ -6,21 +6,29 @@ export default async function getAllUsers(
   res: NextApiResponse
 ) {
   try {
-    const users = await prisma.user.findMany({
-      select: {
-        id: true,
-        name: true,
-        email: true,
-        askCompetence: true,
-        skill1: true,
-        skill2: true,
-        skill3: true,
-        ownSite: true,
-        linkedin: true,
-        github: true,
-        instagram: true,
-      },
-    });
+    const { selectedCategory } = req.query;
+    const filter: string = selectedCategory as string;
+    let users;
+
+    if (filter) {
+      users = await prisma.user.findMany({
+        where: {
+          OR: [
+            {
+              skill1: filter.toLowerCase(),
+            },
+            {
+              skill2: filter.toLowerCase(),
+            },
+            {
+              skill3: filter.toLowerCase(),
+            },
+          ],
+        },
+      });
+    } else {
+      users = await prisma.user.findMany();
+    }
 
     res.status(200).json(users);
   } catch (error) {
