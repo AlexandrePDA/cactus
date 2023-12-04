@@ -40,10 +40,6 @@ export const authConfig = {
       clientId: googleId,
       clientSecret: googleSecret,
     }),
-    LinkedInProvider({
-      clientId: linkedinId,
-      clientSecret: linkedinSecret,
-    }),
     Email({
       from: "Cact-Us <do-not-reply@cact-us.com",
       server: {
