@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button";
 import { signOut } from "next-auth/react";
 
-
 export const LogoutButton = () => {
   return (
     <Button
@@ -12,7 +11,7 @@ export const LogoutButton = () => {
       }}
       className="bg-green text-beige"
     >
-      Logout
+      Déconnexion
     </Button>
   );
 };

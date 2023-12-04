@@ -25,8 +25,9 @@ module.exports = {
       colors: {
         green: "#16A34A",
         darkgreen: "#11671D",
-        beige: "#fffaf2",
+        beige: "#F4FBF6",
         dark: "#4b5563",
+        cardUser: "#FBFEFC",
         desertred: "#f19410",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const bodyStyles = {
-    backgroundColor: "#fffaf2",
+    backgroundColor: "#F4FBF6",
   };
 
   return (
