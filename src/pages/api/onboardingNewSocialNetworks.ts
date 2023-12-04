@@ -20,10 +20,10 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
         id: session?.user.id,
       },
       data: {
-        ownSite: website,
-        linkedin: linkedin,
-        instagram: instagram,
-        github: github,
+        ownSite: website.toLowerCase(),
+        linkedin: linkedin.toLowerCase(),
+        instagram: instagram.toLowerCase(),
+        github: github.toLowerCase(),
       },
     });
     res.status(200).json({ message: "profil crée avec succès !" });

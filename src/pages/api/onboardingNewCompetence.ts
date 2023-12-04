@@ -18,10 +18,10 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
         id: session?.user.id,
       },
       data: {
-        askCompetence: search,
-        skill1: skill1,
-        skill2: skill2,
-        skill3: skill3,
+        askCompetence: search.toLowerCase(),
+        skill1: skill1.toLowerCase(),
+        skill2: skill2.toLowerCase(),
+        skill3: skill3.toLowerCase(),
       },
     });
     res.status(200).json({ message: "profil crée avec succès !" });

@@ -139,7 +139,7 @@ export default function OnboardingNewProfile() {
   return (
     <div className="mx-auto max-w-screen-sm mt-12 w-full lg:w-1/2 ">
       {/* gestion parcours */}
-      <div className="flex gap-2 items-center justify-center text-dark my-8">
+      <div className="flex flex-wrap gap-2 items-center justify-center text-dark my-8">
         {/* Step 1 */}
         {step > 1 ? <CheckCircle2 color="#0EAD69" /> : <CircleDot />}
         {step > 1 ? (

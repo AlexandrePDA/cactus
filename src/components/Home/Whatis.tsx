@@ -8,7 +8,7 @@ export default function Whatis() {
     <>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
-          fill="#0EAD69"
+          fill="#16A34A"
           fillOpacity="1"
           d="M0,160L1440,0L1440,320L0,320Z"
         ></path>
@@ -53,8 +53,8 @@ export default function Whatis() {
               </div>
 
               <div className="mb-8">
-                      <Repeat color="#fffaf2" size={28} />
-                    </div>
+                <Repeat color="#fffaf2" size={28} />
+              </div>
 
               <div className="p-4 md:w-1/3 sm:mb-0 mb-6">
                 <h2 className="text-xl font-semibold text-center mb-6 ">
@@ -97,9 +97,7 @@ export default function Whatis() {
 
         {/* benefits */}
         <div className="container mt-12 px-6 py-10 mx-auto">
-          <h2 className="text-3xl font-bold sm:text-4xl">
-            Pourquoi Cact-Us ?
-          </h2>
+          <h2 className="text-3xl font-bold sm:text-4xl">Pourquoi Cact-Us ?</h2>
           <div className="mt-2 mb-12">
             <span className="inline-block w-40 h-1 bg-desertred rounded-full"></span>
             <span className="inline-block w-3 h-1 ml-1 bg-desertred rounded-full"></span>
@@ -114,7 +112,8 @@ export default function Whatis() {
 
               <p className="mt-1 text-lg text-dark">
                 Avec Cact-Us, finis de paniquer seul devant ton écran ! Crée ton
-                profil, cherche la compétence qu'il te faut et échange avec les CactUsers.
+                profil, cherche la compétence qu'il te faut et échange avec les
+                CactUsers.
               </p>
             </div>
             <div className="block rounded-xl border border-transparent p-8 shadow-xl bg-beige">
@@ -178,7 +177,7 @@ export default function Whatis() {
         viewBox="0 0 1440 320"
       >
         <path
-          fill="#0EAD69"
+          fill="#16A34A"
           fillOpacity="1"
           d="M0,160L1440,0L1440,0L0,0Z"
         ></path>

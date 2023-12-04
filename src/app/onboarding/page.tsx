@@ -1,7 +1,4 @@
-import EditHaveAndSearchCompetences from "@/components/EditHaveAndSearchCompetences";
-import EditNameAndBio from "@/components/EditNameAndBio";
-import EditSocialNetwork from "@/components/EditSocialNetwork";
-import OnboardingNewProfile from "@/components/OnboardingNewProfile";
+import OnboardingNewProfile from "@/components/Onboarding/OnboardingNewProfile";
 import { authConfig } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";

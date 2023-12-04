@@ -2,10 +2,11 @@
 
 import { useQuery } from "react-query";
 import Image from "next/image";
-import { Mail, Globe, Github, Linkedin, Instagram } from "lucide-react";
-import logo from "../../public/assets/Logo_cactus_round.png";
+import { Mail, Globe, Github, Linkedin, Instagram, Loader } from "lucide-react";
+import logo from "../../../public/assets/Logo_cactus_round.png";
 import Link from "next/link";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface User {
   id: number;
@@ -33,7 +34,16 @@ export default function AllUsers() {
   const { data: users, isLoading, isError } = useQuery("users", fetchUsers);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className=" h-screen w-screen">
+        <div className="flex justify-center items-center gap-4">
+          <p>Chargement </p>
+          <div className="animate-spin">
+            <Loader size={16} />
+          </div>
+        </div>
+      </div>
+    );
   }
 
   if (isError) {
@@ -114,7 +124,7 @@ export default function AllUsers() {
                 ""
               )}
             </div>
-            <Link href="#">
+            <Link href={`/profil/${user.email}`}>
               <Button className="w-1/2 mt-4 bg-green">Profil</Button>
             </Link>
           </div>

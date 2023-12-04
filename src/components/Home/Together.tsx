@@ -2,7 +2,6 @@ import Image from "next/image";
 import together from "../../../public/assets/cact-us_together.jpg";
 import together1 from "../../../public/assets/cact-us_together1.jpg";
 
-
 export default function Together() {
   return (
     <>
@@ -12,7 +11,7 @@ export default function Together() {
         viewBox="0 0 1440 320"
       >
         <path
-          fill="#0EAD69"
+          fill="#16A34A"
           fillOpacity="1"
           d="M0,128L1440,256L1440,320L0,320Z"
         ></path>
@@ -99,7 +98,7 @@ export default function Together() {
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
-          fill="#0EAD69"
+          fill="#16A34A"
           fillOpacity="1"
           d="M0,128L1440,256L1440,0L0,0Z"
         ></path>

@@ -1,6 +1,6 @@
-import EditHaveAndSearchCompetences from "../../../components/EditHaveAndSearchCompetences";
-import EditNameAndBio from "../../../components/EditNameAndBio";
-import EditSocialNetwork from "../../../components/EditSocialNetwork";
+import EditHaveAndSearchCompetences from "../../../components/EditProfile/EditHaveAndSearchCompetences";
+import EditNameAndBio from "../../../components/EditProfile/EditNameAndBio";
+import EditSocialNetwork from "../../../components/EditProfile/EditSocialNetwork";
 import { authConfig } from "@/pages/api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
