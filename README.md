@@ -34,6 +34,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 // TOOLS
+
 - https://excalidraw.com/
 - prisma studio
 - supabase studio
@@ -49,15 +50,17 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - Revoir le HERO ✅
 - revoir animation apres email inscrit
 - A l'inscription faire un reglement : tu prends que si tu donnes
-- regarder pourquoi espace blanc entre fin faq et footer 
+- regarder pourquoi espace blanc entre fin faq et footer
 - retravailler footer en y mettant LK de cact-us
 - gerer crisp ou alternative
 - gerer front et back longueur mdp à l'inscription (+8 caracteres, majuscule, number)
 - j'ai commencé next-auth mais bizarre à voir si j'utilise pas direct useContext()
 - a chaque section on perd le beige
 
-// Prisma 
+// Prisma
+
 - schema ok ✅
 
 // IDEAS
+
 - donne de la lumiere a ton cactUs

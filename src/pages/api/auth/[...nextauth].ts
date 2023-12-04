@@ -76,6 +76,11 @@ export const authConfig = {
       return session;
     },
   },
+  pages: {
+    signIn: "/auth/signIn",
+    verifyRequest: "/auth/verify-request",
+    error: "/auth/error",
+  },
   adapter: PrismaAdapter(prisma),
   secret: process.env.NEXTAUTH_SECRET,
 } satisfies NextAuthOptions;
