@@ -26,6 +26,10 @@ export const authConfig = {
       clientId: githubId,
       clientSecret: githubSecret,
     }),
+    GoogleProvider({
+      clientId: googleId,
+      clientSecret: googleSecret,
+    }),
     Email({
       from: "Cact-Us <do-not-reply@cact-us.com",
       server: {
@@ -61,9 +65,6 @@ export const authConfig = {
       }
       return session;
     },
-  },
-  pages: {
-    signIn: "/auth/signIn",
   },
   adapter: PrismaAdapter(prisma),
   secret: process.env.NEXTAUTH_SECRET,

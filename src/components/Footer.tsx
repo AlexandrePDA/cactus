@@ -21,7 +21,7 @@ export const Footer = () => {
             <Linkedin size={20} color="white" />
           </Link>
           <Link
-            href="http://www.alexandre-blog.vercel.app"
+            href="https://alexandre-blog.vercel.app/"
             className="flex items-center gap-2 mb-4 bg-darkgreen py-2 px-4  rounded-xl"
           >
             Blog
