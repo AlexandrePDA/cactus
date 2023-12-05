@@ -13,7 +13,7 @@ export default async function Profil({
   const session = await getServerSession(authConfig);
   if (!session) redirect("/");
   return (
-    <div className="h-screen mb-4">
+    <div className=" mb-4">
       <ShowProfil email={params.userId} />
     </div>
   );

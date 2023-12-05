@@ -1,11 +1,5 @@
 "use client";
 
-import { useQuery } from "react-query";
-import Image from "next/image";
-import { Globe, Github, Linkedin, Instagram, Loader } from "lucide-react";
-import logo from "../../../public/assets/Logo_cactus_round.png";
-import Link from "next/link";
-import { Button } from "../ui/button";
 import {
   Select,
   SelectContent,
@@ -33,20 +27,6 @@ interface User {
   bio: string;
 }
 
-interface AllUsersProps {
-  selectedCategory: string;
-}
-
-const fetchUsers = async (selectedCategory: string) => {
-  const response = await fetch(
-    `/api/getAllUsers?selectedCategory=${selectedCategory}`
-  );
-  if (!response.ok) {
-    throw new Error("Failed to fetch users");
-  }
-  return response.json();
-};
-
 export default function AllUsers() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const handleChange = (value: string) => {
@@ -62,7 +42,7 @@ export default function AllUsers() {
   const categories = [
     {
       title: "Musique 🎸",
-      options: ["Piano", "Guitare", "Violon", "Chant"],
+      options: ["Piano", "Guitare", "Chant"],
     },
     {
       title: "Outils DevOps 🛠️",
@@ -74,21 +54,15 @@ export default function AllUsers() {
     },
     {
       title: "Cloud ☁️",
-      options: ["AWS", "Microsoft Azure", "Oracle Cloud", "DigitalOcean"],
+      options: ["AWS", "Azure", "Oracle", "DigitalOcean"],
     },
     {
       title: "UI/UX 👩🏼‍🎨",
-      options: ["Design graphique", "UI", "UX"],
+      options: ["UI", "UX"],
     },
     {
       title: "DIY 🛠️",
-      options: [
-        "Couture",
-        "Bricolage",
-        "Jardinage",
-        "Décoration",
-        "Cosmétique",
-      ],
+      options: ["Couture", "Bricolage", "Jardinage", "Cosmétique"],
     },
     {
       title: "Marketing 🛍️",
@@ -100,14 +74,7 @@ export default function AllUsers() {
     },
     {
       title: " Logiciels 👨🏾‍💻",
-      options: [
-        "Photoshop",
-        "Illustrator",
-        "InDesign",
-        "Premiere Pro",
-        "After Effects",
-        "SketchUp",
-      ],
+      options: ["Photoshop", "Illustrator", "Premiere Pro", "After Effects"],
     },
     {
       title: " Programmation ⚙️",
@@ -120,19 +87,11 @@ export default function AllUsers() {
         "Swift",
         "TypeScript",
         "PHP",
-        "Go",
       ],
     },
     {
       title: " Cuisine 🍕",
-      options: [
-        "Cuisine française",
-        "Cuisine italienne",
-        "Pâtisserie",
-        "Cuisine asiatique",
-        "Cuisine végétarienne",
-        "Boulangerie",
-      ],
+      options: ["Cuisine", "Pâtisserie"],
     },
     {
       title: " Langages 💬",
@@ -149,14 +108,15 @@ export default function AllUsers() {
       title: " Cours 📚",
       options: [
         "Soutien scolaire",
-        "Préparation aux examens",
-        "Préparation aux concours",
+        "Préparation examens",
+        "Préparation concours",
         "Mathématiques",
         "Physique",
         "Chimie",
         "Français",
         "Biologie",
-        "Histoire/Géographie",
+        "Histoire",
+        "Géographie",
       ],
     },
     {
@@ -182,6 +142,14 @@ export default function AllUsers() {
       ],
     },
   ];
+
+  // Trier les titres par ordre alphabétique
+  categories.sort((a, b) => a.title.localeCompare(b.title));
+
+  // Trier les options par ordre alphabétique
+  categories.forEach((category) => {
+    category.options.sort();
+  });
 
   return (
     <div className="max-w-screen-xl  p-4">

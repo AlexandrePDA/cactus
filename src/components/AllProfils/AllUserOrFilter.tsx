@@ -1,7 +1,6 @@
 import { useQuery } from "react-query";
 import Image from "next/image";
-import { Globe, Github, Linkedin, Instagram, Loader } from "lucide-react";
-import logo from "../../../public/assets/Logo_cactus_round.png";
+import { Search, Loader } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
@@ -63,18 +62,18 @@ export default function AllUserOrFilter({ selectedCategory }: AllUsersProps) {
         {users.map((user: User) => (
           <div
             key={user.id}
-            className=" flex flex-col rounded-xl p-4 md:p-6 bg-cardUser border border-gray-200 dark:bg-slate-900 dark:border-gray-700"
+            className=" flex flex-col justify-between rounded-xl p-4 md:p-6 bg-cardUser border border-gray-200 dark:bg-slate-900 dark:border-gray-700 shadow-md"
           >
-            <div className="flex items-center gap-x-4">
+            <div className="flex items-center gap-x-4 ">
               <Image
-                className="rounded-full w-20 h-20"
+                className="rounded-lg w-24 h-24 object-cover object-center"
                 src={user.image}
                 alt="Image Description"
                 width={400}
                 height={400}
               />
               <div className="grow">
-                <h3 className="font-medium text-gray-800 dark:text-gray-200 mb-2">
+                <h3 className="font-medium text-dark dark:text-gray-200 mb-2">
                   {user.name}
                 </h3>
                 <p className="text-xs uppercase text-gray-500">
@@ -96,42 +95,13 @@ export default function AllUserOrFilter({ selectedCategory }: AllUsersProps) {
                 )}
               </div>
             </div>
-            <h4 className="text-gray-500 font-bold my-4">
-              🔎 {user.askCompetence}
-            </h4>
-            <p className=" text-gray-500">{user.bio}</p>
-            <div className=" space-x-1 flex ">
-              {user.ownSite ? (
-                <Link href={user.ownSite}>
-                  <Globe color="#4b5563" size={18} strokeWidth={2} />
-                </Link>
-              ) : (
-                ""
-              )}
-              {user.github ? (
-                <Link href={user.github}>
-                  <Github color="#4b5563" size={18} strokeWidth={2} />
-                </Link>
-              ) : (
-                ""
-              )}
-              {user.linkedin ? (
-                <Link href={user.linkedin}>
-                  <Linkedin color="#4b5563" size={18} strokeWidth={2} />
-                </Link>
-              ) : (
-                ""
-              )}
-              {user.instagram ? (
-                <Link href={user.instagram}>
-                  <Instagram color="#4b5563" size={18} strokeWidth={2} />
-                </Link>
-              ) : (
-                ""
-              )}
+            <div className="text-darkgreen font-bold my-4 mx-auto flex items-center gap-2">
+              <p>🔎</p>
+              <p>{user.askCompetence}</p>
             </div>
+
             <Link href={`/profil/${user.email}`}>
-              <Button className="w-1/2 mt-4 bg-green">Profil</Button>
+              <Button className=" mt-4 bg-green">Profil</Button>
             </Link>
           </div>
         ))}

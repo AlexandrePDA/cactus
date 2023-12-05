@@ -83,7 +83,10 @@ export default function EditHaveAndSearchCompetences() {
   }
 
   const categories = [
-    { title: "Musique 🎸", options: ["Piano", "Guitare", "Violon", "Chant"] },
+    {
+      title: "Musique 🎸",
+      options: ["Piano", "Guitare", "Chant"],
+    },
     {
       title: "Outils DevOps 🛠️",
       options: ["Docker", "Kubernetes", "Jenkins", "Git", "Terraform"],
@@ -94,21 +97,15 @@ export default function EditHaveAndSearchCompetences() {
     },
     {
       title: "Cloud ☁️",
-      options: ["AWS", "Microsoft Azure", "Oracle Cloud", "DigitalOcean"],
+      options: ["AWS", "Azure", "Oracle", "DigitalOcean"],
     },
     {
       title: "UI/UX 👩🏼‍🎨",
-      options: ["Design graphique", "UI", "UX"],
+      options: ["UI", "UX"],
     },
     {
       title: "DIY 🛠️",
-      options: [
-        "Couture",
-        "Bricolage",
-        "Jardinage",
-        "Décoration",
-        "Cosmétique",
-      ],
+      options: ["Couture", "Bricolage", "Jardinage", "Cosmétique"],
     },
     {
       title: "Marketing 🛍️",
@@ -120,14 +117,7 @@ export default function EditHaveAndSearchCompetences() {
     },
     {
       title: " Logiciels 👨🏾‍💻",
-      options: [
-        "Photoshop",
-        "Illustrator",
-        "InDesign",
-        "Premiere Pro",
-        "After Effects",
-        "SketchUp",
-      ],
+      options: ["Photoshop", "Illustrator", "Premiere Pro", "After Effects"],
     },
     {
       title: " Programmation ⚙️",
@@ -140,19 +130,11 @@ export default function EditHaveAndSearchCompetences() {
         "Swift",
         "TypeScript",
         "PHP",
-        "Go",
       ],
     },
     {
       title: " Cuisine 🍕",
-      options: [
-        "Cuisine française",
-        "Cuisine italienne",
-        "Pâtisserie",
-        "Cuisine asiatique",
-        "Cuisine végétarienne",
-        "Boulangerie",
-      ],
+      options: ["Cuisine", "Pâtisserie"],
     },
     {
       title: " Langages 💬",
@@ -169,14 +151,15 @@ export default function EditHaveAndSearchCompetences() {
       title: " Cours 📚",
       options: [
         "Soutien scolaire",
-        "Préparation aux examens",
-        "Préparation aux concours",
+        "Préparation examens",
+        "Préparation concours",
         "Mathématiques",
         "Physique",
         "Chimie",
         "Français",
         "Biologie",
-        "Histoire/Géographie",
+        "Histoire",
+        "Géographie",
       ],
     },
     {
@@ -202,6 +185,14 @@ export default function EditHaveAndSearchCompetences() {
       ],
     },
   ];
+
+  // Trier les titres par ordre alphabétique
+  categories.sort((a, b) => a.title.localeCompare(b.title));
+
+  // Trier les options par ordre alphabétique
+  categories.forEach((category) => {
+    category.options.sort();
+  });
 
   return (
     <div className="mx-auto max-w-screen-sm mb-12 w-full lg:w-1/2">

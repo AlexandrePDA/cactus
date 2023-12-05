@@ -206,7 +206,10 @@ export default function OnboardingNewProfile() {
   }
 
   const categories = [
-    { title: "Musique 🎸", options: ["Piano", "Guitare", "Violon", "Chant"] },
+    {
+      title: "Musique 🎸",
+      options: ["Piano", "Guitare", "Chant"],
+    },
     {
       title: "Outils DevOps 🛠️",
       options: ["Docker", "Kubernetes", "Jenkins", "Git", "Terraform"],
@@ -217,21 +220,15 @@ export default function OnboardingNewProfile() {
     },
     {
       title: "Cloud ☁️",
-      options: ["AWS", "Microsoft Azure", "Oracle Cloud", "DigitalOcean"],
+      options: ["AWS", "Azure", "Oracle", "DigitalOcean"],
     },
     {
       title: "UI/UX 👩🏼‍🎨",
-      options: ["Design graphique", "UI", "UX"],
+      options: ["UI", "UX"],
     },
     {
       title: "DIY 🛠️",
-      options: [
-        "Couture",
-        "Bricolage",
-        "Jardinage",
-        "Décoration",
-        "Cosmétique",
-      ],
+      options: ["Couture", "Bricolage", "Jardinage", "Cosmétique"],
     },
     {
       title: "Marketing 🛍️",
@@ -243,14 +240,7 @@ export default function OnboardingNewProfile() {
     },
     {
       title: " Logiciels 👨🏾‍💻",
-      options: [
-        "Photoshop",
-        "Illustrator",
-        "InDesign",
-        "Premiere Pro",
-        "After Effects",
-        "SketchUp",
-      ],
+      options: ["Photoshop", "Illustrator", "Premiere Pro", "After Effects"],
     },
     {
       title: " Programmation ⚙️",
@@ -263,19 +253,11 @@ export default function OnboardingNewProfile() {
         "Swift",
         "TypeScript",
         "PHP",
-        "Go",
       ],
     },
     {
       title: " Cuisine 🍕",
-      options: [
-        "Cuisine française",
-        "Cuisine italienne",
-        "Pâtisserie",
-        "Cuisine asiatique",
-        "Cuisine végétarienne",
-        "Boulangerie",
-      ],
+      options: ["Cuisine", "Pâtisserie"],
     },
     {
       title: " Langages 💬",
@@ -292,14 +274,15 @@ export default function OnboardingNewProfile() {
       title: " Cours 📚",
       options: [
         "Soutien scolaire",
-        "Préparation aux examens",
-        "Préparation aux concours",
+        "Préparation examens",
+        "Préparation concours",
         "Mathématiques",
         "Physique",
         "Chimie",
         "Français",
         "Biologie",
-        "Histoire/Géographie",
+        "Histoire",
+        "Géographie",
       ],
     },
     {

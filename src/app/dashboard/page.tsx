@@ -39,28 +39,28 @@ export default async function Dashboard() {
           <div className="flex flex-row gap-4 my-2">
             {session.user.ownSite ? (
               <Link href={session.user.ownSite}>
-                <Globe />
+                <Globe color="#11671D" />
               </Link>
             ) : (
               ""
             )}
             {session.user.github ? (
               <Link href={session.user.github}>
-                <Github />
+                <Github color="#11671D" />
               </Link>
             ) : (
               ""
             )}
             {session.user.linkedin ? (
               <Link href={session.user.linkedin}>
-                <Linkedin />
+                <Linkedin color="#11671D" />
               </Link>
             ) : (
               ""
             )}
             {session.user.instagram ? (
               <Link href={session.user.instagram}>
-                <Instagram />
+                <Instagram color="#11671D" />
               </Link>
             ) : (
               ""
