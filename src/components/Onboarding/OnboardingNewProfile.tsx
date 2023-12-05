@@ -455,7 +455,7 @@ export default function OnboardingNewProfile() {
         {step === 3 ? (
           <Form {...form3}>
             <h3 className=" text-green font-bold">
-              🧩 LA compétence recherchée
+              🧩 La compétence recherchée
             </h3>
             <form
               onSubmit={form3.handleSubmit(onSubmit3)}
