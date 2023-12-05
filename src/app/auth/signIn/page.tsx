@@ -50,6 +50,16 @@ export default function SignIn() {
       >
         Sign with Google
       </Button>
+      <Button
+        onClick={(e) => {
+          e.preventDefault();
+          signIn("linkedin", {
+            callbackUrl: "https://www.cact-us.com/allprofils/",
+          });
+        }}
+      >
+        Sign with Linkedin
+      </Button>
     </div>
   );
 }
