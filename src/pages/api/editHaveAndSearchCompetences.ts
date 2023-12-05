@@ -14,6 +14,11 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   console.log(search);
 
   console.log(session?.user.id);
+  if (skill1 === "" && search === "") {
+    return res
+      .status(400)
+      .json({ message: "Veuillez renseigner au moins un champ" });
+  }
 
   try {
     if (skill1.trim() !== "") {

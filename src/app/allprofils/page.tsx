@@ -11,16 +11,12 @@ export default async function AllProfils() {
   if (session?.user.askCompetence === null) redirect("/onboarding");
 
   return (
-    <div className="bg-beige max-w-screen-xl mx-auto h-screen">
+    <div className="bg-beige max-w-screen-xl mx-auto">
       <div className="my-24">
         <h2 className="text-center px-2 text-2xl sm:text-4xl text-dark">
-          Trouve ta{" "}
+          C'est le moment de trouver la{" "}
           <span className="bg-gradient-to-r from-desertred to-green bg-clip-text text-transparent">
             pépite
-          </span>{" "}
-          parmi nos{" "}
-          <span className="bg-gradient-to-r from-desertred to-green bg-clip-text text-transparent">
-            CactUsers
           </span>{" "}
           !
         </h2>

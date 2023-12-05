@@ -22,11 +22,10 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: [
-      "images.unsplash.com",
-      "avatars.githubusercontent.com",
-      "lh3.googleusercontent.com",
-    ],
+    remotePatterns: [{ protocol: "https", hostname: "**" }],
+  },
+  experimental: {
+    serverActions: true, // Enable Server Actions
   },
 };
 

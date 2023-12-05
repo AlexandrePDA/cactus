@@ -4,21 +4,12 @@ import { Globe, Github, Linkedin, Instagram, Loader } from "lucide-react";
 import logo from "../../../public/assets/Logo_cactus_round.png";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { useState } from "react";
 
 interface User {
   id: number;
   name: string;
   email: string;
+  image: string;
   askCompetence: string;
   skill1: string;
   skill2: string;
@@ -77,7 +68,7 @@ export default function AllUserOrFilter({ selectedCategory }: AllUsersProps) {
             <div className="flex items-center gap-x-4">
               <Image
                 className="rounded-full w-20 h-20"
-                src={logo}
+                src={user.image}
                 alt="Image Description"
                 width={400}
                 height={400}

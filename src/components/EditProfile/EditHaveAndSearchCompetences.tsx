@@ -21,9 +21,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
-import { Input } from "@/components/ui/input";
 import toast, { Toaster } from "react-hot-toast";
+import { useState } from "react";
 
 const formSchema = z.object({
   search: z
@@ -37,6 +36,7 @@ const formSchema = z.object({
 });
 
 export default function EditHaveAndSearchCompetences() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -54,7 +54,13 @@ export default function EditHaveAndSearchCompetences() {
     // ✅ This will be type-safe and validated.
     console.log(values);
 
+    if (values.skill1 === "" || values.search === "") {
+      toast.error("😢 Les champs sont vides");
+      return;
+    }
+
     try {
+      setIsSubmitting(true);
       const response = await fetch("/api/editHaveAndSearchCompetences", {
         method: "POST",
         headers: {
@@ -71,11 +77,25 @@ export default function EditHaveAndSearchCompetences() {
     } catch (error) {
       console.log(error);
       toast.error("😢 Une erreur est survenue");
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
   const categories = [
     { title: "Musique 🎸", options: ["Piano", "Guitare", "Violon", "Chant"] },
+    {
+      title: "Outils DevOps 🛠️",
+      options: ["Docker", "Kubernetes", "Jenkins", "Git", "Terraform"],
+    },
+    {
+      title: "Automatisation 🤖",
+      options: ["CI", "CD"],
+    },
+    {
+      title: "Cloud ☁️",
+      options: ["AWS", "Microsoft Azure", "Oracle Cloud", "DigitalOcean"],
+    },
     {
       title: "UI/UX 👩🏼‍🎨",
       options: ["Design graphique", "UI", "UX"],
@@ -115,7 +135,7 @@ export default function EditHaveAndSearchCompetences() {
         "JavaScript",
         "Python",
         "Java",
-        "C++",
+        "Cpp",
         "Ruby",
         "Swift",
         "TypeScript",
@@ -137,7 +157,6 @@ export default function EditHaveAndSearchCompetences() {
     {
       title: " Langages 💬",
       options: [
-        "Français",
         "Espagnol",
         "Allemand",
         "Chinois",
@@ -188,7 +207,9 @@ export default function EditHaveAndSearchCompetences() {
     <div className="mx-auto max-w-screen-sm mb-12 w-full lg:w-1/2">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <h3 className=" text-green font-bold">🧩 LA compétence recherchée</h3>
+          <h3 className=" text-green font-bold">
+            🧩 Tu as besoin d'apprendre une nouvelle compétence ?
+          </h3>
 
           <FormField
             control={form.control}
@@ -353,7 +374,7 @@ export default function EditHaveAndSearchCompetences() {
             )}
           />
 
-          <Button className="bg-green" type="submit">
+          <Button className="bg-green" type="submit" disabled={isSubmitting}>
             Valider
           </Button>
         </form>

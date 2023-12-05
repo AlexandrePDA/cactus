@@ -14,6 +14,10 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
 
   console.log(session?.user.id);
 
+  if (username === "" && bio === "") {
+    return res.status(400).json({ message: "Veuillez renseigner les champs" });
+  }
+
   try {
     const response = await prisma.user.update({
       where: {

@@ -11,6 +11,12 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   console.log(req.body.values);
   const { website, linkedin, github, instagram } = req.body.values;
 
+  if (website === "" && linkedin === "" && github === "" && instagram === "") {
+    return res
+      .status(400)
+      .json({ message: "Veuillez renseigner au moins un champ" });
+  }
+
   try {
     if (website.trim() !== "") {
       await prisma.user.update({

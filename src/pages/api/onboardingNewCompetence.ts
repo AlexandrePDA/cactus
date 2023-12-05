@@ -12,6 +12,10 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
 
   const { search, skill1, skill2, skill3 } = req.body.values;
 
+  if (search === "" && skill1 === "") {
+    return res.status(400).json({ message: "Veuillez renseigner les champs" });
+  }
+
   try {
     const response = await prisma.user.update({
       where: {

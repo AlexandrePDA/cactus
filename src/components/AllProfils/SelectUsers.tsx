@@ -65,6 +65,18 @@ export default function AllUsers() {
       options: ["Piano", "Guitare", "Violon", "Chant"],
     },
     {
+      title: "Outils DevOps 🛠️",
+      options: ["Docker", "Kubernetes", "Jenkins", "Git", "Terraform"],
+    },
+    {
+      title: "Automatisation 🤖",
+      options: ["CI", "CD"],
+    },
+    {
+      title: "Cloud ☁️",
+      options: ["AWS", "Microsoft Azure", "Oracle Cloud", "DigitalOcean"],
+    },
+    {
       title: "UI/UX 👩🏼‍🎨",
       options: ["Design graphique", "UI", "UX"],
     },
@@ -103,7 +115,7 @@ export default function AllUsers() {
         "JavaScript",
         "Python",
         "Java",
-        "C++",
+        "Cpp",
         "Ruby",
         "Swift",
         "TypeScript",
@@ -125,7 +137,6 @@ export default function AllUsers() {
     {
       title: " Langages 💬",
       options: [
-        "Français",
         "Espagnol",
         "Allemand",
         "Chinois",

@@ -15,6 +15,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import toast, { Toaster } from "react-hot-toast";
+import { useState } from "react";
 
 const formSchema = z.object({
   username: z.string(),
@@ -22,6 +23,7 @@ const formSchema = z.object({
 });
 
 export default function EditNameAndBio() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -32,7 +34,12 @@ export default function EditNameAndBio() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    if (values.username === "" || values.bio === "") {
+      toast.error("😢 Les champs sont vides");
+      return;
+    }
     try {
+      setIsSubmitting(true);
       const response = await fetch("/api/editNameAndBio", {
         method: "POST",
         headers: {
@@ -49,6 +56,8 @@ export default function EditNameAndBio() {
     } catch (error) {
       console.log(error);
       toast.error("😢 Une erreur est survenue");
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -89,7 +98,7 @@ export default function EditNameAndBio() {
             )}
           />
 
-          <Button className="bg-green" type="submit">
+          <Button className="bg-green" type="submit" disabled={isSubmitting}>
             Valider
           </Button>
         </form>

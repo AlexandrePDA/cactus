@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/form";
 import toast, { Toaster } from "react-hot-toast";
 import { Input } from "@/components/ui/input";
+import { useState } from "react";
 
 const formSchema = z.object({
   website: z.string().optional(),
@@ -24,6 +25,7 @@ const formSchema = z.object({
 });
 
 export default function EditSocialNetwork() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -40,7 +42,18 @@ export default function EditSocialNetwork() {
     // ✅ This will be type-safe and validated.
     console.log(values);
 
+    if (
+      values.website === "" &&
+      values.linkedin === "" &&
+      values.instagram === "" &&
+      values.github === ""
+    ) {
+      toast.error("😢 Les champs sont vides");
+      return;
+    }
+
     try {
+      setIsSubmitting(true);
       const response = await fetch("/api/editSocialNetwork", {
         method: "POST",
         headers: {
@@ -57,6 +70,8 @@ export default function EditSocialNetwork() {
     } catch (error) {
       console.log(error);
       toast.error("😢 Une erreur est survenue");
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -129,7 +144,7 @@ export default function EditSocialNetwork() {
               </FormItem>
             )}
           />
-          <Button className="bg-green" type="submit">
+          <Button className="bg-green" type="submit" disabled={isSubmitting}>
             Valider
           </Button>
         </form>

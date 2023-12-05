@@ -9,7 +9,7 @@ export const LogoutButton = () => {
       onClick={async () => {
         await signOut();
       }}
-      className="bg-green text-beige"
+      className="md:bg-white bg-green md:text-green  text-beige"
     >
       Déconnexion
     </Button>
