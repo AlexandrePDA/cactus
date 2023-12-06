@@ -4,9 +4,11 @@ import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { set } from "react-hook-form";
 
 export default function SignIn() {
   const [email, setEmail] = useState<string>("");
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
   return (
     <main className="w-full h-screen flex flex-col items-center justify-center px-4">
@@ -41,6 +43,7 @@ export default function SignIn() {
         <form
           onSubmit={(e) => {
             e.preventDefault();
+            setIsSubmitted(true);
             signIn("email", {
               email: email,
               callbackUrl: "https://www.cact-us.com/allprofils/",
@@ -58,7 +61,10 @@ export default function SignIn() {
               className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-lime-600 shadow-sm rounded-lg"
             />
           </div>
-          <Button className="w-full mt-4 px-4 py-2 text-white font-medium bg-green  rounded-lg duration-150">
+          <Button
+            disabled={isSubmitted}
+            className="w-full mt-4 px-4 py-2 text-white font-medium bg-green  rounded-lg duration-150"
+          >
             Se connecter
           </Button>
         </form>
