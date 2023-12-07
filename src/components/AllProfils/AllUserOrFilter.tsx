@@ -65,19 +65,24 @@ export default function AllUserOrFilter({ selectedCategory }: AllUsersProps) {
             className=" flex flex-col justify-between rounded-xl p-4 md:p-6 bg-cardUser border border-gray-200 dark:bg-slate-900 dark:border-gray-700 shadow-md"
           >
             <div className="flex items-center gap-x-4 ">
-              <Image
-                className="rounded-lg w-24 h-24 object-cover object-center"
-                src={user.image}
-                alt="Image Description"
-                width={400}
-                height={400}
-              />
+              {user.image ? (
+                <Image
+                  className="rounded-lg w-24 h-24 object-cover object-center"
+                  src={user.image}
+                  alt="Image Description"
+                  width={400}
+                  height={400}
+                />
+              ) : (
+                ""
+              )}
+
               <div className="grow">
                 <h3 className="font-medium text-dark dark:text-gray-200 mb-2">
-                  {user.name}
+                  {user.name ? <p>{user.name}</p> : ""}
                 </h3>
                 <p className="text-xs uppercase text-gray-500">
-                  ⭐️ {user.skill1}
+                  ⭐️ {user.skill1 ? user.skill1 : ""}
                 </p>
                 {user.skill2 ? (
                   <p className="text-xs uppercase text-gray-500">
@@ -97,7 +102,7 @@ export default function AllUserOrFilter({ selectedCategory }: AllUsersProps) {
             </div>
             <div className="text-darkgreen font-bold my-4 mx-auto flex items-center gap-2">
               <p>🔎</p>
-              <p>{user.askCompetence}</p>
+              {user.askCompetence ? <p>{user.askCompetence}</p> : ""}
             </div>
 
             <Link href={`/profil/${user.email}`}>

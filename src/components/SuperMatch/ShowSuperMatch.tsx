@@ -94,7 +94,7 @@ export default function ShowSuperMatch() {
                     />
                     <div className="grow">
                       <h3 className="font-medium text-dark dark:text-gray-200 mb-2">
-                        {user.name}
+                        {user.name ? <p>{user.name}</p> : ""}
                       </h3>
                       <p className="text-xs uppercase text-gray-500">
                         ⭐️ {user.skill1}
@@ -117,7 +117,7 @@ export default function ShowSuperMatch() {
                   </div>
                   <div className="text-darkgreen font-bold my-4 mx-auto flex items-center gap-2">
                     <p>🔎</p>
-                    <p>{user.askCompetence}</p>
+                    {user.askCompetence ? <p>{user.askCompetence}</p> : ""}
                   </div>
                   <Link href={`/profil/${user.email}`}>
                     <Button className=" mt-4 bg-green">Profil</Button>

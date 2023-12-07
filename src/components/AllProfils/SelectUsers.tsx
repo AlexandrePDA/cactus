@@ -3,29 +3,12 @@
 import {
   Select,
   SelectContent,
-  SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
 import { useState } from "react";
 import AllUserOrFilter from "./AllUserOrFilter";
-
-interface User {
-  id: number;
-  name: string;
-  email: string;
-  askCompetence: string;
-  skill1: string;
-  skill2: string;
-  skill3: string;
-  ownSite: string;
-  github: string;
-  linkedin: string;
-  instagram: string;
-  bio: string;
-}
 
 export default function AllUsers() {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -35,7 +18,6 @@ export default function AllUsers() {
   };
 
   const resetFilter = () => {
-    // Réinitialisation de la valeur du filtre à sa valeur par défaut
     setSelectedCategory("");
   };
 
