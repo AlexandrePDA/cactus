@@ -24,7 +24,7 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
         },
       });
     }
-    if (username.trim() !== "") {
+    if (bio.trim() !== "") {
       await prisma.user.update({
         where: {
           id: session?.user.id,

@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -16,6 +15,7 @@ import {
 import toast, { Toaster } from "react-hot-toast";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { Loader } from "lucide-react";
 
 const formSchema = z.object({
   website: z.string().optional(),
@@ -145,6 +145,11 @@ export default function EditSocialNetwork() {
             )}
           />
           <Button className="bg-green" type="submit" disabled={isSubmitting}>
+            {isSubmitting ? (
+              <span className="animate-spin mr-2">
+                <Loader size={16} />
+              </span>
+            ) : null}
             Valider
           </Button>
         </form>

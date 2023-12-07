@@ -6,7 +6,6 @@ import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import Email from "next-auth/providers/email";
 import { ExtendedUser } from "../../../../type";
-import LinkedInProvider from "next-auth/providers/linkedin";
 
 const githubId = process.env.GITHUB_ID;
 const githubSecret = process.env.GITHUB_SECRET;
@@ -41,7 +40,7 @@ export const authConfig = {
       clientSecret: googleSecret,
     }),
     Email({
-      from: "Cact-Us <do-not-reply@cact-us.com",
+      from: "Cact-Us <no-reply@cact-us.com",
       server: {
         host: process.env.SMTP_HOST,
         port: Number(process.env.SMTP_PORT),

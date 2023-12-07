@@ -23,14 +23,11 @@ import {
 } from "@/components/ui/select";
 import toast, { Toaster } from "react-hot-toast";
 import { useState } from "react";
+import { Loader } from "lucide-react";
 
 const formSchema = z.object({
-  search: z
-    .string()
-    .min(1, { message: "Tu as oublié de selectionner ta recherche" }),
-  skill1: z
-    .string()
-    .min(1, { message: "Tu as oublié de selectionner un skill" }),
+  search: z.string().optional(),
+  skill1: z.string().optional(),
   skill2: z.string().optional(),
   skill3: z.string().optional(),
 });
@@ -53,9 +50,13 @@ export default function EditHaveAndSearchCompetences() {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
-
-    if (values.skill1 === "" || values.search === "") {
-      toast.error("😢 Les champs sont vides");
+    if (
+      values.search === "" &&
+      values.skill1 === "" &&
+      values.skill2 === "" &&
+      values.skill3 === ""
+    ) {
+      toast.error("😢 Tu dois remplir au moins un champ");
       return;
     }
 
@@ -242,10 +243,7 @@ export default function EditHaveAndSearchCompetences() {
           />
 
           <h3 className=" text-green font-bold">
-            🧠 Mes skills à partager{" "}
-            <span className="italic text-xs">
-              (minimum un. Plus il y en a, mieux c'est !)
-            </span>
+            🧠 Mes skills à partager <span className="italic text-xs"></span>
           </h3>
 
           <FormField
@@ -366,6 +364,11 @@ export default function EditHaveAndSearchCompetences() {
           />
 
           <Button className="bg-green" type="submit" disabled={isSubmitting}>
+            {isSubmitting ? (
+              <span className="animate-spin mr-2">
+                <Loader size={16} />
+              </span>
+            ) : null}
             Valider
           </Button>
         </form>

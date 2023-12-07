@@ -2,6 +2,10 @@ import { HeartHandshake } from "lucide-react";
 import { Share2 } from "lucide-react";
 import { ArrowUpDown } from "lucide-react";
 
+import { LoginButton } from "@/auth/LoginButton";
+import { Button } from "../ui/button";
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section className="bg-beige mx-auto max-w-screen-xl   ">
@@ -28,12 +32,12 @@ export default function Hero() {
             plateforme, décris ton besoin, présente tes qualifications : c'est
             parti ! 🚀
           </h3>
-
-          {/* 
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <ButtonCTA item="En savoir plus" href="/#whatis" />
+          <div className="flex flex-wrap gap-8 justify-center items-center mt-8">
+            <LoginButton />
+            <Link href="#whatis">
+              <Button className="bg-green text-white">En savoir plus</Button>
+            </Link>
           </div>
-            */}
 
           <div className="flex flex-col md:flex-row items-center justify-between mt-12">
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">

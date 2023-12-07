@@ -25,7 +25,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import toast, { Toaster } from "react-hot-toast";
 import { FormEventHandler, useState } from "react";
-import { ChevronRight, CheckCircle2, CircleDot } from "lucide-react";
+import { ChevronRight, CheckCircle2, CircleDot, Loader } from "lucide-react";
 import { Separator } from "../ui/separator";
 import { uploadFile } from "@/app/upload/upload.action";
 import Image from "next/image";
@@ -375,6 +375,11 @@ export default function OnboardingNewProfile() {
                 type="submit"
                 disabled={isSubmitting}
               >
+                {isSubmitting ? (
+                  <span className="animate-spin mr-2">
+                    <Loader size={16} />
+                  </span>
+                ) : null}
                 Valider
               </Button>
             </form>
@@ -426,6 +431,11 @@ export default function OnboardingNewProfile() {
                   type="submit"
                   disabled={isSubmitting1}
                 >
+                  {isSubmitting1 ? (
+                    <span className="animate-spin mr-2">
+                      <Loader size={16} />
+                    </span>
+                  ) : null}
                   Valider
                 </Button>
               </form>
@@ -611,6 +621,11 @@ export default function OnboardingNewProfile() {
                 type="submit"
                 disabled={isSubmitting2}
               >
+                {isSubmitting2 ? (
+                  <span className="animate-spin mr-2">
+                    <Loader size={16} />
+                  </span>
+                ) : null}
                 Valider
               </Button>
             </form>
@@ -698,6 +713,11 @@ export default function OnboardingNewProfile() {
                 type="submit"
                 disabled={isSubmitting3}
               >
+                {isSubmitting3 ? (
+                  <span className="animate-spin mr-2">
+                    <Loader size={16} />
+                  </span>
+                ) : null}
                 Valider
               </Button>
             </form>

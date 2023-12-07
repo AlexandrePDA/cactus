@@ -7,27 +7,29 @@ import { authConfig } from "@/pages/api/auth/[...nextauth]";
 
 export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerSession(req, res, authConfig);
-  console.log("session", session);
-  console.log(req.body.values);
 
   const { search, skill1, skill2, skill3 } = req.body.values;
-  console.log(search);
-
-  console.log(session?.user.id);
-  if (skill1 === "" && search === "") {
-    return res
-      .status(400)
-      .json({ message: "Veuillez renseigner au moins un champ" });
+  if (search === "" && skill1 === "" && skill2 === "" && skill3 === "") {
+    return res.status(400).json({ message: "Veuillez renseigner les champs" });
   }
 
   try {
-    if (skill1.trim() !== "") {
+    if (search.trim() !== "") {
       await prisma.user.update({
         where: {
           id: session?.user.id,
         },
         data: {
           askCompetence: search,
+        },
+      });
+    }
+    if (skill1.trim() !== "") {
+      await prisma.user.update({
+        where: {
+          id: session?.user.id,
+        },
+        data: {
           skill1: skill1,
         },
       });
@@ -39,7 +41,6 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
           id: session?.user.id,
         },
         data: {
-          askCompetence: search,
           skill2: skill2,
         },
       });
@@ -51,7 +52,6 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
           id: session?.user.id,
         },
         data: {
-          askCompetence: search,
           skill3: skill3,
         },
       });

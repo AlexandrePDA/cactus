@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import Image from "next/image";
-import { Search, Loader } from "lucide-react";
+import { Loader } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 

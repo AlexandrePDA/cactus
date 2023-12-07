@@ -16,6 +16,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import toast, { Toaster } from "react-hot-toast";
 import { useState } from "react";
+import { Loader } from "lucide-react";
 
 const formSchema = z.object({
   username: z.string(),
@@ -34,7 +35,7 @@ export default function EditNameAndBio() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    if (values.username === "" || values.bio === "") {
+    if (values.username === "" && values.bio === "") {
       toast.error("😢 Les champs sont vides");
       return;
     }
@@ -99,6 +100,11 @@ export default function EditNameAndBio() {
           />
 
           <Button className="bg-green" type="submit" disabled={isSubmitting}>
+            {isSubmitting ? (
+              <span className="animate-spin mr-2">
+                <Loader size={16} />
+              </span>
+            ) : null}
             Valider
           </Button>
         </form>

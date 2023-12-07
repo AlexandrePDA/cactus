@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useQuery } from "react-query";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import ConfettiExplosion from "react-confetti-explosion";
 
 interface User {
   id: number;
@@ -30,6 +32,18 @@ const fetchSuperMatches = async () => {
   }
 };
 export default function ShowSuperMatch() {
+  const [monEtat, setMonEtat] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      // Mise à jour de l'état à false après 3 secondes
+      setMonEtat(false);
+    }, 3000);
+
+    // Nettoyer le timer si le composant est démonté avant que le délai soit écoulé
+    return () => clearTimeout(timer);
+  }, []);
+
   const {
     data: superMatches,
     isLoading,
@@ -49,9 +63,10 @@ export default function ShowSuperMatch() {
       {superMatches.length === 0 ? (
         ""
       ) : (
-        <div className="mb-24  p-4 rounded-lg border shadow-lg m-4">
-          <div className="">
-            <div className="flex items-center justify-center">
+        <div className="mb-24  p-4 rounded-lg border shadow-lg m-4 relative">
+          <div>
+            <div className="relative flex items-center justify-center">
+              <ConfettiExplosion className="absolute" />
               {superMatches.length === 1 ? (
                 <h2 className="text-dark mx-auto mb-4 font-extrabold text-center">
                   🎉 Un profil correspond à tes recherches 🎉
@@ -104,7 +119,6 @@ export default function ShowSuperMatch() {
                     <p>🔎</p>
                     <p>{user.askCompetence}</p>
                   </div>
-
                   <Link href={`/profil/${user.email}`}>
                     <Button className=" mt-4 bg-green">Profil</Button>
                   </Link>
