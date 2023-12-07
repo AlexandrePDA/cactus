@@ -352,7 +352,7 @@ export default function OnboardingNewProfile() {
         {step === 1 ? (
           <div className="my-4 flex flex-col gap-4 flex-wrap">
             <div className="flex gap-3 items-center">
-              <h2>Photo de profil * </h2>
+              <h2>Photo de profil (.jpg/.jpeg/.png) * </h2>
               {imageUrl ? (
                 <Image
                   className="rounded-full w-20 h-20"
