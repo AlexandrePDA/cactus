@@ -89,6 +89,10 @@ export default function EditHaveAndSearchCompetences() {
       options: ["Piano", "Guitare", "Chant"],
     },
     {
+      title: "Youtube 🎥",
+      options: ["Montage vidéo", "Tournage vidéo", "Script"],
+    },
+    {
       title: "Outils DevOps 🛠️",
       options: ["Docker", "Kubernetes", "Jenkins", "Git", "Terraform"],
     },
