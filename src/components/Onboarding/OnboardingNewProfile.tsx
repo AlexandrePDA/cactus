@@ -31,6 +31,7 @@ import { uploadFile } from "@/app/upload/upload.action";
 import Image from "next/image";
 import { CldUploadButton } from "next-cloudinary";
 import { CldImage } from "next-cloudinary";
+import { off } from "process";
 
 type UploadResult = {
   info: {
@@ -101,6 +102,11 @@ export default function OnboardingNewProfile() {
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    if (!imageUrl) {
+      toast.error("😢 Pas d'image ou format image non valide");
+      setIsSubmitting(false);
+      return;
+    }
     console.log("imageURL in post: ", imageUrl);
     const url = imageUrl;
 
@@ -377,8 +383,10 @@ export default function OnboardingNewProfile() {
             <form onSubmit={handleSubmit}>
               <CldUploadButton
                 uploadPreset="drtqn26p"
-                onUpload={(result: UploadResult) => {
-                  setImageUrl(result.info.url);
+                onUpload={(result) => {
+                  if (result.event === "success" && result.info !== undefined) {
+                    setImageUrl(result.info.url);
+                  }
                 }}
               />
               <Button
