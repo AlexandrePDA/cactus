@@ -10,6 +10,8 @@ import { redirect } from "next/navigation";
 export default async function Dashboard() {
   const session = await getServerSession(authConfig);
 
+  console.log(session);
+
   if (!session) redirect("/");
 
   if (session?.user.askCompetence === null) redirect("/onboarding");

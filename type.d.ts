@@ -13,4 +13,6 @@ export interface ExtendedUser extends AdapterUser {
   skill1?: string;
   skill2?: string;
   skill3?: string;
+  resetPasswordToken?: string;
+  resetPasswordTokenExpiry?: Date;
 }

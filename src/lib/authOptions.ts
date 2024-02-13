@@ -1,14 +1,12 @@
-import prisma from "@/lib/prisma";
-import { PrismaAdapter } from "@auth/prisma-adapter";
-import { NextAuthOptions } from "next-auth";
-import NextAuth from "next-auth/next";
-import { ExtendedUser } from "../../../../type";
-import { compare } from "bcrypt";
+import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { compare } from "bcrypt";
+import prisma from "@/lib/prisma";
 
-export const dynamic = "force-dynamic";
-
-export const authConfig = {
+export const authOptions: NextAuthOptions = {
+  session: {
+    strategy: "jwt",
+  },
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -46,8 +44,6 @@ export const authConfig = {
             skill2: user.skill2,
             skill3: user.skill3,
             bio: user.bio,
-            resetPasswordToken: user.resetPasswordToken,
-            resetPasswordTokenExpiry: user.resetPasswordTokenExpiry,
           };
         }
         return null;
@@ -57,19 +53,17 @@ export const authConfig = {
   callbacks: {
     session: async ({ session, token }: { session: any; token: any }) => {
       if (session.user) {
-        session.user.bio = token.bio;
+        session.user.linkedin = token.linkedin;
+        session.user.id = token.id;
+        session.user.github = token.github;
         session.user.haveCompetence = token.haveCompetence;
         session.user.askCompetence = token.askCompetence;
-        session.user.github = token.github;
-        session.user.linkedin = token.linkedin;
         session.user.instagram = token.instagram;
         session.user.ownSite = token.ownSite;
-        session.user.id = token.id;
         session.user.skill1 = token.skill1;
         session.user.skill2 = token.skill2;
         session.user.skill3 = token.skill3;
-        session.user.resetPasswordToken = token.resetPasswordToken;
-        session.user.resetPasswordTokenExpiry = token.resetPasswordTokenExpiry;
+        session.user.bio = token.bio;
       }
       return session;
     },
@@ -80,31 +74,21 @@ export const authConfig = {
 
       token.id = existingUser?.id;
       token.linkedin = existingUser?.linkedin;
+      token.github = existingUser?.github;
+      token.haveCompetence = existingUser?.haveCompetence;
+      token.askCompetence = existingUser?.askCompetence;
       token.instagram = existingUser?.instagram;
       token.ownSite = existingUser?.ownSite;
       token.skill1 = existingUser?.skill1;
       token.skill2 = existingUser?.skill2;
       token.skill3 = existingUser?.skill3;
       token.bio = existingUser?.bio;
-      token.haveCompetence = existingUser?.haveCompetence;
-      token.askCompetence = existingUser?.askCompetence;
-      token.github = existingUser?.github;
-      token.resetPasswordToken = existingUser?.resetPasswordToken;
-      token.resetPasswordTokenExpiry = existingUser?.resetPasswordTokenExpiry;
 
       return token;
     },
   },
   pages: {
-    signIn: "/auth/signIn",
-    verifyRequest: "/auth/verify-request",
-    error: "/auth/error",
+    signIn: "/login",
   },
-  adapter: PrismaAdapter(prisma),
   secret: process.env.NEXTAUTH_SECRET,
-  session: {
-    strategy: "jwt",
-  },
-} satisfies NextAuthOptions;
-
-export default NextAuth(authConfig);
+};

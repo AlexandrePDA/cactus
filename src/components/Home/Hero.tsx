@@ -2,7 +2,7 @@ import { HeartHandshake } from "lucide-react";
 import { Share2 } from "lucide-react";
 import { ArrowUpDown } from "lucide-react";
 
-import { LoginButton } from "@/auth/LoginButton";
+import { LoginButton } from "@/components/auth/LoginButton";
 import { Button } from "../ui/button";
 import Link from "next/link";
 

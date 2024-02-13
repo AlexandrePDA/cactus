@@ -2,7 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../public/assets/Logo_cactus_round.png";
-import { LoginButton } from "@/auth/LoginButton";
+import { LoginButton } from "@/components/auth/LoginButton";
+
 import { getServerSession } from "next-auth";
 import { authConfig } from "@/pages/api/auth/[...nextauth]";
 import { Menu } from "./Menu";
