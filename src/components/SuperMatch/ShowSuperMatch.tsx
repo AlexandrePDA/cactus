@@ -115,7 +115,7 @@ export default function ShowSuperMatch() {
                       )}
                     </div>
                   </div>
-                  <div className="text-darkgreen font-bold my-4 mx-auto flex items-center gap-2">
+                  <div className="text-lightorange font-bold my-4 mx-auto flex items-center gap-2">
                     <p>🔎</p>
                     {user.askCompetence ? <p>{user.askCompetence}</p> : ""}
                   </div>

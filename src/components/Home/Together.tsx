@@ -11,7 +11,7 @@ export default function Together() {
         viewBox="0 0 1440 320"
       >
         <path
-          fill="#16A34A"
+          fill="#1C6758"
           fillOpacity="1"
           d="M0,128L1440,256L1440,320L0,320Z"
         ></path>
@@ -98,7 +98,7 @@ export default function Together() {
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
-          fill="#16A34A"
+          fill="#1C6758"
           fillOpacity="1"
           d="M0,128L1440,256L1440,0L0,0Z"
         ></path>

@@ -23,9 +23,9 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        green: "#16A34A",
-        darkgreen: "#11671D",
-        beige: "#FFFFFF",
+        green: "#1C6758",
+        lightorange: "#FF9B50",
+        beige: "#F2FFE9",
         dark: "#4b5563",
         cardUser: "#FBFEFC",
         desertred: "#f19410",

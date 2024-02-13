@@ -15,12 +15,12 @@ export default function EditProfile() {
   return (
     <div>
       <div className="flex items-center justify-center">
-        <div className="bg-darkgreen text-white rounded-xl p-2 inline-flex">
+        <div className="bg-lightorange text-white rounded-xl p-2 inline-flex">
           <Link
             href="#"
             onClick={() => handleLinkClick("infos")}
             className={`${
-              selectedLink === "infos" ? "bg-green" : "bg-darkgreen"
+              selectedLink === "infos" ? "bg-green" : "bg-lightorange"
             } transition-bg duration-700 ease-in-out p-1 rounded-md`}
           >
             Infos
@@ -29,7 +29,7 @@ export default function EditProfile() {
             href="#"
             onClick={() => handleLinkClick("competences")}
             className={`${
-              selectedLink === "competences" ? "bg-green" : "bg-darkgreen"
+              selectedLink === "competences" ? "bg-green" : "bg-lightorange"
             } transition-bg duration-700 ease-in-out p-1 rounded-sm`}
           >
             Compétences
@@ -38,7 +38,7 @@ export default function EditProfile() {
             href="#"
             onClick={() => handleLinkClick("reseaux")}
             className={`${
-              selectedLink === "reseaux" ? "bg-green" : "bg-darkgreen"
+              selectedLink === "reseaux" ? "bg-green" : "bg-lightorange"
             } transition-bg duration-700 ease-in-out p-1 rounded-sm`}
           >
             Réseaux

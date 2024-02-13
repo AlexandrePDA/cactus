@@ -14,13 +14,13 @@ export default async function AllProfils() {
   return (
     <div className="bg-beige max-w-screen-xl mx-auto">
       <div className="mt-24 mb-8 flex items-center justify-center flex-col">
-        <h2 className="mx-auto  font-extrabold text-5xl lg:text-7xl text-darkgreen">
+        <h2 className="mx-auto  font-extrabold text-5xl lg:text-7xl text-lightorange">
           Explore.
         </h2>
-        <h2 className="mx-auto  font-extrabold text-5xl lg:text-7xl text-darkgreen">
+        <h2 className="mx-auto  font-extrabold text-5xl lg:text-7xl text-lightorange">
           Trouve.
         </h2>
-        <h2 className="mx-auto  font-extrabold text-5xl lg:text-7xl text-darkgreen">
+        <h2 className="mx-auto  font-extrabold text-5xl lg:text-7xl text-lightorange">
           Contact.
         </h2>
 

@@ -8,7 +8,7 @@ export default function Whatis() {
     <div id="whatis">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
-          fill="#16A34A"
+          fill="#1C6758"
           fillOpacity="1"
           d="M0,160L1440,0L1440,320L0,320Z"
         ></path>
@@ -177,7 +177,7 @@ export default function Whatis() {
         viewBox="0 0 1440 320"
       >
         <path
-          fill="#16A34A"
+          fill="#1C6758"
           fillOpacity="1"
           d="M0,160L1440,0L1440,0L0,0Z"
         ></path>

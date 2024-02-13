@@ -113,7 +113,7 @@ export default function ShowProfil({ email }: ShowProfilProps) {
             <Separator className=" my-4" />
             <div className="flex flex-col flex-wrap items-center gap-4">
               <h3 className="font-bold text-xl">Sa recherche</h3>
-              <h4 className=" text-lg text-darkgreen">
+              <h4 className=" text-lg text-lightorange">
                 🔎 {userProfile.askCompetence}
               </h4>
 

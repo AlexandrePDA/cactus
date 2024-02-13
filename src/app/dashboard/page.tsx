@@ -76,7 +76,7 @@ export default async function Dashboard() {
             <Separator className=" my-4" />
             <div className="flex flex-col flex-wrap items-center gap-4">
               <h3 className="font-bold text-xl">Ma recherche</h3>
-              <h4 className=" text-lg text-darkgreen">
+              <h4 className=" text-lg text-lightorange">
                 🔎 {session.user.askCompetence}
               </h4>
 

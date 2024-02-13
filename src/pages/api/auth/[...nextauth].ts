@@ -39,6 +39,7 @@ export const authConfig = {
           return {
             id: user.id,
             email: user.email,
+            name: user.name,
             linkedin: user.linkedin,
             image: user.image,
             github: user.github,
@@ -72,6 +73,8 @@ export const authConfig = {
         session.user.skill1 = token.skill1;
         session.user.skill2 = token.skill2;
         session.user.skill3 = token.skill3;
+        session.user.name = token.name;
+        session.user.image = token.image;
         session.user.resetPasswordToken = token.resetPasswordToken;
         session.user.resetPasswordTokenExpiry = token.resetPasswordTokenExpiry;
       }
@@ -93,6 +96,8 @@ export const authConfig = {
       token.haveCompetence = existingUser?.haveCompetence;
       token.askCompetence = existingUser?.askCompetence;
       token.github = existingUser?.github;
+      token.name = existingUser?.name;
+      token.image = existingUser?.image;
       token.resetPasswordToken = existingUser?.resetPasswordToken;
       token.resetPasswordTokenExpiry = existingUser?.resetPasswordTokenExpiry;
 

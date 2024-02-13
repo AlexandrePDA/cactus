@@ -28,7 +28,7 @@ export const Menu = async () => {
             <DropdownMenuItem>
               <Link
                 href="/dashboard"
-                className="flex items-center gap-2 px-4 py-2"
+                className="flex items-center gap-2 px-4 py-2 "
               >
                 <LayoutDashboard color="#0EAD69" />
                 <p>Dashboard</p>
@@ -52,15 +52,15 @@ export const Menu = async () => {
         </DropdownMenu>
       </div>
       <div className="hidden  md:flex md:items-center md:gap-2">
-        <Button className="bg-darkgreen">
-          <Link href="/dashboard" className="flex items-center gap-2">
-            <LayoutDashboard color="#FFF" />
+        <Button className="bg-lightorange hover:bg-beige hover:text-lightorange">
+          <Link href="/dashboard" className="flex items-center gap-2 ">
+            <LayoutDashboard />
             <p>Dashboard</p>
           </Link>
         </Button>
-        <Button className="bg-darkgreen">
+        <Button className="bg-lightorange hover:bg-beige hover:text-lightorange">
           <Link href="/allprofils" className="flex items-center gap-2">
-            <Users2 color="#FFF" />
+            <Users2 />
             <p>Cact-Users</p>
           </Link>
         </Button>
