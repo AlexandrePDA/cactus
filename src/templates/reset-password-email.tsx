@@ -10,10 +10,17 @@ export const ResetPasswordEmailTemplate: React.FC<
   ResetPasswordEmailTemplateProps
 > = ({ email, resetPasswordToken }: ResetPasswordEmailTemplateProps) => (
   <div>
-    <h1>Hey {email}</h1>
-    <p>Pour configurer un nouveau mot de passe, click sur le lien :</p>
+    <h2>Hey 👋🏽</h2>
+    <p>Pour configurer un nouveau mot de passe, cliquez sur le lien :</p>
+    <a href={`${domain}/reset-password?token=${resetPasswordToken}`}>
+      juste là 🚀
+    </a>
     <br />
-    <a href={`${domain}/reset-password?token=${resetPasswordToken}`}>ici</a>
+    <p>
+      Si vous n'avez fait aucune demande de réinitialisation de mot de passe, ne
+      prenez pas en compte ce mail.
+    </p>
     <br />
+    <p>Cact-us 🌵</p>
   </div>
 );

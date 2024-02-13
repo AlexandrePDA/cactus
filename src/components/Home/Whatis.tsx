@@ -41,7 +41,7 @@ export default function Whatis() {
                     alt="content"
                     width={500}
                     height={500}
-                    className="object-cover border-4 border-beige object-center h-full w-full"
+                    className="object-cover border-4 border-beige object-center h-full w-full rounded-lg"
                     src={man}
                   />
                 </div>
@@ -72,7 +72,7 @@ export default function Whatis() {
                     alt="content"
                     width={500}
                     height={500}
-                    className="object-cover border-4 border-beige object-center h-full w-full"
+                    className="object-cover border-4 border-beige object-center h-full w-full rounded-lg"
                     src={woman}
                   />
                 </div>

@@ -24,8 +24,8 @@ module.exports = {
       },
       colors: {
         green: "#1C6758",
-        lightorange: "#FF9B50",
-        beige: "#F2FFE9",
+        lightorange: "#FF9F2E",
+        beige: "#FBFFF7",
         dark: "#4b5563",
         cardUser: "#FBFEFC",
         desertred: "#f19410",

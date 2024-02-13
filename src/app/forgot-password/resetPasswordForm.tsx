@@ -54,8 +54,13 @@ export default function FormRegister() {
   }
 
   return (
-    <div className=" max-w-sm mx-auto border p-4 rounded-md mt-40 m-2">
-      <h2 className="my-4 font-bold">🔐 Recevoir un email pour reset mdp</h2>
+    <div className=" max-w-sm mx-auto border p-4 rounded-md border-gray-100 shadow-md mt-32  m-4 text-dark">
+      <h2 className="my-4 text-xl text-dark text-center">
+        Mot de passe oublié
+      </h2>
+      <h3 className="text-center text-dark text-lg my-4">
+        Ça va arriver dans ta boîte mail 💌
+      </h3>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
@@ -77,7 +82,11 @@ export default function FormRegister() {
               <p>Erreur</p>
             </div>
           )}
-          <Button disabled={loading} type="submit">
+          <Button
+            disabled={loading}
+            type="submit"
+            className="bg-lightorange hover:bg-lightorange"
+          >
             Recevoir l'email
           </Button>
         </form>

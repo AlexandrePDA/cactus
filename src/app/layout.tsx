@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
 import NavBar from "@/components/NavBar";
@@ -10,7 +10,10 @@ import { Footer } from "@/components/Footer";
 const CrispWithNoSSR = dynamic(() => import("../components/crisp"));
 
 // Créez l'objet Inter pour les styles de police
-const inter = Inter({ subsets: ["latin"] });
+const inter = Poppins({
+  weight: ["400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+});
 
 export const dynamicStatic = "force-dynamic";
 
@@ -31,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const bodyStyles = {
-    backgroundColor: "#F2FFE9",
+    backgroundColor: "#FBFFF7",
   };
 
   return (

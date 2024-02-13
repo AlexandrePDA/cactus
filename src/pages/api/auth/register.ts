@@ -12,6 +12,15 @@ export default async function handler(
     console.log(req.body);
     const { email, password } = JSON.parse(req.body);
     const emailToLowerCase = email.toLowerCase();
+
+    if (password < 8) {
+      return res
+        .status(400)
+        .json({
+          message: "Le mot de passe doit contenir au moins 8 caractères",
+        });
+    }
+
     console.log(emailToLowerCase);
     if (!emailToLowerCase || !password)
       return res.status(400).json({ message: "Email et mot de passe requis" });

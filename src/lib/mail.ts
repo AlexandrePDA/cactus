@@ -11,9 +11,11 @@ export async function sendEmailWelcome(email: string) {
   await resend.emails.send({
     from: "no-reply@cact-us.com",
     to: email,
-    subject: "Welcome to our app!",
-    html: `<h1>Bienvenue sur notre application</h1><br>
-      <p>Merci pour ton inscription!</p><br>`,
+    subject: "Bienvenue Cact-user !",
+    html: `<h1>Bienvenue sur Cact-Us 🌵</h1>
+      <p>Merci pour ton inscription !</p>
+      <p>Connecte-toi dès maintenant pour commencer à partager tes compétences.</p>
+      <p>À bientôt!</p>`,
   });
 }
 

@@ -84,8 +84,11 @@ export default function FormRegister() {
   }
 
   return (
-    <div className=" max-w-sm mx-auto border p-4 rounded-md mt-40 m-2">
-      <h2 className="my-4 font-bold">🔐 Inscription</h2>
+    <div className=" max-w-sm mx-auto border p-4 rounded-md border-gray-100 shadow-md mt-32 m-4 text-dark">
+      <h2 className="my-4 text-xl text-dark text-center">🔐 Inscription</h2>
+      <h3 className="text-center text-dark text-lg my-4">
+        Bienvenue dans la communauté des cact-users !{" "}
+      </h3>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
@@ -126,7 +129,11 @@ export default function FormRegister() {
               <p>Email déjà utilisé</p>
             </div>
           )}
-          <Button disabled={loading} type="submit" className="flex gap-2">
+          <Button
+            disabled={loading}
+            type="submit"
+            className="flex gap-2 bg-lightorange hover:bg-lightorange"
+          >
             {loading && <Loader2 className="h-5 w-5 animate-spin" />}
             <p>S'inscrire</p>
           </Button>
@@ -134,7 +141,7 @@ export default function FormRegister() {
       </Form>
       <Link
         href="/login"
-        className="text-sm text-gray-400 underline mt-8 block text-center"
+        className="text-sm text-gray-600 underline mt-8 block text-center"
       >
         Déjà un compte ?
       </Link>

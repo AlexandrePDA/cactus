@@ -73,8 +73,11 @@ export default function FormLogin() {
   }
 
   return (
-    <div className=" max-w-sm mx-auto border p-4 rounded-md mt-40 m-2">
-      <h2 className="my-4 font-bold">🔐 Connexion</h2>
+    <div className=" max-w-sm mx-auto border p-4 rounded-md border-gray-100 shadow-md mt-32  m-4 text-dark">
+      <h2 className="my-4 text-xl text-dark text-center">🔐 Connexion</h2>
+      <h3 className="text-center text-dark text-lg my-4">
+        Heureux de te revoir !{" "}
+      </h3>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
@@ -117,7 +120,11 @@ export default function FormLogin() {
               <p>Mot de passe ou email invalide</p>
             </div>
           )}
-          <Button disabled={loading} type="submit" className="flex gap-2">
+          <Button
+            disabled={loading}
+            type="submit"
+            className="flex gap-2 bg-lightorange hover:bg-lightorange"
+          >
             {loading && <Loader2 className="h-5 w-5 animate-spin" />}
             <p>Connexion</p>
           </Button>
@@ -125,13 +132,13 @@ export default function FormLogin() {
       </Form>
       <Link
         href="/forgot-password"
-        className="text-sm text-gray-400 underline mt-8 block text-center"
+        className="text-sm text-gray-600 underline mt-8 block text-center"
       >
         Mot de passe oublié?
       </Link>
       <Link
         href="/register"
-        className="text-sm text-gray-400 underline  block text-center"
+        className="text-sm text-gray-600 my-2 underline  block text-center"
       >
         Pas encore de compte ?
       </Link>

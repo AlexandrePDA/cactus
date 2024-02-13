@@ -63,8 +63,11 @@ export default function ChangePasswordForm({
   }
 
   return (
-    <div className=" max-w-sm mx-auto border p-4 rounded-md mt-40 m-2">
-      <h2 className="my-4 font-bold">🔐 Reset password </h2>
+    <div className=" max-w-sm mx-auto border p-4 rounded-md border-gray-100 shadow-md mt-32  m-4 text-dark">
+      <h2 className="my-4 text-xl text-dark text-center">
+        Nouveau mot de passe 🪄
+      </h2>
+
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormField
@@ -92,7 +95,11 @@ export default function ChangePasswordForm({
               <p>Erreur</p>
             </div>
           )}
-          <Button disabled={loading} type="submit">
+          <Button
+            disabled={loading}
+            type="submit"
+            className="bg-lightorange hover:bg-lightorange"
+          >
             Modifier
           </Button>
         </form>

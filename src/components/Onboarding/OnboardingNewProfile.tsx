@@ -380,8 +380,9 @@ export default function OnboardingNewProfile() {
                 />
               ) : null}
             </div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-2 ">
               <CldUploadButton
+                className="text-center text-lightorange mx-auto"
                 uploadPreset="drtqn26p"
                 options={{
                   sources: ["local"],
@@ -405,7 +406,7 @@ export default function OnboardingNewProfile() {
                 }}
               />
               <Button
-                className="bg-green"
+                className="bg-green w-1/2 mx-auto mt-4"
                 type="submit"
                 disabled={isSubmitting}
               >
