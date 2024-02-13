@@ -372,7 +372,7 @@ export default function OnboardingNewProfile() {
 
               {imageUrl ? (
                 <Image
-                  className="rounded-full w-20 h-20"
+                  className="rounded-full w-20 h-20 object-cover object-center"
                   src={imageUrl}
                   alt="Image Description"
                   width={400}
@@ -383,6 +383,11 @@ export default function OnboardingNewProfile() {
             <form onSubmit={handleSubmit}>
               <CldUploadButton
                 uploadPreset="drtqn26p"
+                options={{
+                  sources: ["local"],
+                  multiple: false,
+                  maxFiles: 1,
+                }}
                 onUpload={(result) => {
                   if (
                     result.event === "success" &&
