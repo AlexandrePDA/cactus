@@ -19,6 +19,7 @@ import { useState } from "react";
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
+import { Loader2 } from "lucide-react";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Email invalide" }),
@@ -109,15 +110,16 @@ export default function FormLogin() {
               </FormItem>
             )}
           />
-          {/* TODO : mdp oublié */}
+
           {error && (
             <div className="bg-destructive/15 p-3 rounded-md flex items-center gap-x-2 text-sm text-destructive my-4">
               <ExclamationTriangleIcon className="h-4 w-4" />
               <p>Mot de passe ou email invalide</p>
             </div>
           )}
-          <Button disabled={loading} type="submit">
-            Connexion
+          <Button disabled={loading} type="submit" className="flex gap-2">
+            {loading && <Loader2 className="h-5 w-5 animate-spin" />}
+            <p>Connexion</p>
           </Button>
         </form>
       </Form>

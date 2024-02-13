@@ -20,6 +20,7 @@ import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import toast, { Toaster } from "react-hot-toast";
+import { Loader2 } from "lucide-react";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Email invalide" }),
@@ -125,8 +126,9 @@ export default function FormRegister() {
               <p>Email déjà utilisé</p>
             </div>
           )}
-          <Button disabled={loading} type="submit">
-            S'inscrire
+          <Button disabled={loading} type="submit" className="flex gap-2">
+            {loading && <Loader2 className="h-5 w-5 animate-spin" />}
+            <p>S'inscrire</p>
           </Button>
         </form>
       </Form>

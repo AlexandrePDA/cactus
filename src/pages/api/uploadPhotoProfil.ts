@@ -6,16 +6,16 @@ import prisma from "@/lib/prisma";
 
 export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   const urlPhoto = req.body;
-
+  console.log(urlPhoto);
   const session = await getServerSession(req, res, authConfig);
-
+  console.log(session);
   if (urlPhoto === "") {
     return res.status(400).json({ message: "Pas de photo" });
   }
 
   // Obtenez l'extension du fichier
   const fileExtension = urlPhoto.split(".").pop().toLowerCase();
-
+  console.log(fileExtension);
   // Liste des extensions autorisées
   const allowedExtensions = ["jpg", "jpeg", "png"];
 
@@ -25,7 +25,7 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
       .status(400)
       .json({ message: "Le fichier n'est pas une image valide." });
   }
-
+  console.log(session?.user.id);
   try {
     await prisma.user.update({
       where: {

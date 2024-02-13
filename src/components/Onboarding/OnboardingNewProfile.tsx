@@ -29,6 +29,15 @@ import { ChevronRight, CheckCircle2, CircleDot, Loader } from "lucide-react";
 import { Separator } from "../ui/separator";
 import { uploadFile } from "@/app/upload/upload.action";
 import Image from "next/image";
+import { CldUploadButton } from "next-cloudinary";
+import { CldImage } from "next-cloudinary";
+
+type UploadResult = {
+  info: {
+    url: string;
+  };
+  event: "success";
+};
 
 const formSchema = z.object({
   username: z.string().min(2, { message: "Au moins 2 caractères" }),
@@ -55,7 +64,7 @@ const formSchemaSocialNetworks = z.object({
 
 export default function OnboardingNewProfile() {
   const [step, setStep] = useState(1);
-  const [imageUrl, setImageUrl] = useState<string | null>(null); // [1
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [isSubmitting1, setIsSubmitting1] = useState<boolean>(false);
   const [isSubmitting2, setIsSubmitting2] = useState<boolean>(false);
@@ -92,11 +101,8 @@ export default function OnboardingNewProfile() {
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    const formData = new FormData(e.currentTarget);
-    const file = formData.get("file") as File;
-
-    const url = await uploadFile(formData);
-    setImageUrl(url);
+    console.log("imageURL in post: ", imageUrl);
+    const url = imageUrl;
 
     try {
       const response = await fetch("/api/uploadPhotoProfil", {
@@ -357,6 +363,7 @@ export default function OnboardingNewProfile() {
           <div className="my-4 flex flex-col gap-4 flex-wrap">
             <div className="flex gap-3 items-center">
               <h2>Photo de profil (.jpg/.jpeg/.png) * </h2>
+
               {imageUrl ? (
                 <Image
                   className="rounded-full w-20 h-20"
@@ -368,11 +375,11 @@ export default function OnboardingNewProfile() {
               ) : null}
             </div>
             <form onSubmit={handleSubmit}>
-              <input
-                className="mb-2"
-                type="file"
-                name="file"
-                accept=".jpg, .jpeg, .png"
+              <CldUploadButton
+                uploadPreset="drtqn26p"
+                onUpload={(result: UploadResult) => {
+                  setImageUrl(result.info.url);
+                }}
               />
               <Button
                 className="bg-green"

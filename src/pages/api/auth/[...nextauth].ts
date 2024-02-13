@@ -40,7 +40,7 @@ export const authConfig = {
             id: user.id,
             email: user.email,
             linkedin: user.linkedin,
-            image: user.email,
+            image: user.image,
             github: user.github,
             haveCompetence: user.haveCompetence,
             askCompetence: user.askCompetence,

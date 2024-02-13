@@ -1,8 +1,6 @@
 import { HeartHandshake } from "lucide-react";
 import { Share2 } from "lucide-react";
 import { ArrowUpDown } from "lucide-react";
-
-import { LoginButton } from "@/components/auth/LoginButton";
 import { Button } from "../ui/button";
 import Link from "next/link";
 
@@ -33,7 +31,6 @@ export default function Hero() {
             parti ! 🚀
           </h3>
           <div className="flex flex-wrap gap-8 justify-center items-center mt-8">
-            <LoginButton />
             <Link href="#whatis">
               <Button className="bg-green text-white">En savoir plus</Button>
             </Link>
