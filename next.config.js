@@ -24,9 +24,6 @@ const nextConfig = {
   images: {
     remotePatterns: [{ protocol: "https", hostname: "**" }],
   },
-  experimental: {
-    serverActions: true, // Enable Server Actions
-  },
 };
 
 module.exports = nextConfig;
