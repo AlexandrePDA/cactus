@@ -384,8 +384,18 @@ export default function OnboardingNewProfile() {
               <CldUploadButton
                 uploadPreset="drtqn26p"
                 onUpload={(result) => {
-                  if (result.event === "success" && result.info !== undefined) {
-                    setImageUrl(result.info.url);
+                  if (
+                    result.event === "success" &&
+                    typeof result.info === "object" &&
+                    result.info !== null
+                  ) {
+                    if ("url" in result.info) {
+                      setImageUrl(result.info.url);
+                    } else {
+                      console.error(
+                        "La propriété 'url' n'existe pas dans result.info"
+                      );
+                    }
                   }
                 }}
               />
