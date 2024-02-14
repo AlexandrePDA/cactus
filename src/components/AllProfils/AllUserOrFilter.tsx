@@ -56,10 +56,13 @@ export default function AllUserOrFilter({ selectedCategory }: AllUsersProps) {
     return <div>Error fetching users</div>;
   }
 
+  const reversedUsers = [...users].reverse();
+  console.log(reversedUsers);
+
   return (
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
-        {users.map((user: User) => (
+        {reversedUsers.map((user: User) => (
           <Link
             href={`/profil/${user.email}`}
             key={user.id}
