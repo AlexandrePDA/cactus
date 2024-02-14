@@ -4,6 +4,7 @@ import { AdapterUser } from "next-auth/adapters";
 export interface ExtendedUser extends AdapterUser {
   id: string;
   bio?: string;
+  projet?: string;
   haveCompetence?: string[];
   askCompetence?: string;
   github?: string;

@@ -76,10 +76,6 @@ export default function AllUsers() {
       ],
     },
     {
-      title: " Cuisine 🍕",
-      options: ["Cuisine", "Pâtisserie"],
-    },
-    {
       title: " Langages 💬",
       options: [
         "Espagnol",

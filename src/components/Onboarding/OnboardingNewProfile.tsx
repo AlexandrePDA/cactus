@@ -43,6 +43,7 @@ type UploadResult = {
 const formSchema = z.object({
   username: z.string().min(2, { message: "Au moins 2 caractères" }),
   bio: z.string().min(10, { message: "Au moins 10 caractères" }),
+  projet: z.string().min(10, { message: "Au moins 10 caractères" }),
 });
 
 const formSchemaCompetences = z.object({
@@ -76,6 +77,7 @@ export default function OnboardingNewProfile() {
     defaultValues: {
       username: "",
       bio: "",
+      projet: "",
     },
   });
 
@@ -107,7 +109,6 @@ export default function OnboardingNewProfile() {
       setIsSubmitting(false);
       return;
     }
-    console.log("imageURL in post: ", imageUrl);
     const url = imageUrl;
 
     try {
@@ -130,7 +131,7 @@ export default function OnboardingNewProfile() {
   };
 
   async function onSubmit2(values: z.infer<typeof formSchema>) {
-    if (values.username === "" || values.bio === "") {
+    if (values.username === "" || values.bio === "" || values.projet === "") {
       toast.error("😢 Les champs sont vides");
       return;
     }
@@ -223,7 +224,7 @@ export default function OnboardingNewProfile() {
       options: ["Piano", "Guitare", "Chant"],
     },
     {
-      title: "Youtube 🎥 ",
+      title: "Youtube 🎥",
       options: ["Montage vidéo", "Tournage vidéo", "Script"],
     },
     {
@@ -270,10 +271,6 @@ export default function OnboardingNewProfile() {
         "TypeScript",
         "PHP",
       ],
-    },
-    {
-      title: " Cuisine 🍕",
-      options: ["Cuisine", "Pâtisserie"],
     },
     {
       title: " Langages 💬",
@@ -334,20 +331,20 @@ export default function OnboardingNewProfile() {
   });
 
   return (
-    <div className="mx-auto max-w-screen-sm mt-12 w-full lg:w-1/2 ">
+    <div className="mx-auto max-w-screen-sm mt-2 w-full lg:w-1/2 ">
       {/* gestion parcours */}
       <div className="flex flex-wrap gap-2 items-center justify-center text-dark my-8">
         {/* Step 1 */}
-        {step > 2 ? <CheckCircle2 color="#0EAD69" /> : <CircleDot />}
+        {step > 2 ? <CheckCircle2 color="#1C6758" /> : <CircleDot />}
         {step > 2 ? (
-          <p className="text-green">Présentation</p>
+          <p className="text-green font-bold">Présentation</p>
         ) : (
           <p>Présentation</p>
         )}
         <ChevronRight />
 
         {/* Step 2 */}
-        {step > 3 ? <CheckCircle2 color="#0EAD69" /> : <CircleDot />}
+        {step > 3 ? <CheckCircle2 color="#1C6758" /> : <CircleDot />}
         {step > 3 ? (
           <p className="text-green">Compétences</p>
         ) : (
@@ -356,7 +353,7 @@ export default function OnboardingNewProfile() {
         <ChevronRight />
 
         {/* Step 3 */}
-        {step > 4 ? <CheckCircle2 color="#0EAD69" /> : <CircleDot />}
+        {step > 4 ? <CheckCircle2 color="#1C6758" /> : <CircleDot />}
         {step > 4 ? (
           <p className="text-green">Mes réseaux</p>
         ) : (
@@ -367,12 +364,12 @@ export default function OnboardingNewProfile() {
         {/* formulaires */}
         {step === 1 ? (
           <div className="my-4 flex flex-col gap-4 flex-wrap">
-            <div className="flex gap-3 items-center">
-              <h2>Photo de profil (.jpg/.jpeg/.png) * </h2>
+            <div className="flex flex-col gap-3 items-center text-green font-bold">
+              <h2>📸 Photo de profil (.jpg/.jpeg/.png) * </h2>
 
               {imageUrl ? (
                 <Image
-                  className="rounded-full w-20 h-20 object-cover object-center"
+                  className="rounded-lg w-20 h-20 object-cover object-center"
                   src={imageUrl}
                   alt="Image Description"
                   width={400}
@@ -424,6 +421,7 @@ export default function OnboardingNewProfile() {
         )}
         {step === 2 ? (
           <div>
+            <p className="text-center my-2">Faisons connaissance 👋🏽</p>
             <Form {...form2}>
               <form
                 onSubmit={form2.handleSubmit(onSubmit2)}
@@ -434,9 +432,11 @@ export default function OnboardingNewProfile() {
                   name="username"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Prénom *</FormLabel>
+                      <FormLabel className="text-green font-bold">
+                        Prénom *
+                      </FormLabel>
                       <FormControl>
-                        <Input placeholder="John Doe" {...field} />
+                        <Input placeholder="Cact-Us" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -447,13 +447,32 @@ export default function OnboardingNewProfile() {
                   name="bio"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>
-                        Parle nous de toi, ton besoin et tes compétences à
-                        partagées *
+                      <FormLabel className="text-green font-bold">
+                        Parle nous de toi en quelques lignes *
                       </FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="Hello ! je suis professeur d'anglais et j'aime la photographie et j'aimerai apprendre l'Espagnol"
+                          placeholder="Je suis un cact-us sociable et curieux, j'aime apprendre et partager mes connaissances. J'aime la musique, la photographie et le développement personnel"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                <FormField
+                  control={form2.control}
+                  name="projet"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-green font-bold">
+                        C'est ici que tu expliques ton projet, la raison pour
+                        laquelle tu cherches à apprendre ou à monter en
+                        compétence sur un domaine *
+                      </FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Je suis professeur d'anglais et j'aimerai apprendre la photographie pour pouvoir l'enseigner à mes élèves. Je souhaite aussi pouvoir réaliser des photos de qualité pour mes voyages à l'étranger"
                           {...field}
                         />
                       </FormControl>
@@ -485,6 +504,10 @@ export default function OnboardingNewProfile() {
             <h3 className=" text-green font-bold">
               🧩 La compétence recherchée
             </h3>
+            <p>
+              Dis-nous ce que tu aimerais apprendre : tu pourrais être surpris
+              par les compétences que notre communauté peut t'apporter!
+            </p>
             <form
               onSubmit={form3.handleSubmit(onSubmit3)}
               className="space-y-8"
@@ -534,6 +557,10 @@ export default function OnboardingNewProfile() {
                   (minimum un. Plus il y en a, mieux c'est !)
                 </span>
               </h3>
+              <p>
+                Parle-nous de tes compétences : tu pourrais inspirer d'autres
+                membres à développer leurs propres talents!
+              </p>
 
               <FormField
                 control={form3.control}
@@ -675,6 +702,11 @@ export default function OnboardingNewProfile() {
               💻 Mes réseaux sociaux{" "}
               <span className="italic text-xs">(optionnel)</span>
             </h3>
+            <p>
+              Partage tes réseaux sociaux : ainsi, les autres membres pourront
+              découvrir ton travail et te contacter directement s'ils sont
+              intéressés!
+            </p>
             <form
               onSubmit={form4.handleSubmit(onSubmit4)}
               className="space-y-8"

@@ -51,6 +51,7 @@ export const authConfig = {
             skill2: user.skill2,
             skill3: user.skill3,
             bio: user.bio,
+            projet: user.projet,
             resetPasswordToken: user.resetPasswordToken,
             resetPasswordTokenExpiry: user.resetPasswordTokenExpiry,
           };
@@ -75,6 +76,7 @@ export const authConfig = {
         session.user.skill3 = token.skill3;
         session.user.name = token.name;
         session.user.image = token.image;
+        session.user.projet = token.projet;
         session.user.resetPasswordToken = token.resetPasswordToken;
         session.user.resetPasswordTokenExpiry = token.resetPasswordTokenExpiry;
       }
@@ -98,6 +100,7 @@ export const authConfig = {
       token.github = existingUser?.github;
       token.name = existingUser?.name;
       token.image = existingUser?.image;
+      token.projet = existingUser?.projet;
       token.resetPasswordToken = existingUser?.resetPasswordToken;
       token.resetPasswordTokenExpiry = existingUser?.resetPasswordTokenExpiry;
 

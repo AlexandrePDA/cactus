@@ -10,11 +10,11 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   console.log("session", session);
   console.log(req.body.values);
 
-  const { username, bio } = req.body.values;
+  const { username, bio, projet } = req.body.values;
 
   console.log(session?.user.id);
 
-  if (username === "" && bio === "") {
+  if (username === "" && bio === "" && projet === "") {
     return res.status(400).json({ message: "Veuillez renseigner les champs" });
   }
 
@@ -26,8 +26,10 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
       data: {
         name: username,
         bio: bio,
+        projet: projet,
       },
     });
+    console.log("response", response);
     res.status(200).json({ message: "profil crée avec succès !" });
   } catch (error) {
     console.error("Erreur lors de la création de l'utilisateur", error);

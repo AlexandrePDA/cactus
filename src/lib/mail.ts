@@ -33,3 +33,14 @@ export async function sendPasswordResetEmail(
     }) as React.ReactElement,
   });
 }
+
+export async function SendEmaiSuperMatch(email: string) {
+  await resend.emails.send({
+    from: "no-reply@cact-us.com",
+    to: email,
+    subject: "SuperMatch trouvé ! 🎉",
+    html: `<h1>Il y a un profil qui correspond à ta recherche !</h1>
+      <p>Connecte-toi dès maintenant pour échanger avec le cact-user !.</p>
+      <p>À bientôt!</p>`,
+  });
+}

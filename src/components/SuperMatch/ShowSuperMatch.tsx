@@ -80,49 +80,71 @@ export default function ShowSuperMatch() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {superMatches.map((user: User) => (
-                <div
+                <Link
+                  href={`/profil/${user.email}`}
                   key={user.id}
-                  className=" flex flex-col justify-between rounded-xl p-4 md:p-6 bg-cardUser border border-gray-200 dark:bg-slate-900 dark:border-gray-700 shadow-md"
+                  className=" flex flex-col justify-between rounded-lg p-2 bg-cardUser border border-gray-200  shadow-md hover:shadow-xl "
                 >
-                  <div className="flex items-center gap-x-4 ">
-                    <Image
-                      className="rounded-lg w-24 h-24 object-cover object-center"
-                      src={user.image}
-                      alt="Image Description"
-                      width={400}
-                      height={400}
-                    />
-                    <div className="grow">
-                      <h3 className="font-medium text-dark dark:text-gray-200 mb-2">
+                  <div className=" flex flex-col items-center  ">
+                    {user.image ? (
+                      <Image
+                        className=" rounded-t-md w-full h-60 object-cover object-center"
+                        src={user.image}
+                        alt="Image Description picture profil"
+                        width={600}
+                        height={600}
+                      />
+                    ) : (
+                      ""
+                    )}
+                    {user.askCompetence ? (
+                      <p className="text-md font-bold text-center w-full  bg-lightorange p-2 rounded-b-md uppercase text-white">
+                        🔎 {user.askCompetence}
+                      </p>
+                    ) : (
+                      ""
+                    )}
+
+                    <div className="grow w-full mb-2">
+                      <h3 className="text-center font-semibold text-green text-xl md:text-2xl  my-4">
                         {user.name ? <p>{user.name}</p> : ""}
                       </h3>
-                      <p className="text-xs uppercase text-gray-500">
-                        ⭐️ {user.skill1}
-                      </p>
-                      {user.skill2 ? (
-                        <p className="text-xs uppercase text-gray-500">
-                          ⭐️ {user.skill2}
+                      <div>
+                        {user.bio ? (
+                          <p className="text-sm  text-green italic mt-2 mb-4">
+                            «{" "}
+                            {user.bio.length > 50
+                              ? user.bio.substring(0, 50) + "..."
+                              : user.bio}{" "}
+                            »
+                          </p>
+                        ) : (
+                          ""
+                        )}
+                      </div>
+
+                      <div className="flex gap-2 flex-wrap items-center justify-center">
+                        <p className="text-sm bg-[#B4DFC4] font-semibold p-2 rounded uppercase text-green">
+                          ⭐️ {user.skill1 ? user.skill1 : ""}
                         </p>
-                      ) : (
-                        ""
-                      )}
-                      {user.skill3 ? (
-                        <p className="text-xs uppercase text-gray-500">
-                          ⭐️ {user.skill3}
-                        </p>
-                      ) : (
-                        ""
-                      )}
+                        {user.skill2 ? (
+                          <p className="text-sm uppercase bg-[#B4DFC4] font-semibold p-2 rounded text-green">
+                            ⭐️ {user.skill2}
+                          </p>
+                        ) : (
+                          ""
+                        )}
+                        {user.skill3 ? (
+                          <p className="text-sm bg-[#B4DFC4] p-2 font-semibold rounded uppercase text-green">
+                            ⭐️ {user.skill3}
+                          </p>
+                        ) : (
+                          ""
+                        )}
+                      </div>
                     </div>
                   </div>
-                  <div className="text-lightorange font-bold my-4 mx-auto flex items-center gap-2">
-                    <p>🔎</p>
-                    {user.askCompetence ? <p>{user.askCompetence}</p> : ""}
-                  </div>
-                  <Link href={`/profil/${user.email}`}>
-                    <Button className=" mt-4 bg-green">Profil</Button>
-                  </Link>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

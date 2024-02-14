@@ -138,10 +138,6 @@ export default function EditHaveAndSearchCompetences() {
       ],
     },
     {
-      title: " Cuisine 🍕",
-      options: ["Cuisine", "Pâtisserie"],
-    },
-    {
       title: " Langages 💬",
       options: [
         "Espagnol",

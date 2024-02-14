@@ -84,7 +84,7 @@ export default function FormRegister() {
   }
 
   return (
-    <div className=" max-w-sm mx-auto border p-4 rounded-md border-gray-100 shadow-md mt-32 m-4 text-dark">
+    <div className=" max-w-sm mx-auto border p-4 rounded-md border-gray-100 shadow-md mt-32 my-4 text-dark">
       <h2 className="my-4 text-xl text-dark text-center">🔐 Inscription</h2>
       <h3 className="text-center text-dark text-lg my-4">
         Bienvenue dans la communauté des cact-users !{" "}

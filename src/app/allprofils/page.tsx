@@ -13,15 +13,9 @@ export default async function AllProfils() {
 
   return (
     <div className="bg-beige max-w-screen-xl mx-auto">
-      <div className="mt-24 mb-8 flex items-center justify-center flex-col">
-        <h2 className="mx-auto  font-extrabold text-5xl lg:text-7xl text-lightorange">
-          Explore.
-        </h2>
-        <h2 className="mx-auto  font-extrabold text-5xl lg:text-7xl text-lightorange">
-          Trouve.
-        </h2>
-        <h2 className="mx-auto  font-extrabold text-5xl lg:text-7xl text-lightorange">
-          Contact.
+      <div className="mt-16 mb-8">
+        <h2 className="text-center font-extrabold text-5xl lg:text-7xl text-lightorange ">
+          Explore. Trouve. Contact.
         </h2>
 
         <p className="text-center text-dark text-md sm:text-lg p-4">
@@ -29,7 +23,7 @@ export default async function AllProfils() {
           Consulte notre sélection pour y trouver la compétence dont tu as
           besoin.
           <br /> Un des profils recherche ce que tu possèdes ? C'est l'heure des
-          présentations
+          présentations 🚀
         </p>
       </div>
       <ShowSuperMatch />
