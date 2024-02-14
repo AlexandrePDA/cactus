@@ -18,6 +18,7 @@ interface User {
   linkedin: string;
   instagram: string;
   bio: string;
+  projet: string;
 }
 
 interface AllUsersProps {
@@ -57,11 +58,10 @@ export default function AllUserOrFilter({ selectedCategory }: AllUsersProps) {
   }
 
   const reversedUsers = [...users].reverse();
-  console.log(reversedUsers);
 
   return (
     <div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:p-8">
         {reversedUsers.map((user: User) => (
           <Link
             href={`/profil/${user.email}`}

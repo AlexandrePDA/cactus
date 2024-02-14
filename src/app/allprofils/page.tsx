@@ -14,7 +14,7 @@ export default async function AllProfils() {
   return (
     <div className="bg-beige max-w-screen-xl mx-auto">
       <div className="mt-16 mb-8">
-        <h2 className="text-center font-extrabold text-5xl lg:text-7xl text-lightorange ">
+        <h2 className="text-center font-extrabold text-4xl lg:text-6xl text-lightorange ">
           Explore. Trouve. Contact.
         </h2>
 

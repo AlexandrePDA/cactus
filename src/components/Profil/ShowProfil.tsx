@@ -2,7 +2,6 @@
 import { useQuery } from "react-query";
 import { Separator } from "../ui/separator";
 import {
-  Mail,
   Globe,
   Github,
   Linkedin,

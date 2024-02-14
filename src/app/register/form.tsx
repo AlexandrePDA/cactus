@@ -69,7 +69,7 @@ export default function FormRegister() {
         callbackUrl: "/dashboard",
       });
       toast.success("Inscription réussie");
-      return (window.location.href = "/dashboard");
+      return (window.location.href = "/allprofils");
     } catch (error) {
       setError(true);
       toast.error("Echec de l'inscription");

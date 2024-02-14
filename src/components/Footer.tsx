@@ -30,7 +30,7 @@ export const Footer = () => {
         </div>
         <div className="container flex flex-col items-center justify-between p-6 mx-auto space-y-4 sm:space-y-0 sm:flex-row">
           <p className="text-sm ">
-            ©Cact-Us - Copyright 2023. All Rights Reserved.
+            ©Cact-Us - Copyright 2024. All Rights Reserved.
           </p>
           <a className="text-sm" href="/mentions-legales">
             Mentions Légales

@@ -59,7 +59,7 @@ export default function FormLogin() {
         return console.log("Échec de l'authentification");
       }
       toast.success("Connexion réussie");
-      return (window.location.href = "/dashboard");
+      return (window.location.href = "/allprofils");
     } catch (error) {
       setError(true);
       setLoading(false);
