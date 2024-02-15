@@ -12,13 +12,13 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-const fetchUserProfile = async (email: string) => {
-  const response = await fetch("/api/getUserProfileByEmail", {
+const fetchUserProfile = async (slug: string) => {
+  const response = await fetch("/api/getUserProfileBySlug", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ email }),
+    body: JSON.stringify({ slug }),
   });
 
   if (!response.ok) {
@@ -29,21 +29,16 @@ const fetchUserProfile = async (email: string) => {
 };
 
 interface ShowProfilProps {
-  email: string;
+  slug: string;
 }
 
-export default function ShowProfil({ email }: ShowProfilProps) {
-  function replacePercent40(str: string): string {
-    return str.replace(/%40/g, "@");
-  }
-
+export default function ShowProfil({ slug }: ShowProfilProps) {
+  console.log(slug);
   const {
     data: userProfile,
     isLoading,
     isError,
-  } = useQuery(["userProfile", email], () =>
-    fetchUserProfile(replacePercent40(email))
-  );
+  } = useQuery(["userProfile", slug], () => fetchUserProfile(slug));
 
   if (isLoading) {
     return (
@@ -145,7 +140,7 @@ export default function ShowProfil({ email }: ShowProfilProps) {
           <div className="flex flex-wrap flex-row gap-4 ">
             <Link
               href={`mailto:${userProfile.email}`}
-              className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#F4EEFF] shadow hover:shadow-xl transition"
+              className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#F4EEFF] shadow hover:shadow-xl transition-all duration-300"
             >
               <span className="bg-[#DCD6F7] p-2  rounded-md m-2">
                 <MailPlus color="#ffffff" />
@@ -155,7 +150,7 @@ export default function ShowProfil({ email }: ShowProfilProps) {
             {userProfile.ownSite ? (
               <Link
                 href={userProfile.ownSite}
-                className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-white shadow hover:shadow-xl transition"
+                className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-white shadow hover:shadow-xl transition-all duration-300"
               >
                 <span className="bg-[#E1F0DA] p-2  rounded-md m-2">
                   <Globe color="#11671D" />
@@ -168,7 +163,7 @@ export default function ShowProfil({ email }: ShowProfilProps) {
             {userProfile.github ? (
               <Link
                 href={userProfile.github}
-                className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#eeeeee] shadow hover:shadow-xl transition"
+                className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#eeeeee] shadow hover:shadow-xl transition-all duration-300"
               >
                 <span className="bg-[#D1D1D1] p-2  rounded-md m-2">
                   <Github color="#0D1117" />
@@ -181,7 +176,7 @@ export default function ShowProfil({ email }: ShowProfilProps) {
             {userProfile.linkedin ? (
               <Link
                 href={userProfile.linkedin}
-                className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#F1F6F9] shadow hover:shadow-xl transition"
+                className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#F1F6F9] shadow hover:shadow-xl transition-all duration-300"
               >
                 <span className="bg-[#326897] p-2  rounded-md m-2">
                   <Linkedin color="#ffffff" />
@@ -194,7 +189,7 @@ export default function ShowProfil({ email }: ShowProfilProps) {
             {userProfile.instagram ? (
               <Link
                 href={userProfile.instagram}
-                className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#F9F5F6] shadow hover:shadow-xl transition"
+                className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#F9F5F6] shadow hover:shadow-xl transition-all duration-300"
               >
                 <span className="bg-gradient-to-r  from-[#F7D074]  to-[#CF2E7E]  p-2  rounded-md m-2">
                   <Instagram color="#ffffff" />

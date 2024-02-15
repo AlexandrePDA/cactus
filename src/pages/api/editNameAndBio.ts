@@ -6,10 +6,10 @@ import { authConfig } from "@/pages/api/auth/[...nextauth]";
 // OK
 
 export default async function POST(req: NextApiRequest, res: NextApiResponse) {
-  const { username, bio } = req.body.values;
+  const { username, bio, projet } = req.body.values;
   const session = await getServerSession(req, res, authConfig);
 
-  if (username === "" && bio === "") {
+  if (username === "" && bio === "" && projet === "") {
     return res.status(400).json({ message: "Veuillez renseigner les champs" });
   }
 
@@ -31,6 +31,16 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
         },
         data: {
           bio: bio,
+        },
+      });
+    }
+    if (projet.trim() !== "") {
+      await prisma.user.update({
+        where: {
+          id: session?.user.id,
+        },
+        data: {
+          projet: projet,
         },
       });
     }

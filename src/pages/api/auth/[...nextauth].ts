@@ -52,6 +52,7 @@ export const authConfig = {
             skill3: user.skill3,
             bio: user.bio,
             projet: user.projet,
+            slug: user.slug,
             resetPasswordToken: user.resetPasswordToken,
             resetPasswordTokenExpiry: user.resetPasswordTokenExpiry,
           };
@@ -77,6 +78,7 @@ export const authConfig = {
         session.user.name = token.name;
         session.user.image = token.image;
         session.user.projet = token.projet;
+        session.user.slug = token.slug;
         session.user.resetPasswordToken = token.resetPasswordToken;
         session.user.resetPasswordTokenExpiry = token.resetPasswordTokenExpiry;
       }
@@ -102,6 +104,7 @@ export const authConfig = {
       token.image = existingUser?.image;
       token.projet = existingUser?.projet;
       token.resetPasswordToken = existingUser?.resetPasswordToken;
+      token.slug = existingUser?.slug;
       token.resetPasswordTokenExpiry = existingUser?.resetPasswordTokenExpiry;
 
       return token;

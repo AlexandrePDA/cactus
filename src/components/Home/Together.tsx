@@ -16,7 +16,7 @@ export default function Together() {
           d="M0,128L1440,256L1440,320L0,320Z"
         ></path>
       </svg>
-      <div className="bg-green ">
+      <div id="nous" className="bg-green ">
         <section className="mx-auto max-w-screen-xl py-10 md:pb-2  text-beige p-4">
           <section>
             <div className="mx-auto max-w-screen-xl px-4  sm:py-12 sm:px-6 lg:py-16 lg:px-8">

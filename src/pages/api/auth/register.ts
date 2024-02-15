@@ -2,6 +2,7 @@ import { hash } from "bcrypt";
 import prisma from "@/lib/prisma";
 import { sendEmailWelcome } from "@/lib/mail";
 import { NextApiRequest, NextApiResponse } from "next";
+import crypto from "crypto";
 
 export default async function handler(
   req: NextApiRequest,
@@ -14,11 +15,9 @@ export default async function handler(
     const emailToLowerCase = email.toLowerCase();
 
     if (password < 8) {
-      return res
-        .status(400)
-        .json({
-          message: "Le mot de passe doit contenir au moins 8 caractères",
-        });
+      return res.status(400).json({
+        message: "Le mot de passe doit contenir au moins 8 caractères",
+      });
     }
 
     console.log(emailToLowerCase);
@@ -39,10 +38,14 @@ export default async function handler(
     }
 
     const hashedPassword = await hash(password, 10);
+
+    const slug = crypto.randomBytes(32).toString("base64url");
+    console.log(slug);
     const user = await prisma.user.create({
       data: {
         email: emailToLowerCase,
         password: hashedPassword,
+        slug: slug,
       },
     });
     await sendEmailWelcome(emailToLowerCase);

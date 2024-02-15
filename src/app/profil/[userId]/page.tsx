@@ -14,7 +14,7 @@ export default async function Profil({
   if (!session) redirect("/");
   return (
     <div className=" mb-4">
-      <ShowProfil email={params.userId} />
+      <ShowProfil slug={params.userId} />
     </div>
   );
 }

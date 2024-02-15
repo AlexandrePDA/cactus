@@ -25,9 +25,24 @@ export default async function getAllUsers(
             },
           ],
         },
+        orderBy: {
+          createdAt: "desc",
+        },
       });
     } else {
-      users = await prisma.user.findMany();
+      users = await prisma.user.findMany({
+        where: {
+          skill1: {
+            not: null,
+          },
+          askCompetence: {
+            not: null,
+          },
+        },
+        orderBy: {
+          createdAt: "desc",
+        },
+      });
     }
 
     res.status(200).json(users);

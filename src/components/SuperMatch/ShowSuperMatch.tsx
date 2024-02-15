@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useQuery } from "react-query";
-import { Button } from "../ui/button";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import ConfettiExplosion from "react-confetti-explosion";
@@ -63,12 +62,12 @@ export default function ShowSuperMatch() {
       {superMatches.length === 0 ? (
         ""
       ) : (
-        <div className="mb-24  p-4 rounded-lg border shadow-lg m-4 relative">
+        <div className="mb-24  p-4 rounded-lg border-[#f5f5f5] border shadow-lg m-4 relative">
           <div>
             <div className="relative flex items-center justify-center">
               <ConfettiExplosion className="absolute" />
               {superMatches.length === 1 ? (
-                <h2 className="text-dark mx-auto mb-4 font-extrabold text-center">
+                <h2 className="text-green mx-auto mb-4 font-semibold text-xl text-center">
                   🎉 Un profil correspond à tes recherches 🎉
                 </h2>
               ) : (
@@ -83,7 +82,7 @@ export default function ShowSuperMatch() {
                 <Link
                   href={`/profil/${user.email}`}
                   key={user.id}
-                  className=" flex flex-col justify-between rounded-lg p-2 bg-cardUser border border-gray-200  shadow-md hover:shadow-xl "
+                  className=" flex flex-col justify-between rounded-lg p-2 bg-cardUser border border-gray-200  shadow-md hover:shadow-xl transition-all duration-300"
                 >
                   <div className=" flex flex-col items-center  ">
                     {user.image ? (

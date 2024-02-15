@@ -19,8 +19,9 @@ import { useState } from "react";
 import { Loader } from "lucide-react";
 
 const formSchema = z.object({
-  username: z.string(),
-  bio: z.string(),
+  username: z.string().optional(),
+  bio: z.string().optional(),
+  projet: z.string().optional(),
 });
 
 export default function EditNameAndBio() {
@@ -31,12 +32,13 @@ export default function EditNameAndBio() {
     defaultValues: {
       username: "",
       bio: "",
+      projet: "",
     },
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    if (values.username === "" && values.bio === "") {
-      toast.error("😢 Les champs sont vides");
+    if (values.username === "" && values.bio === "" && values.projet === "") {
+      toast.error("😢 Tu dois remplir au moins un champ");
       return;
     }
     try {
@@ -66,7 +68,10 @@ export default function EditNameAndBio() {
     <div className="mx-auto max-w-screen-sm mb-12 w-full lg:w-1/2 ">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <h3 className=" text-green font-bold">👋🏽 À propos de moi</h3>
+          <h3 className=" text-green font-semibold">
+            🌱 Un nouveau projet qui te demande une nouvelle compétence ? Tu
+            veux nous en dire plus sur toi ? Tu es au bon endroit !
+          </h3>
           <FormField
             control={form.control}
             name="username"
@@ -82,11 +87,30 @@ export default function EditNameAndBio() {
           />
           <FormField
             control={form.control}
+            name="projet"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>
+                  Dis nous en plus sur ton nouveau projet, tes compétences et ta
+                  recherche
+                </FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder="Hello ! je suis professeur d'anglais et j'aime la photographie. J'aimerai apprendre l'Espagnol"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
             name="bio"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>
-                  Dis nous en plus sur tes besoins et tes skills
+                  Présente toi, qui tu es, ce que tu aimes ?
                 </FormLabel>
                 <FormControl>
                   <Textarea

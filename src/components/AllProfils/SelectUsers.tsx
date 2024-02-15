@@ -23,32 +23,16 @@ export default function AllUsers() {
 
   const categories = [
     {
-      title: "Musique 🎸",
-      options: ["Piano", "Guitare", "Chant"],
-    },
-    {
-      title: "Youtube 🎥",
-      options: ["Montage vidéo", "Tournage vidéo", "Script"],
+      title: "Photos/Vidéos 🎥",
+      options: ["Montage vidéo", "Tournage vidéo", "Script", "Photographie"],
     },
     {
       title: "Outils DevOps 🛠️",
-      options: ["Docker", "Kubernetes", "Jenkins", "Git", "Terraform"],
+      options: ["Docker", "Kubernetes", "Jenkins", "Terraform", "CI", "CD"],
     },
     {
-      title: "Automatisation 🤖",
-      options: ["CI", "CD"],
-    },
-    {
-      title: "Cloud ☁️",
-      options: ["AWS", "Azure", "Oracle", "DigitalOcean"],
-    },
-    {
-      title: "UI/UX 👩🏼‍🎨",
-      options: ["UI", "UX"],
-    },
-    {
-      title: "DIY 🛠️",
-      options: ["Couture", "Bricolage", "Jardinage", "Cosmétique"],
+      title: "Design 👩🏼‍🎨",
+      options: ["UI", "UX", "Graphiste", "Webdesigner", "Motion designer"],
     },
     {
       title: "Marketing 🛍️",
@@ -60,7 +44,7 @@ export default function AllUsers() {
     },
     {
       title: " Logiciels 👨🏾‍💻",
-      options: ["Photoshop", "Illustrator", "Premiere Pro", "After Effects"],
+      options: ["Photoshop", "Illustrator", "Final Cut Pro", "After Effects"],
     },
     {
       title: " Programmation ⚙️",
@@ -76,7 +60,7 @@ export default function AllUsers() {
       ],
     },
     {
-      title: " Langages 💬",
+      title: "Langues 💬",
       options: [
         "Espagnol",
         "Allemand",
@@ -87,18 +71,13 @@ export default function AllUsers() {
       ],
     },
     {
-      title: " Cours 📚",
+      title: "Soutien scolaire 📚",
       options: [
-        "Soutien scolaire",
-        "Préparation examens",
-        "Préparation concours",
+        "Préparation examen",
         "Mathématiques",
         "Physique",
-        "Chimie",
         "Français",
-        "Biologie",
-        "Histoire",
-        "Géographie",
+        "Histoire/Géo",
       ],
     },
     {
@@ -112,15 +91,15 @@ export default function AllUsers() {
     },
     {
       title: " Arts 🎨",
-      options: ["Peinture", "Dessin", "Sculpture", "Photographie"],
+      options: ["Peinture", "Dessin", "Ecriture", "Musique"],
     },
     {
       title: " Développement personnel ✨",
       options: [
-        "Gestion du temps",
+        "Gestion du stress",
         "Productivité",
         "Leadership",
-        "Bien-être émotionnel",
+        "Prise de parole",
       ],
     },
   ];

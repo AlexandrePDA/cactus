@@ -26,43 +26,51 @@ export default function How() {
 
             <div className="mt-8 xl:mt-12 lg:flex lg:items-center">
               <div className="lg:flex lg:w-1/2 lg:justify-center">
-
                 {/* card gauche */}
-                <div className="max-w-sm mx-auto mb-12 w-full sm:w-3/4">
-                  <div className="bg-beige text-dark flex w-full flex-col items-center justify-center h-full   px-8 py-8 rounded-lg overflow-hidden text-center relative shadow-2xl">
+                <div className="max-w-sm mx-auto mb-12 w-full sm:w-3/4 rounded-md bg-cardUser border-gray-200 shadow-md p-2">
+                  <div className=" flex flex-col items-center  ">
                     <Image
-                      className="object-cover w-32 h-32   rounded-full ring ring-white"
+                      className=" rounded-t-md w-full h-60 object-cover object-center transform scale-200"
                       src={logo}
-                      alt="logo cact-us"
-                      width={500}
-                      height={500}
+                      alt="Image Description picture profil"
+                      width={600}
+                      height={600}
                     />
 
-                    <h2 className=" text-2xl font-semibold  my-4">Cact-Us</h2>
+                    <p className="text-md font-bold text-center w-full  bg-lightorange p-2 rounded-b-md uppercase text-white">
+                      🔎 Docker
+                    </p>
 
-                    {/* je partage, je reçois */}
-                    <div className="flex items-center w-full gap-2 mb-4">
-                      <Sun color="#f19410" size={28} />
-                      <p>Anglais, Python, Dessin</p>
-                    </div>
+                    <div className="grow w-full mb-2">
+                      <h3 className="text-center font-semibold text-green text-xl md:text-2xl  my-4">
+                        <p>Cact-Us</p>
+                      </h3>
+                      <div>
+                        <p className="text-sm text-center text-green italic mt-2 mb-4">
+                          « Je suis un cactus, je veux apprendre tout en
+                          partageant... »
+                        </p>
+                      </div>
 
-                    <div>
-                      <Repeat color="#4b5563" size={28} />
-                    </div>
+                      <div className="flex gap-2 flex-wrap items-center justify-center">
+                        <p className="text-sm bg-[#B4DFC4] font-semibold p-2 rounded uppercase text-green">
+                          ⭐️ Anglais
+                        </p>
 
-                    <div className="flex items-center w-full gap-2 my-4">
-                      <Sprout color="#11671D" size={28} />
-                      <p>DevOps</p>
-                    </div>
+                        <p className="text-sm uppercase bg-[#B4DFC4] font-semibold p-2 rounded text-green">
+                          ⭐️ Photographie
+                        </p>
 
-                    <div className=" w-full px-6 py-3 mt-4 text-sm  text-white bg-green rounded-lg ">
-                      <p className="mx-auto">Voir le profil</p>
+                        <p className="text-sm bg-[#B4DFC4] p-2 font-semibold rounded uppercase text-green">
+                          ⭐️ Mathématiques
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-                {/* description droite */}
+              {/* description droite */}
               <div className="grid w-full grid-cols-1 gap-8 lg:w-1/2 xl:gap-16 md:grid-cols-2">
                 <div className="space-y-3">
                   <span className="inline-block p-3 text-white bg-green rounded-xl">
@@ -114,7 +122,9 @@ export default function How() {
                     </svg>
                   </span>
 
-                  <h2 className="text-xl font-semibold ">🌱 Définis ton besoin </h2>
+                  <h2 className="text-xl font-semibold ">
+                    🔎 Définis ton besoin{" "}
+                  </h2>
 
                   <p className="text-lg">
                     Rédiger un business plan, écrire le script de ta prochaine
@@ -142,7 +152,7 @@ export default function How() {
                   </span>
 
                   <h2 className="text-xl font-semibold  ">
-                  ☀️ Renseigne tes compétences 
+                    ⭐️ Renseigne tes compétences
                   </h2>
 
                   <p className="text-lg">

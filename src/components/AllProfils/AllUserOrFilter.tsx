@@ -19,6 +19,7 @@ interface User {
   instagram: string;
   bio: string;
   projet: string;
+  slug: string;
 }
 
 interface AllUsersProps {
@@ -57,16 +58,14 @@ export default function AllUserOrFilter({ selectedCategory }: AllUsersProps) {
     return <div>Error fetching users</div>;
   }
 
-  const reversedUsers = [...users].reverse();
-
   return (
     <div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:p-8">
-        {reversedUsers.map((user: User) => (
+        {users.map((user: User) => (
           <Link
-            href={`/profil/${user.email}`}
+            href={`/profil/${user.slug}`}
             key={user.id}
-            className=" flex flex-col justify-between rounded-lg p-2 bg-cardUser border border-gray-200  shadow-md hover:shadow-xl "
+            className=" flex flex-col justify-between rounded-lg p-2 bg-cardUser border border-gray-200  shadow-md hover:shadow-xl transition-all duration-300"
           >
             <div className=" flex flex-col items-center  ">
               {user.image ? (
@@ -94,7 +93,7 @@ export default function AllUserOrFilter({ selectedCategory }: AllUsersProps) {
                 </h3>
                 <div>
                   {user.bio ? (
-                    <p className="text-sm  text-green italic mt-2 mb-4">
+                    <p className="text-sm text-center text-green italic mt-2 mb-4">
                       «{" "}
                       {user.bio.length > 50
                         ? user.bio.substring(0, 50) + "..."

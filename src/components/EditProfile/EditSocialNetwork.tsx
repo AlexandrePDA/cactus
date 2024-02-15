@@ -15,7 +15,7 @@ import {
 import toast, { Toaster } from "react-hot-toast";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-import { Loader } from "lucide-react";
+import { Instagram, Loader } from "lucide-react";
 
 const formSchema = z.object({
   website: z.string().optional(),
@@ -48,7 +48,7 @@ export default function EditSocialNetwork() {
       values.instagram === "" &&
       values.github === ""
     ) {
-      toast.error("😢 Les champs sont vides");
+      toast.error("😢 Tu dois remplir au moins un champ");
       return;
     }
 
@@ -79,10 +79,12 @@ export default function EditSocialNetwork() {
     <div className="mx-auto max-w-screen-sm">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <h3 className=" text-green font-bold">
-            💻 Mes réseaux sociaux{" "}
+          <h3 className=" text-green font-semibold">
+            👩🏽‍💻 Un nouveau site internet que tu veux mettre en avant ? Tu viens
+            de refaire ton instagram ? C'est ici que ça se passe !
             <span className="italic text-xs">(optionnel)</span>
           </h3>
+
           <FormField
             control={form.control}
             name="website"

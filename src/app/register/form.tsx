@@ -68,6 +68,7 @@ export default function FormRegister() {
         redirect: false,
         callbackUrl: "/dashboard",
       });
+
       toast.success("Inscription réussie");
       return (window.location.href = "/allprofils");
     } catch (error) {
@@ -77,9 +78,6 @@ export default function FormRegister() {
       setLoading(false);
 
       console.error("error", error);
-    } finally {
-      setLoading(false);
-      form.reset();
     }
   }
 
@@ -132,7 +130,7 @@ export default function FormRegister() {
           <Button
             disabled={loading}
             type="submit"
-            className="flex gap-2 bg-lightorange hover:bg-lightorange"
+            className="flex gap-2 bg-lightorange hover:bg-lightorange transition-all duration-300"
           >
             {loading && <Loader2 className="h-5 w-5 animate-spin" />}
             <p>S'inscrire</p>

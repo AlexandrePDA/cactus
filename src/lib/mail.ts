@@ -1,10 +1,10 @@
+import EmailRegister from "@/components/Mail";
 import { ResetPasswordEmailTemplate } from "@/templates/reset-password-email";
 import React from "react";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// à remplacer par le domaine de l'app. sur vercel mettre le nom domaine
 const domain = process.env.NEXT_PUBLIC_APP_URL;
 
 export async function sendEmailWelcome(email: string) {
@@ -12,10 +12,7 @@ export async function sendEmailWelcome(email: string) {
     from: "no-reply@cact-us.com",
     to: email,
     subject: "Bienvenue Cact-user !",
-    html: `<h1>Bienvenue sur Cact-Us 🌵</h1>
-      <p>Merci pour ton inscription !</p>
-      <p>Connecte-toi dès maintenant pour commencer à partager tes compétences.</p>
-      <p>À bientôt!</p>`,
+    react: EmailRegister() as React.ReactElement,
   });
 }
 

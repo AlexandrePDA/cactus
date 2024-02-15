@@ -37,6 +37,33 @@ export const Menu = async () => {
 
             <DropdownMenuItem>
               <Link
+                href="/dashboard/apropos"
+                className="flex items-center gap-2 px-4 py-2 "
+              >
+                <p className="text-xs">À propos de mois</p>
+              </Link>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem>
+              <Link
+                href="/dashboard/competences"
+                className="flex items-center gap-2 px-4 py-2 "
+              >
+                <p className="text-xs">Compétences</p>
+              </Link>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem>
+              <Link
+                href="/dashboard/mesreseaux"
+                className="flex items-center gap-2 px-4 py-2 "
+              >
+                <p className="text-xs">Mes réseaux</p>
+              </Link>
+            </DropdownMenuItem>
+
+            <DropdownMenuItem>
+              <Link
                 href="/allprofils"
                 className="flex items-center gap-2 px-4 py-2 "
               >
@@ -52,13 +79,13 @@ export const Menu = async () => {
         </DropdownMenu>
       </div>
       <div className="hidden  md:flex md:items-center md:gap-2">
-        <Button className="bg-lightorange hover:bg-beige hover:text-lightorange">
+        <Button className="bg-lightorange hover:bg-beige hover:text-lightorange transition-all duration-300">
           <Link href="/dashboard" className="flex items-center gap-2 ">
             <LayoutDashboard />
             <p>Dashboard</p>
           </Link>
         </Button>
-        <Button className="bg-lightorange hover:bg-beige hover:text-lightorange">
+        <Button className="bg-lightorange hover:bg-beige hover:text-lightorange transition-all duration-300">
           <Link href="/allprofils" className="flex items-center gap-2">
             <Users2 />
             <p>Cact-Users</p>

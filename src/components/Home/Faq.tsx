@@ -11,11 +11,8 @@ export const Faq = () => {
   const [open6, setOpen6] = useState<boolean>(false);
   const [open7, setOpen7] = useState<boolean>(false);
 
-
-
-
   return (
-    <section className="bg-beige pb-24 -mb-12 py-8">
+    <section id="faq" className="bg-beige pb-24 -mb-12 py-8">
       <div className="container max-w-4xl px-6 py-4 mx-auto">
         <h2 className="text-3xl lg:text-4xl font-semibold text-center text-dark ">
           FAQ 🌵
@@ -70,7 +67,8 @@ export const Faq = () => {
 
             {open1 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Cact-Us, c'est la 1re plateforme d'échange de compétences pour les curieux qui souhaitent partager et apprendre  🌵
+                Cact-Us, c'est la 1re plateforme d'échange de compétences pour
+                les curieux qui souhaitent partager et apprendre 🌵
               </p>
             )}
           </div>
@@ -123,10 +121,18 @@ export const Faq = () => {
 
             {open2 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Cact-Us sort bientôt de terre. Renseigne ton mail pour être le premier informé du lancement. Tu peux également suivre les actus de Cact-Us sur <a className="border-b-2 border-green pointer" href="https://www.linkedin.com/company/cact-us1/">Linkedin</a>{" "} 🚀
+                Cact-Us sort bientôt de terre. Renseigne ton mail pour être le
+                premier informé du lancement. Tu peux également suivre les actus
+                de Cact-Us sur{" "}
+                <a
+                  className="border-b-2 border-green pointer"
+                  href="https://www.linkedin.com/company/cact-us1/"
+                >
+                  Linkedin
+                </a>{" "}
+                🚀
               </p>
-            ) 
-            }
+            )}
           </div>
 
           <div className="border border-gray-200 rounded-lg ">
@@ -177,11 +183,14 @@ export const Faq = () => {
 
             {open3 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Cact-Us c'est le partage : tu donnes ce que tu sais pour recevoir ce que tu veux apprendre. Ta seule monnaie, c'est tes connaissances. C'est un échange win-win qui n'attend que toi ! ⚡️{" "}
+                Cact-Us c'est le partage : tu donnes ce que tu sais pour
+                recevoir ce que tu veux apprendre. Ta seule monnaie, c'est tes
+                connaissances. C'est un échange win-win qui n'attend que toi !
+                ⚡️{" "}
               </p>
-            ) }
+            )}
           </div>
-        
+
           <div className="border border-gray-200 rounded-lg ">
             <button
               className="flex text-left items-center justify-between w-full p-4"
@@ -230,12 +239,13 @@ export const Faq = () => {
 
             {open4 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Tu trouveras toujours quelqu'un qui recherche ce que tu sais. C'est d'ailleurs la richesse de Cact-Us : faire de nos compétences un atout pour échanger ✨
+                Tu trouveras toujours quelqu'un qui recherche ce que tu sais.
+                C'est d'ailleurs la richesse de Cact-Us : faire de nos
+                compétences un atout pour échanger ✨
               </p>
-            ) }
+            )}
           </div>
 
-                  
           <div className="border border-gray-200 rounded-lg ">
             <button
               className="flex text-left items-center justify-between w-full p-4"
@@ -284,9 +294,12 @@ export const Faq = () => {
 
             {open5 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Ça y est ? Félicitations 🥳 <br/> Il te suffit de le contacter via ses coordonnées, disponibles sur son profil. Démarrez ensuite votre accompagnement, au rythme qui vous convient. Bonne pousse ! 🌱
+                Ça y est ? Félicitations 🥳 <br /> Il te suffit de le contacter
+                via ses coordonnées, disponibles sur son profil. Démarrez
+                ensuite votre accompagnement, au rythme qui vous convient. Bonne
+                pousse ! 🌱
               </p>
-            ) }
+            )}
           </div>
 
           <div className="border border-gray-200 rounded-lg ">
@@ -337,11 +350,19 @@ export const Faq = () => {
 
             {open6 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Un problème ? Une idée ? Des recommandations ? <br/> Tu peux nous contacter par  <a className="border-b-2 border-green pointer" href="mailto:contact@cact-us.com">mail</a>  ou via le chat juste à ta droite. Nous serons heureux de te répondre 💌
+                Un problème ? Une idée ? Des recommandations ? <br /> Tu peux
+                nous contacter par{" "}
+                <a
+                  className="border-b-2 border-green pointer"
+                  href="mailto:contact@cact-us.com"
+                >
+                  mail
+                </a>{" "}
+                ou via le chat juste à ta droite. Nous serons heureux de te
+                répondre 💌
               </p>
-            ) }
+            )}
           </div>
-
 
           <div className="border border-gray-200 rounded-lg ">
             <button
@@ -391,12 +412,25 @@ export const Faq = () => {
 
             {open7 && (
               <p className="p-8 text-sm text-gray-500 ">
-                Merci pour ton soutien ❤️ <br/>
-                N'hésite pas à en parler autour de toi et suis nos actus sur <a className="border-b-2 border-green pointer" href="https://www.linkedin.com/company/cact-us1/">Linkedin</a> !
-                 <br/> Tu peux aussi soutenir Cact-Us en lui {" "}
-                <a className="border-b-2 border-green pointer" href="https://www.buymeacoffee.com/cactus1">offrant un café</a> ☕️
+                Merci pour ton soutien ❤️ <br />
+                N'hésite pas à en parler autour de toi et suis nos actus sur{" "}
+                <a
+                  className="border-b-2 border-green pointer"
+                  href="https://www.linkedin.com/company/cact-us1/"
+                >
+                  Linkedin
+                </a>{" "}
+                !
+                <br /> Tu peux aussi soutenir Cact-Us en lui{" "}
+                <a
+                  className="border-b-2 border-green pointer"
+                  href="https://www.buymeacoffee.com/cactus1"
+                >
+                  offrant un café
+                </a>{" "}
+                ☕️
               </p>
-            ) }
+            )}
           </div>
         </div>
       </div>

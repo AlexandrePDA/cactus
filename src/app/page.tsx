@@ -1,5 +1,3 @@
-
-import AllUserOrFilter from "@/components/AllProfils/AllUserOrFilter";
 import { Faq } from "@/components/Home/Faq";
 import Hero from "@/components/Home/Hero";
 import How from "@/components/Home/How";

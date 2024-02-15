@@ -1,10 +1,14 @@
 import { Coffee, Book, Github, Linkedin } from "lucide-react";
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { authConfig } from "@/pages/api/auth/[...nextauth]";
+import SettingsAccountButton from "./EditProfile/SettingsAccountButton";
 
-export const Footer = () => {
+export const Footer = async () => {
+  const session = await getServerSession(authConfig);
   return (
     <div className=" bg-green ">
-      <footer className=" max-w-screen-xl mx-auto text-white mt-12 py-8">
+      <footer className=" max-w-screen-xl mx-auto text-white  py-8">
         <div className="container flex items-center justify-center gap-2 flex-col lg:flex-row p-6 mx-auto space-y-4 sm:space-y-0 ">
           <Link
             className="flex gap-2 items-center bg-lightorange py-2 px-4 rounded-xl"
@@ -27,6 +31,22 @@ export const Footer = () => {
             Blog
             <Book size={20} color="white" />
           </Link>
+        </div>
+        <div className="flex gap-4 text-xs items-center justify-center my-2 flex-wrap">
+          <Link className="underline" href="/#nous">
+            Qui sommes-nous ?{" "}
+          </Link>
+          |
+          <Link className="underline" href="/#whatis">
+            Notre concept{" "}
+          </Link>
+          |
+          <Link className="underline" href="/#faq">
+            FAQ
+          </Link>
+        </div>
+        <div className="flex items-center justify-center mb-8">
+          {session ? <SettingsAccountButton userId={session.user.id} /> : ""}
         </div>
         <div className="container flex flex-col items-center justify-between p-6 mx-auto space-y-4 sm:space-y-0 sm:flex-row">
           <p className="text-sm ">

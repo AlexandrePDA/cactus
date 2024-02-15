@@ -85,32 +85,16 @@ export default function EditHaveAndSearchCompetences() {
 
   const categories = [
     {
-      title: "Musique 🎸",
-      options: ["Piano", "Guitare", "Chant"],
-    },
-    {
-      title: "Youtube 🎥",
-      options: ["Montage vidéo", "Tournage vidéo", "Script"],
+      title: "Photos/Vidéos 🎥",
+      options: ["Montage vidéo", "Tournage vidéo", "Script", "Photographie"],
     },
     {
       title: "Outils DevOps 🛠️",
-      options: ["Docker", "Kubernetes", "Jenkins", "Git", "Terraform"],
+      options: ["Docker", "Kubernetes", "Jenkins", "Terraform", "CI", "CD"],
     },
     {
-      title: "Automatisation 🤖",
-      options: ["CI", "CD"],
-    },
-    {
-      title: "Cloud ☁️",
-      options: ["AWS", "Azure", "Oracle", "DigitalOcean"],
-    },
-    {
-      title: "UI/UX 👩🏼‍🎨",
-      options: ["UI", "UX"],
-    },
-    {
-      title: "DIY 🛠️",
-      options: ["Couture", "Bricolage", "Jardinage", "Cosmétique"],
+      title: "Design 👩🏼‍🎨",
+      options: ["UI", "UX", "Graphiste", "Webdesigner", "Motion designer"],
     },
     {
       title: "Marketing 🛍️",
@@ -122,7 +106,7 @@ export default function EditHaveAndSearchCompetences() {
     },
     {
       title: " Logiciels 👨🏾‍💻",
-      options: ["Photoshop", "Illustrator", "Premiere Pro", "After Effects"],
+      options: ["Photoshop", "Illustrator", "Final Cut Pro", "After Effects"],
     },
     {
       title: " Programmation ⚙️",
@@ -138,7 +122,7 @@ export default function EditHaveAndSearchCompetences() {
       ],
     },
     {
-      title: " Langages 💬",
+      title: "Langues 💬",
       options: [
         "Espagnol",
         "Allemand",
@@ -149,18 +133,13 @@ export default function EditHaveAndSearchCompetences() {
       ],
     },
     {
-      title: " Cours 📚",
+      title: "Soutien scolaire 📚",
       options: [
-        "Soutien scolaire",
-        "Préparation examens",
-        "Préparation concours",
+        "Préparation examen",
         "Mathématiques",
         "Physique",
-        "Chimie",
         "Français",
-        "Biologie",
-        "Histoire",
-        "Géographie",
+        "Histoire/Géo",
       ],
     },
     {
@@ -174,15 +153,15 @@ export default function EditHaveAndSearchCompetences() {
     },
     {
       title: " Arts 🎨",
-      options: ["Peinture", "Dessin", "Sculpture", "Photographie"],
+      options: ["Peinture", "Dessin", "Ecriture", "Musique"],
     },
     {
       title: " Développement personnel ✨",
       options: [
-        "Gestion du temps",
+        "Gestion du stress",
         "Productivité",
         "Leadership",
-        "Bien-être émotionnel",
+        "Prise de parole",
       ],
     },
   ];
@@ -199,7 +178,7 @@ export default function EditHaveAndSearchCompetences() {
     <div className="mx-auto max-w-screen-sm mb-12 w-full lg:w-1/2">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <h3 className=" text-green font-bold">
+          <h3 className=" text-green font-semibold">
             🧩 Tu as besoin d'apprendre une nouvelle compétence ?
           </h3>
 
@@ -242,7 +221,7 @@ export default function EditHaveAndSearchCompetences() {
             )}
           />
 
-          <h3 className=" text-green font-bold">
+          <h3 className=" text-green font-semibold">
             🧠 Mes skills à partager <span className="italic text-xs"></span>
           </h3>
 

@@ -7,7 +7,6 @@ import {
   Github,
   Linkedin,
   Instagram,
-  Loader,
   MailPlus,
   Settings,
 } from "lucide-react";
@@ -25,8 +24,8 @@ export default async function Dashboard() {
   const profileImage = session?.user.image || "";
 
   return (
-    <div className="p-4">
-      <div className="p-4 max-w-screen-2xl    text-dark mx-auto w-full mb-4  flex items-center justify-center flex-col ">
+    <div className="p-4  mx-auto">
+      <div className="p-4    text-dark mx-auto w-full mb-4  flex items-center justify-center flex-col ">
         <h1 className="text-center mt-12 mb-4 text-green font-bold text-2xl md:text-4xl">
           Mon dashboard 🌵
         </h1>
@@ -108,7 +107,7 @@ export default async function Dashboard() {
           <div className="flex flex-wrap flex-row gap-4 ">
             <Link
               href={`mailto:${session.user.email}`}
-              className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#F4EEFF] shadow hover:shadow-xl transition"
+              className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#F4EEFF] shadow hover:shadow-xl transition-all duration-300"
             >
               <span className="bg-[#DCD6F7] p-2  rounded-md m-2">
                 <MailPlus color="#ffffff" />
@@ -118,7 +117,7 @@ export default async function Dashboard() {
             {session.user.ownSite ? (
               <Link
                 href={session.user.ownSite}
-                className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-white shadow hover:shadow-xl transition"
+                className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-white shadow hover:shadow-xl transition-all duration-300"
               >
                 <span className="bg-[#E1F0DA] p-2  rounded-md m-2">
                   <Globe color="#11671D" />
@@ -131,7 +130,7 @@ export default async function Dashboard() {
             {session.user.github ? (
               <Link
                 href={session.user.github}
-                className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#eeeeee] shadow hover:shadow-xl transition"
+                className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#eeeeee] shadow hover:shadow-xl transition-all duration-300"
               >
                 <span className="bg-[#D1D1D1] p-2  rounded-md m-2">
                   <Github color="#0D1117" />
@@ -144,7 +143,7 @@ export default async function Dashboard() {
             {session.user.linkedin ? (
               <Link
                 href={session.user.linkedin}
-                className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#F1F6F9] shadow hover:shadow-xl transition"
+                className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#F1F6F9] shadow hover:shadow-xl transition-all duration-300"
               >
                 <span className="bg-[#326897] p-2  rounded-md m-2">
                   <Linkedin color="#ffffff" />
@@ -157,7 +156,7 @@ export default async function Dashboard() {
             {session.user.instagram ? (
               <Link
                 href={session.user.instagram}
-                className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#F9F5F6] shadow hover:shadow-xl transition"
+                className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#F9F5F6] shadow hover:shadow-xl transition-all duration-300"
               >
                 <span className="bg-gradient-to-r  from-[#F7D074]  to-[#CF2E7E]  p-2  rounded-md m-2">
                   <Instagram color="#ffffff" />
@@ -169,10 +168,6 @@ export default async function Dashboard() {
             )}
           </div>
         </div>
-        <Button className="mt-12 bg-green flex gap-2">
-          <Settings />
-          <Link href="/dashboard/settings">Paramètre du compte </Link>
-        </Button>
       </div>
     </div>
   );

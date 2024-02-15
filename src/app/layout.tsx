@@ -6,10 +6,8 @@ import { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 
-// Importez le composant Crisp avec le chargement dynamique
 const CrispWithNoSSR = dynamic(() => import("../components/crisp"));
 
-// Créez l'objet Inter pour les styles de police
 const inter = Poppins({
   weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
@@ -17,7 +15,6 @@ const inter = Poppins({
 
 export const dynamicStatic = "force-dynamic";
 
-// Définissez les métadonnées
 export const metadata: Metadata = {
   title: "Cact-us",
   description:

@@ -66,9 +66,6 @@ export default function FormLogin() {
       toast.error("Echec de l'authentification");
 
       console.error("error", error);
-    } finally {
-      setLoading(false);
-      form.reset();
     }
   }
 
@@ -123,7 +120,7 @@ export default function FormLogin() {
           <Button
             disabled={loading}
             type="submit"
-            className="flex gap-2 bg-lightorange hover:bg-lightorange"
+            className="flex gap-2 bg-lightorange hover:bg-lightorange transition-all duration-300"
           >
             {loading && <Loader2 className="h-5 w-5 animate-spin" />}
             <p>Connexion</p>

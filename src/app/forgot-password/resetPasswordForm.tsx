@@ -85,7 +85,7 @@ export default function FormRegister() {
           <Button
             disabled={loading}
             type="submit"
-            className="bg-lightorange hover:bg-lightorange"
+            className="bg-lightorange hover:bg-lightorange transition-all duration-300"
           >
             Recevoir l'email
           </Button>

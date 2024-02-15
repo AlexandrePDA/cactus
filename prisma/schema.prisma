@@ -46,6 +46,7 @@ model Session {
 
 model User {
   id                       String    @id @default(cuid())
+  createdAt                DateTime  @default(now())
   name                     String?
   email                    String?   @unique
   password                 String?
@@ -64,6 +65,7 @@ model User {
   linkedin                 String?
   accounts                 Account[]
   sessions                 Session[]
+  slug                     String?   @unique
   resetPasswordToken       String?   @unique
   resetPasswordTokenExpiry DateTime?
 }
