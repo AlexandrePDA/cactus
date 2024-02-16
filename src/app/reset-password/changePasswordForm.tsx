@@ -19,6 +19,7 @@ import { useState } from "react";
 import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 import { changePassword } from "@/actions/resetPassword";
 import toast, { Toaster } from "react-hot-toast";
+import { Loader2 } from "lucide-react";
 
 const formSchema = z.object({
   password: z.string().min(8, { message: "8 caractères minimums" }),
@@ -98,8 +99,9 @@ export default function ChangePasswordForm({
           <Button
             disabled={loading}
             type="submit"
-            className="bg-lightorange hover:bg-lightorange transition-all duration-300"
+            className="flex gap-2 bg-lightorange hover:bg-lightorange transition-all duration-300"
           >
+            {loading && <Loader2 className="h-5 w-5 animate-spin" />}
             Modifier
           </Button>
         </form>
