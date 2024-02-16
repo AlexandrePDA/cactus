@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 const fetchUserProfile = async (slug: string) => {
   const response = await fetch("/api/getUserProfileBySlug", {
@@ -52,7 +53,8 @@ export default function ShowProfil({ slug }: ShowProfilProps) {
   }
 
   if (isError) {
-    return <div>Error fetching user profile</div>;
+    toast.error("Une erreur est survenue");
+    return <div>Aïe... Une erreur est survenue </div>;
   }
   const profileImage = userProfile.image || "";
 

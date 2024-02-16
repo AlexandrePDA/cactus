@@ -13,7 +13,7 @@ export default async function Profil({
   const session = await getServerSession(authConfig);
   if (!session) redirect("/");
   return (
-    <div className=" mb-4">
+    <div className=" mb-8">
       <ShowProfil slug={params.userId} />
     </div>
   );

@@ -20,7 +20,7 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
           id: session?.user.id,
         },
         data: {
-          askCompetence: search,
+          askCompetence: search.toLowerCase(),
         },
       });
     }
@@ -30,7 +30,7 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
           id: session?.user.id,
         },
         data: {
-          skill1: skill1,
+          skill1: skill1.toLowerCase(),
         },
       });
     }
@@ -41,7 +41,7 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
           id: session?.user.id,
         },
         data: {
-          skill2: skill2,
+          skill2: skill2.toLowerCase(),
         },
       });
     }
@@ -52,7 +52,7 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
           id: session?.user.id,
         },
         data: {
-          skill3: skill3,
+          skill3: skill3.toLowerCase(),
         },
       });
     }

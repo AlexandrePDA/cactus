@@ -9,7 +9,7 @@ export default async function Competences() {
   if (!session) redirect("/");
 
   return (
-    <div className="p-4 max-w-screen-xl text-dark mx-auto w-full h-screen">
+    <div className="p-4 max-w-screen-xl text-dark mx-auto w-full h-screen mb-12">
       <h2 className="text-center my-12 text-green font-semibold text-3xl">
         Modifier mes compétences et ma recherche
       </h2>

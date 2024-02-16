@@ -12,7 +12,7 @@ export default async function AllProfils() {
   if (session?.user.askCompetence === null) redirect("/onboarding");
 
   return (
-    <div className="bg-beige max-w-screen-xl mx-auto">
+    <div className="bg-beige max-w-screen-xl mx-auto mb-12">
       <div className="mt-16 mb-8">
         <h2 className="text-center font-extrabold text-4xl lg:text-6xl text-lightorange ">
           Explore. Trouve. Contact.

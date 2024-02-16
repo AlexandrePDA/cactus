@@ -5,6 +5,7 @@ import { useQuery } from "react-query";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import ConfettiExplosion from "react-confetti-explosion";
+import toast from "react-hot-toast";
 
 interface User {
   id: number;
@@ -54,7 +55,8 @@ export default function ShowSuperMatch() {
   }
 
   if (isError) {
-    return <p>Erreur lors du chargement des SuperMatches.</p>;
+    toast.error("Une erreur est survenue");
+    return <div>Aïe... Une erreur est survenue </div>;
   }
 
   return (

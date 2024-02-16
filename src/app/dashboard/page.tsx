@@ -24,7 +24,7 @@ export default async function Dashboard() {
   const profileImage = session?.user.image || "";
 
   return (
-    <div className="p-4  mx-auto">
+    <div className="p-4  mx-auto mb-8">
       <div className="p-4    text-dark mx-auto w-full mb-4  flex items-center justify-center flex-col ">
         <h1 className="text-center mt-12 mb-4 text-green font-bold text-2xl md:text-4xl">
           Mon dashboard 🌵

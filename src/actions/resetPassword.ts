@@ -7,11 +7,11 @@ import crypto from "crypto";
 
 // envoie un email pour reset le mot de passe
 export const resetPassword = async (email: string) => {
-  console.log("resetPassword", email);
+  const emailLower = email.toLowerCase();
 
   const user = await prisma.user.findUnique({
     where: {
-      email: email,
+      email: emailLower,
     },
   });
 
@@ -25,7 +25,7 @@ export const resetPassword = async (email: string) => {
 
   await prisma.user.update({
     where: {
-      email: email,
+      email: emailLower,
     },
     data: {
       resetPasswordToken: resetPasswordToken,
@@ -33,7 +33,7 @@ export const resetPassword = async (email: string) => {
     },
   });
 
-  await sendPasswordResetEmail(email, resetPasswordToken);
+  await sendPasswordResetEmail(emailLower, resetPasswordToken);
 
   return "Password reset email sent";
 };

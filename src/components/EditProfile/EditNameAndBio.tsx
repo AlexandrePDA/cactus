@@ -79,7 +79,7 @@ export default function EditNameAndBio() {
               <FormItem>
                 <FormLabel>Prénom</FormLabel>
                 <FormControl>
-                  <Input placeholder="Julie" {...field} />
+                  <Input placeholder="" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -95,10 +95,7 @@ export default function EditNameAndBio() {
                   recherche
                 </FormLabel>
                 <FormControl>
-                  <Textarea
-                    placeholder="Hello ! je suis professeur d'anglais et j'aime la photographie. J'aimerai apprendre l'Espagnol"
-                    {...field}
-                  />
+                  <Textarea placeholder="" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -113,10 +110,7 @@ export default function EditNameAndBio() {
                   Présente toi, qui tu es, ce que tu aimes ?
                 </FormLabel>
                 <FormControl>
-                  <Textarea
-                    placeholder="Hello ! je suis professeur d'anglais et j'aime la photographie. J'aimerai apprendre l'Espagnol"
-                    {...field}
-                  />
+                  <Textarea placeholder="" {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>

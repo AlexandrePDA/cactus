@@ -124,6 +124,7 @@ export default function EditHaveAndSearchCompetences() {
     {
       title: "Langues 💬",
       options: [
+        "Anglais",
         "Espagnol",
         "Allemand",
         "Chinois",
@@ -203,7 +204,7 @@ export default function EditHaveAndSearchCompetences() {
                         <SelectItem
                           value={`category_${index}`}
                           disabled
-                          className="font-bold "
+                          className="font-bold text-green"
                         >
                           {category.title}
                         </SelectItem>
@@ -246,7 +247,7 @@ export default function EditHaveAndSearchCompetences() {
                         <SelectItem
                           value={`category_${index}`}
                           disabled
-                          className="font-bold "
+                          className="font-bold text-green"
                         >
                           {category.title}
                         </SelectItem>
@@ -285,7 +286,7 @@ export default function EditHaveAndSearchCompetences() {
                         <SelectItem
                           value={`category_${index}`}
                           disabled
-                          className="font-bold "
+                          className="font-bold text-green"
                         >
                           {category.title}
                         </SelectItem>
@@ -324,7 +325,7 @@ export default function EditHaveAndSearchCompetences() {
                         <SelectItem
                           value={`category_${index}`}
                           disabled
-                          className="font-bold "
+                          className="font-bold text-green"
                         >
                           {category.title}
                         </SelectItem>

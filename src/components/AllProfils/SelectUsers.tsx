@@ -13,7 +13,7 @@ import AllUserOrFilter from "./AllUserOrFilter";
 export default function AllUsers() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const handleChange = (value: string) => {
-    console.log(value);
+    console.log("VALUE", value);
     setSelectedCategory(value);
   };
 
@@ -62,6 +62,7 @@ export default function AllUsers() {
     {
       title: "Langues 💬",
       options: [
+        "Anglais",
         "Espagnol",
         "Allemand",
         "Chinois",
@@ -130,7 +131,7 @@ export default function AllUsers() {
                   <SelectItem
                     value={`category_${index}`}
                     disabled
-                    className="font-bold "
+                    className="font-bold text-green "
                   >
                     {category.title}
                   </SelectItem>

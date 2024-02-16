@@ -259,6 +259,7 @@ export default function OnboardingNewProfile() {
     {
       title: "Langues 💬",
       options: [
+        "Anglais",
         "Espagnol",
         "Allemand",
         "Chinois",
@@ -495,7 +496,7 @@ export default function OnboardingNewProfile() {
                 name="search"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Je recherche</FormLabel>
+                    <FormLabel>Je recherche *</FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
@@ -511,7 +512,7 @@ export default function OnboardingNewProfile() {
                             <SelectItem
                               value={`category_${index}`}
                               disabled
-                              className="font-bold "
+                              className="font-bold text-green"
                             >
                               {category.title}
                             </SelectItem>
@@ -545,7 +546,7 @@ export default function OnboardingNewProfile() {
                 name="skill1"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Skill ⭐️</FormLabel>
+                    <FormLabel>Skill * ⭐️</FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
@@ -561,7 +562,7 @@ export default function OnboardingNewProfile() {
                             <SelectItem
                               value={`category_${index}`}
                               disabled
-                              className="font-bold "
+                              className="font-bold text-green"
                             >
                               {category.title}
                             </SelectItem>
@@ -600,7 +601,7 @@ export default function OnboardingNewProfile() {
                             <SelectItem
                               value={`category_${index}`}
                               disabled
-                              className="font-bold "
+                              className="font-bold text-green"
                             >
                               {category.title}
                             </SelectItem>
@@ -639,7 +640,7 @@ export default function OnboardingNewProfile() {
                             <SelectItem
                               value={`category_${index}`}
                               disabled
-                              className="font-bold "
+                              className="font-bold text-green"
                             >
                               {category.title}
                             </SelectItem>

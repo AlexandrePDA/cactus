@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Loader } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../ui/button";
+import toast from "react-hot-toast";
 
 interface User {
   id: number;
@@ -55,7 +56,8 @@ export default function AllUserOrFilter({ selectedCategory }: AllUsersProps) {
   }
 
   if (isError) {
-    return <div>Error fetching users</div>;
+    toast.error("Une erreur est survenue");
+    return <div>Aïe... Une erreur est survenue </div>;
   }
 
   return (
