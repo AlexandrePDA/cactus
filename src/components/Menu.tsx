@@ -79,18 +79,18 @@ export const Menu = async () => {
         </DropdownMenu>
       </div>
       <div className="hidden  md:flex md:items-center md:gap-2">
-        <Button className="bg-lightorange hover:bg-beige hover:text-lightorange transition-all duration-300">
-          <Link href="/dashboard" className="flex items-center gap-2 ">
+        <Link href="/dashboard" className="flex items-center gap-2 ">
+          <Button className="bg-lightorange hover:bg-beige hover:text-lightorange transition-all duration-300">
             <LayoutDashboard />
             <p>Dashboard</p>
-          </Link>
-        </Button>
-        <Button className="bg-lightorange hover:bg-beige hover:text-lightorange transition-all duration-300">
-          <Link href="/allprofils" className="flex items-center gap-2">
+          </Button>
+        </Link>
+        <Link href="/allprofils" className="flex items-center gap-2">
+          <Button className="bg-lightorange hover:bg-beige hover:text-lightorange transition-all duration-300">
             <Users2 />
             <p>Cact-Users</p>
-          </Link>
-        </Button>
+          </Button>
+        </Link>
         <LogoutButton />
       </div>
     </div>
