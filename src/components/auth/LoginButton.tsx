@@ -6,12 +6,16 @@ import Link from "next/link";
 export const LoginButton = () => {
   return (
     <div className="flex gap-2">
-      <Button className="bg-lightorange hover:bg-beige hover:text-lightorange transition-all duration-300">
-        <Link href="/login">Connexion</Link>
-      </Button>
-      <Button className="bg-lightorange hover:bg-beige hover:text-lightorange transition-all duration-300">
-        <Link href="/register">S'inscrire</Link>
-      </Button>
+      <Link href="/login">
+        <Button className="bg-lightorange hover:bg-beige hover:text-lightorange transition-all duration-300">
+          Connexion
+        </Button>
+      </Link>
+      <Link href="/register">
+        <Button className="bg-lightorange hover:bg-beige hover:text-lightorange transition-all duration-300">
+          S'inscrire
+        </Button>
+      </Link>
     </div>
   );
 };
