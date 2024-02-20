@@ -34,7 +34,6 @@ interface ShowProfilProps {
 }
 
 export default function ShowProfil({ slug }: ShowProfilProps) {
-  console.log(slug);
   const {
     data: userProfile,
     isLoading,

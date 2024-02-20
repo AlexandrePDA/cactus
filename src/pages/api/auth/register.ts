@@ -9,8 +9,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   try {
-    console.log("coucou!!");
-    console.log(req.body);
     const { email, password } = JSON.parse(req.body);
     const emailToLowerCase = email.toLowerCase();
 
@@ -20,7 +18,6 @@ export default async function handler(
       });
     }
 
-    console.log(emailToLowerCase);
     if (!emailToLowerCase || !password)
       return res.status(400).json({ message: "Email et mot de passe requis" });
     if (password.length < 8)
@@ -28,11 +25,10 @@ export default async function handler(
         message: "Le mot de passe doit contenir au moins 8 caractères",
       });
 
-    console.log({ emailToLowerCase, password });
     const response = await prisma.user.findUnique({
       where: { email: emailToLowerCase },
     });
-    console.log("response register", { response });
+
     if (response) {
       return res.status(400).json({ message: "Email déjà utilisé" });
     }
@@ -40,7 +36,7 @@ export default async function handler(
     const hashedPassword = await hash(password, 10);
 
     const slug = crypto.randomBytes(32).toString("base64url");
-    console.log(slug);
+
     const user = await prisma.user.create({
       data: {
         email: emailToLowerCase,
@@ -49,8 +45,7 @@ export default async function handler(
       },
     });
     await sendEmailWelcome(emailToLowerCase);
-    console.log({ user });
-    console.log("succes");
+
     return res.status(200).json({ message: "succes" });
   } catch (e) {
     console.error(e);

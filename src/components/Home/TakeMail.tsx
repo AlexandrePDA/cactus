@@ -31,7 +31,6 @@ export default function TakeMail() {
   };
   const handleMailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMail(event.target.value);
-    console.log(mail);
   };
 
   const handleSentMail = async () => {

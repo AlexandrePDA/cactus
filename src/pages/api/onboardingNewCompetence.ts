@@ -7,8 +7,6 @@ import { authConfig } from "@/pages/api/auth/[...nextauth]";
 
 export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerSession(req, res, authConfig);
-  console.log("session", session);
-  console.log(req.body.values);
 
   const { search, skill1, skill2, skill3 } = req.body.values;
 

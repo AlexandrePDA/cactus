@@ -6,7 +6,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { slug } = req.body;
-  console.log(slug);
 
   try {
     const userProfile = await prisma.user.findUnique({

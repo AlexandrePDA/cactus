@@ -7,8 +7,7 @@ import { authConfig } from "@/pages/api/auth/[...nextauth]";
 
 export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerSession(req, res, authConfig);
-  console.log("session", session);
-  console.log(req.body.values);
+
   const { website, linkedin, github, instagram } = req.body.values;
 
   if (website === "" && linkedin === "" && github === "" && instagram === "") {

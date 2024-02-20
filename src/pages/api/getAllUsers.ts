@@ -7,13 +7,12 @@ export default async function getAllUsers(
 ) {
   try {
     const { selectedCategory } = req.query;
-    console.log("selectedCategory", selectedCategory);
+
     const filter: string = selectedCategory as string;
-    console.log("filter", filter);
+
     let users;
 
     if (filter) {
-      console.log("ok j'y suis");
       users = await prisma.user.findMany({
         where: {
           OR: [

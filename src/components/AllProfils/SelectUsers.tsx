@@ -13,7 +13,6 @@ import AllUserOrFilter from "./AllUserOrFilter";
 export default function AllUsers() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const handleChange = (value: string) => {
-    console.log("VALUE", value);
     setSelectedCategory(value);
   };
 

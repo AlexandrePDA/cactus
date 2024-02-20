@@ -35,7 +35,7 @@ export default function SettingsAccountButton({
       });
 
       const data = await response.json();
-      console.log(data);
+
       toast.success("Ton compte a bien été supprimé");
       window.location.href = "/";
     } catch (error) {

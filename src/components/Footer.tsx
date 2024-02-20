@@ -55,12 +55,12 @@ export const Footer = async () => {
           <a className="text-sm" href="/mentions-legales">
             Mentions Légales
           </a>
-
-          <div className="flex -mx-2"></div>
-          <div className="flex justify-between items-center">
-            <p className="text-sm">
+        </div>
+        {/* <div className="flex -mx-2"></div>
+          <div className="flex  items-center">
+             <p className="text-sm">
               Made by <span className="text-lightorange">Alexandre</span>
-            </p>
+            </p> 
             <a
               href="https://www.linkedin.com/in/alexandre-pires-de-almeida"
               className="mx-2 text-2xl text-lightorange transition-colors duration-300   "
@@ -75,9 +75,9 @@ export const Footer = async () => {
               aria-label="Github"
             >
               <Github size={16} color="white" />
-            </a>
+            </a> 
           </div>
-        </div>
+        </div> */}
       </footer>
     </div>
   );

@@ -91,8 +91,7 @@ export default function EditNameAndBio() {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>
-                  Dis nous en plus sur ton nouveau projet, tes compétences et ta
-                  recherche
+                  Décris ton nouveau projet, tes compétences et ta recherche
                 </FormLabel>
                 <FormControl>
                   <Textarea placeholder="" {...field} />
@@ -106,9 +105,7 @@ export default function EditNameAndBio() {
             name="bio"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>
-                  Présente toi, qui tu es, ce que tu aimes ?
-                </FormLabel>
+                <FormLabel>Une nouvelle bio ?</FormLabel>
                 <FormControl>
                   <Textarea placeholder="" {...field} />
                 </FormControl>

@@ -7,12 +7,8 @@ import { authConfig } from "@/pages/api/auth/[...nextauth]";
 
 export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerSession(req, res, authConfig);
-  console.log("session", session);
-  console.log(req.body.values);
 
   const { website, linkedin, instagram, github } = req.body.values;
-
-  console.log(session?.user.id);
 
   try {
     const response = await prisma.user.update({

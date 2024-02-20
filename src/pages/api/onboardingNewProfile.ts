@@ -7,12 +7,8 @@ import { authConfig } from "@/pages/api/auth/[...nextauth]";
 
 export default async function POST(req: NextApiRequest, res: NextApiResponse) {
   const session = await getServerSession(req, res, authConfig);
-  console.log("session", session);
-  console.log(req.body.values);
 
   const { username, bio, projet } = req.body.values;
-
-  console.log(session?.user.id);
 
   if (username === "" && bio === "" && projet === "") {
     return res.status(400).json({ message: "Veuillez renseigner les champs" });
@@ -29,10 +25,9 @@ export default async function POST(req: NextApiRequest, res: NextApiResponse) {
         projet: projet,
       },
     });
-    console.log("response", response);
+
     res.status(200).json({ message: "profil crée avec succès !" });
   } catch (error) {
-    console.error("Erreur lors de la création de l'utilisateur", error);
     res.status(500).json({ message: "error" });
   }
 }
