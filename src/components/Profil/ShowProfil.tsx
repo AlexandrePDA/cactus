@@ -151,6 +151,8 @@ export default function ShowProfil({ slug }: ShowProfilProps) {
             {userProfile.ownSite ? (
               <Link
                 href={userProfile.ownSite}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-white shadow hover:shadow-xl transition-all duration-300"
               >
                 <span className="bg-[#E1F0DA] p-2  rounded-md m-2">
@@ -164,6 +166,8 @@ export default function ShowProfil({ slug }: ShowProfilProps) {
             {userProfile.github ? (
               <Link
                 href={userProfile.github}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#eeeeee] shadow hover:shadow-xl transition-all duration-300"
               >
                 <span className="bg-[#D1D1D1] p-2  rounded-md m-2">
@@ -177,6 +181,8 @@ export default function ShowProfil({ slug }: ShowProfilProps) {
             {userProfile.linkedin ? (
               <Link
                 href={userProfile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#F1F6F9] shadow hover:shadow-xl transition-all duration-300"
               >
                 <span className="bg-[#326897] p-2  rounded-md m-2">
@@ -190,6 +196,8 @@ export default function ShowProfil({ slug }: ShowProfilProps) {
             {userProfile.instagram ? (
               <Link
                 href={userProfile.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="my-2 md:my-4 w-24 h-24 rounded-md flex items-start  gap-2 flex-col bg-[#F9F5F6] shadow hover:shadow-xl transition-all duration-300"
               >
                 <span className="bg-gradient-to-r  from-[#F7D074]  to-[#CF2E7E]  p-2  rounded-md m-2">
